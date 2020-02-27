@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
 <meta charset="UTF-8"> 
@@ -17,13 +17,13 @@
   <div class="container">
 
     <div class="blog-header">
-      <h1 class="blog-title">Zoë's Mathematical World</h1>
-      <p class="lead blog-description">Galois Representations For The Masses</p>
+      <h1 class="blog-title">Adam's website</h1>
+      <p class="lead blog-description">Please do not view</p>
     </div>
 
     <div class="blog-main">
       <h1>
-      Dit is de website van Zoë
+      This is Adam's website
       </h1>
       <img src="images/zoe.jpg" class="img-responsive img-rounded pull-right" alt="Zoë" />
       <p>
