@@ -1,0 +1,155 @@
+\def\Dbar{\leavevmode\lower.6ex\hbox to 0pt{\hskip-.23ex \accent"16\hss}D}
+  \def\cfac#1{\ifmmode\setbox7\hbox{$\accent"5E#1$}\else
+  \setbox7\hbox{\accent"5E#1}\penalty 10000\relax\fi\raise 1\ht7
+  \hbox{\lower1.15ex\hbox to 1\wd7{\hss\accent"13\hss}}\penalty 10000
+  \hskip-1\wd7\penalty 10000\box7}
+  \def\cftil#1{\ifmmode\setbox7\hbox{$\accent"5E#1$}\else
+  \setbox7\hbox{\accent"5E#1}\penalty 10000\relax\fi\raise 1\ht7
+  \hbox{\lower1.15ex\hbox to 1\wd7{\hss\accent"7E\hss}}\penalty 10000
+  \hskip-1\wd7\penalty 10000\box7}
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{MR0070624}{article}{
+      author={Amitsur, S.~A.},
+       title={Generic splitting fields of central simple algebras},
+        date={1955},
+        ISSN={0003-486X},
+     journal={Ann. of Math. (2)},
+      volume={62},
+       pages={8\ndash 43},
+         url={https://doi.org/10.2307/2007098},
+      review={\MR{0070624}},
+}
+
+\bib{MR0318216}{article}{
+      author={Amitsur, S.~A.},
+       title={On central division algebras},
+        date={1972},
+        ISSN={0021-2172},
+     journal={Israel J. Math.},
+      volume={12},
+       pages={408\ndash 420},
+         url={https://doi.org/10.1007/BF02764632},
+      review={\MR{0318216}},
+}
+
+\bib{PC2011}{article}{
+      author={Clark, Pete~L.},
+       title={Noncommutative algebra},
+     journal={Lecture notes, available at},
+      volume={math.uga.edu/~pete/noncommutativealgebra.pdf},
+}
+
+\bib{KC}{article}{
+      author={Conrad, Keith},
+       title={Separability},
+     journal={Lecture notes, available at},
+  volume={https://kconrad.math.uconn.edu/blurbs/galoistheory/separable1.pdf},
+}
+
+\bib{MR1038525}{book}{
+      author={Curtis, Charles~W.},
+      author={Reiner, Irving},
+       title={Methods of representation theory. {V}ol. {I}},
+      series={Wiley Classics Library},
+   publisher={John Wiley \& Sons, Inc., New York},
+        date={1990},
+        ISBN={0-471-52367-4},
+        note={With applications to finite groups and orders, Reprint of the
+  1981 original, A Wiley-Interscience Publication},
+      review={\MR{1038525}},
+}
+
+\bib{MR0225922}{incollection}{
+      author={Gruenberg, K.},
+       title={Profinite groups},
+        date={1967},
+   booktitle={Algebraic {N}umber {T}heory ({P}roc. {I}nstructional {C}onf.,
+  {B}righton, 1965)},
+   publisher={Thompson, Washington, D.C.},
+       pages={116\ndash 127},
+      review={\MR{0225922}},
+}
+
+\bib{MR2266528}{book}{
+      author={Gille, Philippe},
+      author={Szamuely, Tam\'{a}s},
+       title={Central simple algebras and {G}alois cohomology},
+      series={Cambridge Studies in Advanced Mathematics},
+   publisher={Cambridge University Press, Cambridge},
+        date={2006},
+      volume={101},
+        ISBN={978-0-521-86103-8; 0-521-86103-9},
+         url={https://doi.org/10.1017/CBO9780511607219},
+      review={\MR{2266528}},
+}
+
+\bib{MR1009787}{book}{
+      author={Jacobson, Nathan},
+       title={Basic algebra. {II}},
+     edition={Second},
+   publisher={W. H. Freeman and Company, New York},
+        date={1989},
+        ISBN={0-7167-1933-9},
+      review={\MR{1009787}},
+}
+
+\bib{MR2392026}{book}{
+      author={Neukirch, J{\"u}rgen},
+      author={Schmidt, Alexander},
+      author={Wingberg, Kay},
+       title={Cohomology of number fields},
+     edition={Second},
+      series={Grundlehren der Mathematischen Wissenschaften [Fundamental
+  Principles of Mathematical Sciences]},
+   publisher={Springer-Verlag, Berlin},
+        date={2008},
+      volume={323},
+        ISBN={978-3-540-37888-4},
+         url={http://dx.doi.org/10.1007/978-3-540-37889-1},
+      review={\MR{2392026}},
+}
+
+\bib{MR2915483}{article}{
+      author={Poonen, Bjorn},
+      author={Rains, Eric},
+       title={Self cup products and the theta characteristic torsor},
+        date={2011},
+        ISSN={1073-2780},
+     journal={Math. Res. Lett.},
+      volume={18},
+      number={6},
+       pages={1305\ndash 1318},
+         url={http://dx.doi.org/10.4310/MRL.2011.v18.n6.a18},
+      review={\MR{2915483}},
+}
+
+\bib{MR1867431}{book}{
+      author={Serre, Jean-Pierre},
+       title={Galois cohomology},
+     edition={English},
+      series={Springer Monographs in Mathematics},
+   publisher={Springer-Verlag, Berlin},
+        date={2002},
+        ISBN={3-540-42192-0},
+        note={Translated from the French by Patrick Ion and revised by the
+  author},
+      review={\MR{1867431}},
+}
+
+\bib{MR1269324}{book}{
+      author={Weibel, Charles~A.},
+       title={An introduction to homological algebra},
+      series={Cambridge Studies in Advanced Mathematics},
+   publisher={Cambridge University Press, Cambridge},
+        date={1994},
+      volume={38},
+        ISBN={0-521-43500-5; 0-521-55987-1},
+         url={https://doi.org/10.1017/CBO9781139644136},
+      review={\MR{1269324}},
+}
+
+\end{biblist}
+\end{bibdiv}

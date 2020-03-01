@@ -1,0 +1,73 @@
+\contentsline {part}{\tocpart {Part}{1}{Central simple algebras}}{2}
+\contentsline {section}{\tocsection {}{1}{Preliminaries}}{2}
+\contentsline {subsection}{\tocsubsection {}{1.1}{Rings}}{2}
+\contentsline {subsection}{\tocsubsection {}{1.2}{Modules and Schur's lemma}}{3}
+\contentsline {subsection}{\tocsubsection {}{1.3}{Algebras over a field}}{3}
+\contentsline {subsection}{\tocsubsection {}{1.4}{Matrix rings}}{3}
+\contentsline {section}{\tocsection {}{2}{Central simple algebras: Definition and examples}}{4}
+\contentsline {subsection}{\tocsubsection {}{2.1}{Matrix algebras}}{5}
+\contentsline {subsection}{\tocsubsection {}{2.2}{Quaternion algebras}}{5}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.1}{Hamilton's quaternions}}{5}
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{General quaternion algebras}}{5}
+\contentsline {section}{\tocsection {}{3}{Modules over central simple algebras and Wedderburn's theorem}}{7}
+\contentsline {subsection}{\tocsubsection {}{3.1}{Central simple algebras over an algebraically closed field}}{10}
+\contentsline {section}{\tocsection {}{4}{Splitting fields for central simple algebras}}{11}
+\contentsline {subsection}{\tocsubsection {}{4.1}{Tensor products of central simple algebras}}{11}
+\contentsline {subsection}{\tocsubsection {}{4.2}{Automorphisms of central simple algebras: the Skolem--Noether theorem}}{13}
+\contentsline {subsection}{\tocsubsection {}{4.3}{Derivations of central simple algebras}}{13}
+\contentsline {subsection}{\tocsubsection {}{4.4}{Splitting fields for central simple algebras}}{15}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.1}{Splitting fields for quaternion algebras}}{15}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.2}{The double centraliser theorem}}{16}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.3}{Central simple algebras over $\mathbb {R}$}}{19}
+\contentsline {subsubsection}{\tocsubsubsection {}{4.4.4}{Central simple algebras over finite fields}}{19}
+\contentsline {subsection}{\tocsubsection {}{4.5}{Galois splitting fields for central simple algebras}}{20}
+\contentsline {section}{\tocsection {}{5}{The Brauer group of a field}}{21}
+\contentsline {section}{\tocsection {}{6}{Non-abelian $H^1$ and Galois descent}}{23}
+\contentsline {subsection}{\tocsubsection {}{6.1}{Semilinear actions}}{23}
+\contentsline {subsection}{\tocsubsection {}{6.2}{Galois descent for vector spaces}}{24}
+\contentsline {subsection}{\tocsubsection {}{6.3}{Galois descent for central simple algebras}}{27}
+\contentsline {subsection}{\tocsubsection {}{6.4}{Non-abelian $H^1$}}{27}
+\contentsline {subsection}{\tocsubsection {}{6.5}{1-cocycles and semilinear actions}}{29}
+\contentsline {subsection}{\tocsubsection {}{6.6}{Hilbert's Theorem 90}}{30}
+\contentsline {subsection}{\tocsubsection {}{6.7}{Central simple algebras split by a fixed Galois extension}}{31}
+\contentsline {section}{\tocsection {}{7}{The reduced norm}}{32}
+\contentsline {subsection}{\tocsubsection {}{7.1}{Generalities on norm maps}}{33}
+\contentsline {subsection}{\tocsubsection {}{7.2}{Definition and basic properties of the reduced norm}}{34}
+\contentsline {subsection}{\tocsubsection {}{7.3}{Comparison between norm maps on central simple algebras}}{36}
+\contentsline {part}{\tocpart {Part}{2}{Group cohomology}}{38}
+\contentsline {section}{\tocsection {}{8}{Introduction}}{38}
+\contentsline {section}{\tocsection {}{9}{Some homological algebra (UNDER DEVELOPMENT)}}{40}
+\contentsline {subsection}{\tocsubsection {}{9.1}{Projective modules}}{40}
+\contentsline {subsection}{\tocsubsection {}{9.2}{Injective modules}}{41}
+\contentsline {subsection}{\tocsubsection {}{9.3}{The Snake Lemma}}{42}
+\contentsline {subsection}{\tocsubsection {}{9.4}{Chain complexes}}{43}
+\contentsline {subsection}{\tocsubsection {}{9.5}{Projective and injective resolutions}}{43}
+\contentsline {subsection}{\tocsubsection {}{9.6}{Ext functors}}{43}
+\contentsline {section}{\tocsection {}{10}{The basics of Group cohomology}}{43}
+\contentsline {subsection}{\tocsubsection {}{10.1}{The group ring}}{43}
+\contentsline {subsection}{\tocsubsection {}{10.2}{The standard resolution}}{44}
+\contentsline {subsection}{\tocsubsection {}{10.3}{Definition of group cohomology}}{46}
+\contentsline {subsection}{\tocsubsection {}{10.4}{Long exact sequence for cohomology}}{47}
+\contentsline {subsection}{\tocsubsection {}{10.5}{Cohomology and direct products}}{49}
+\contentsline {subsection}{\tocsubsection {}{10.6}{Cochains, cocycles, and coboundaries}}{50}
+\contentsline {subsection}{\tocsubsection {}{10.7}{Low degree cohomology groups}}{52}
+\contentsline {subsection}{\tocsubsection {}{10.8}{Low degree boundary homomorphims}}{53}
+\contentsline {subsection}{\tocsubsection {}{10.9}{$H^2$ and group extensions}}{53}
+\contentsline {subsection}{\tocsubsection {}{10.10}{Pullback and pushout of extensions}}{58}
+\contentsline {subsection}{\tocsubsection {}{10.11}{Baer sum of extensions}}{58}
+\contentsline {subsection}{\tocsubsection {}{10.12}{Cohomology of finite cyclic groups}}{58}
+\contentsline {subsection}{\tocsubsection {}{10.13}{Operations on modules}}{60}
+\contentsline {subsection}{\tocsubsection {}{10.14}{Restriction and inflation}}{61}
+\contentsline {subsection}{\tocsubsection {}{10.15}{Coinduction and Shapiro's lemma}}{62}
+\contentsline {subsubsection}{\tocsubsubsection {}{10.15.1}{Coinduced modules}}{63}
+\contentsline {subsubsection}{\tocsubsubsection {}{10.15.2}{Induced modules}}{64}
+\contentsline {subsection}{\tocsubsection {}{10.16}{The inflation-restriction exact sequence}}{65}
+\contentsline {subsection}{\tocsubsection {}{10.17}{Corestriction}}{66}
+\contentsline {subsection}{\tocsubsection {}{10.18}{Cup products}}{67}
+\contentsline {subsection}{\tocsubsection {}{10.19}{Relation to nonabelian $H^1$}}{67}
+\contentsline {section}{\tocsection {}{11}{Cohomology of profinite groups}}{69}
+\contentsline {part}{\tocpart {Part}{3}{The Brauer group revisited}}{69}
+\contentsline {section}{\tocsection {}{12}{The Brauer group in terms of cohomology}}{69}
+\contentsline {subsection}{\tocsubsection {}{12.1}{Statement of the main theorem and applications}}{69}
+\contentsline {subsection}{\tocsubsection {}{12.2}{Proof of \Cref {brauer as cohom main}}}{70}
+\contentsline {section}{\tocsection {}{}{References}}{77}
