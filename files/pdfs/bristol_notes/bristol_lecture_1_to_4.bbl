@@ -1,0 +1,170 @@
+\def\Dbar{\leavevmode\lower.6ex\hbox to 0pt{\hskip-.23ex \accent"16\hss}D}
+  \def\cfac#1{\ifmmode\setbox7\hbox{$\accent"5E#1$}\else
+  \setbox7\hbox{\accent"5E#1}\penalty 10000\relax\fi\raise 1\ht7
+  \hbox{\lower1.15ex\hbox to 1\wd7{\hss\accent"13\hss}}\penalty 10000
+  \hskip-1\wd7\penalty 10000\box7}
+  \def\cftil#1{\ifmmode\setbox7\hbox{$\accent"5E#1$}\else
+  \setbox7\hbox{\accent"5E#1}\penalty 10000\relax\fi\raise 1\ht7
+  \hbox{\lower1.15ex\hbox to 1\wd7{\hss\accent"7E\hss}}\penalty 10000
+  \hskip-1\wd7\penalty 10000\box7}
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{ACCGHLNSTT2018}{article}{
+      author={Allen, P.},
+      author={Calegari, F.},
+      author={Caraiani, A.},
+      author={Gee, T.},
+      author={Helm, D.},
+      author={Le~Hung, B.},
+      author={Newton, J.},
+      author={Scholze, S.},
+      author={Taylor, R.},
+      author={Thorne, J.},
+       title={Potential automorphy over cm fields},
+        date={2018},
+     journal={Preprint},
+      volume={arXiv:1812.09999},
+}
+
+\bib{BCGP2018}{article}{
+      author={Boxer, G.},
+      author={Calegari, F.},
+      author={Gee, T.},
+      author={Pilloni, V.},
+       title={Abelian surfaces over totally realy fields are potentially
+  modular},
+        date={2018},
+     journal={Preprint},
+      volume={arXiv:1812.09269},
+}
+
+\bib{MR1045822}{book}{
+      author={Bosch, Siegfried},
+      author={L{\"u}tkebohmert, Werner},
+      author={Raynaud, Michel},
+       title={N\'eron models},
+      series={Ergebnisse der Mathematik und ihrer Grenzgebiete (3) [Results in
+  Mathematics and Related Areas (3)]},
+   publisher={Springer-Verlag, Berlin},
+        date={1990},
+      volume={21},
+        ISBN={3-540-50587-3},
+      review={\MR{1045822 (91i:14034)}},
+}
+
+\bib{MR3576328}{article}{
+      author={Bouw, Irene~I.},
+      author={Wewers, Stefan},
+       title={Computing {$L$}-functions and semistable reduction of
+  superelliptic curves},
+        date={2017},
+        ISSN={0017-0895},
+     journal={Glasg. Math. J.},
+      volume={59},
+      number={1},
+       pages={77\ndash 108},
+         url={https://doi.org/10.1017/S0017089516000057},
+      review={\MR{3576328}},
+}
+
+\bib{MR861969}{book}{
+      editor={Cornell, Gary},
+      editor={Silverman, Joseph~H.},
+       title={Arithmetic geometry},
+   publisher={Springer-Verlag, New York},
+        date={1986},
+        ISBN={0-387-96311-1},
+         url={https://doi.org/10.1007/978-1-4613-8655-1},
+        note={Papers from the conference held at the University of Connecticut,
+  Storrs, Connecticut, July 30--August 10, 1984},
+      review={\MR{861969}},
+}
+
+\bib{M2D2}{article}{
+      author={Dokchitser, Tim},
+      author={Dokchitser, Vladimir},
+      author={Maistret, C\'{e}line},
+      author={Morgan, Adam},
+       title={Local arithmetic of curves and jacobians},
+        date={2018},
+     journal={Preprint},
+      volume={arXiv:1808.02936},
+}
+
+\bib{DNS2019}{article}{
+      author={Derickx, M.},
+      author={Najman, F.},
+      author={Siksek, S.},
+       title={Elliptic curves over totally real cubic fields are modular},
+        date={2019},
+     journal={Preprint},
+      volume={arXiv:1901.03436},
+}
+
+\bib{MR3359051}{article}{
+      author={Freitas, Nuno},
+      author={Le~Hung, Bao~V.},
+      author={Siksek, Samir},
+       title={Elliptic curves over real quadratic fields are modular},
+        date={2015},
+        ISSN={0020-9910},
+     journal={Invent. Math.},
+      volume={201},
+      number={1},
+       pages={159\ndash 206},
+         url={https://doi.org/10.1007/s00222-014-0550-z},
+      review={\MR{3359051}},
+}
+
+\bib{MR1041476}{article}{
+      author={Flynn, Eugene~Victor},
+       title={The {J}acobian and formal group of a curve of genus {$2$} over an
+  arbitrary ground field},
+        date={1990},
+        ISSN={0305-0041},
+     journal={Math. Proc. Cambridge Philos. Soc.},
+      volume={107},
+      number={3},
+       pages={425\ndash 441},
+         url={https://doi.org/10.1017/S0305004100068729},
+      review={\MR{1041476}},
+}
+
+\bib{MR0463157}{book}{
+      author={Hartshorne, Robin},
+       title={Algebraic geometry},
+   publisher={Springer-Verlag, New York-Heidelberg},
+        date={1977},
+        ISBN={0-387-90244-9},
+        note={Graduate Texts in Mathematics, No. 52},
+      review={\MR{0463157 (57 \#3116)}},
+}
+
+\bib{MR1917232}{book}{
+      author={Liu, Qing},
+       title={Algebraic geometry and arithmetic curves},
+      series={Oxford Graduate Texts in Mathematics},
+   publisher={Oxford University Press, Oxford},
+        date={2002},
+      volume={6},
+        ISBN={0-19-850284-2},
+        note={Translated from the French by Reinie Ern{\'e}, Oxford Science
+  Publications},
+      review={\MR{1917232 (2003g:14001)}},
+}
+
+\bib{MR3729254}{book}{
+      author={Poonen, Bjorn},
+       title={Rational points on varieties},
+      series={Graduate Studies in Mathematics},
+   publisher={American Mathematical Society, Providence, RI},
+        date={2017},
+      volume={186},
+        ISBN={978-1-4704-3773-2},
+      review={\MR{3729254}},
+}
+
+\end{biblist}
+\end{bibdiv}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.4)  4 FEB 2021 21:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.4)  12 FEB 2021 10:32
 entering extended mode
 **./bristol_lecture_1_to_4.tex
 (bristol_lecture_1_to_4.tex
@@ -1042,57 +1042,25 @@ G,.JBIG2,.JB2,.eps]
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package xypdf Info: Line width: 0.47998pt on input line 76.
-ABD: EveryShipout initializing macros
-
-LaTeX Warning: Citation `MR3729254' on page 1 undefined on input line 93.
-
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 93.
-
-("C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.
-fd"
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [1{C:/Users/Adam Morgan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+ABD: EveryShipout initializing macros [1{C:/Users/Adam Morgan/AppData/Local/MiK
+TeX/2.9/pdftex/config/pdftex.map}]
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
 (amsrefs)                instead of \cite[...]{...} on input line 133.
 
-
-LaTeX Warning: Citation `MR0463157' on page 2 undefined on input line 133.
-
-
-LaTeX Warning: Citation `MR861969' on page 2 undefined on input line 138.
-
-<ECgrouplaw.png, id=20, 385.13887pt x 352.01512pt>
+<ECgrouplaw.png, id=19, 385.13887pt x 352.01512pt>
 File: ECgrouplaw.png Graphic file (type png)
 <use ECgrouplaw.png>
 Package pdftex.def Info: ECgrouplaw.png  used on input line 146.
 (pdftex.def)             Requested size: 385.13791pt x 352.01425pt.
-[2 <./ECgrouplaw.png>] [3]
-
-LaTeX Warning: Citation `MR3359051' on page 4 undefined on input line 221.
-
-
-LaTeX Warning: Citation `DNS2019' on page 4 undefined on input line 221.
-
-
-LaTeX Warning: Citation `ACCGHLNSTT2018' on page 4 undefined on input line 221.
-
-
-
-LaTeX Warning: Citation `BCGP2018' on page 4 undefined on input line 221.
-
-[4]
-
-LaTeX Warning: Citation `MR1041476' on page 5 undefined on input line 262.
-
-[5] [6] [7] [8]
-<model.png, id=55, 503.63156pt x 280.79906pt>
+[2 <./ECgrouplaw.png>] [3] [4] [5] [6] [7] [8]
+<model.png, id=54, 503.63156pt x 280.79906pt>
 File: model.png Graphic file (type png)
 <use model.png>
 Package pdftex.def Info: model.png  used on input line 369.
 (pdftex.def)             Requested size: 503.63033pt x 280.79837pt.
  [9 <./model.png>] [10]
-<normalisation.png, id=64, 536.0025pt x 274.02374pt>
+<normalisation.png, id=63, 536.0025pt x 274.02374pt>
 File: normalisation.png Graphic file (type png)
 <use normalisation.png>
 Package pdftex.def Info: normalisation.png  used on input line 426.
@@ -1103,104 +1071,93 @@ LaTeX Font Info:    Try loading font information for U+euf on input line 430.
 f.fd"
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 ) [11 <./normalisation.png>] [12]
-<curve_1.png, id=72, 388.45125pt x 163.3603pt>
+<curve_1.png, id=71, 388.45125pt x 163.3603pt>
 File: curve_1.png Graphic file (type png)
 <use curve_1.png>
 Package pdftex.def Info: curve_1.png  used on input line 508.
 (pdftex.def)             Requested size: 388.45029pt x 163.3599pt.
-<dual_graph_1.png, id=73, 143.78719pt x 164.86594pt>
+<dual_graph_1.png, id=72, 143.78719pt x 164.86594pt>
 File: dual_graph_1.png Graphic file (type png)
 <use dual_graph_1.png>
 Package pdftex.def Info: dual_graph_1.png  used on input line 515.
 (pdftex.def)             Requested size: 143.78683pt x 164.86551pt.
-<curve_2.png, id=74, 382.42876pt x 96.36pt>
+<curve_2.png, id=73, 382.42876pt x 96.36pt>
 File: curve_2.png Graphic file (type png)
 <use curve_2.png>
 Package pdftex.def Info: curve_2.png  used on input line 525.
 (pdftex.def)             Requested size: 382.42781pt x 96.35974pt.
  [13 <./curve_1.png> <./dual_graph_1.png> <./curve_2.png>]
-<dual_graph_3.png, id=79, 222.8325pt x 115.93312pt>
+<dual_graph_3.png, id=78, 222.8325pt x 115.93312pt>
 File: dual_graph_3.png Graphic file (type png)
 <use dual_graph_3.png>
 Package pdftex.def Info: dual_graph_3.png  used on input line 534.
 (pdftex.def)             Requested size: 222.83195pt x 115.93283pt.
-
-
-LaTeX Warning: Citation `MR1917232' on page 14 undefined on input line 564.
-
-<thickness.png, id=80, 539.76656pt x 364.36125pt>
+<thickness.png, id=79, 539.76656pt x 364.36125pt>
 File: thickness.png Graphic file (type png)
 <use thickness.png>
 Package pdftex.def Info: thickness.png  used on input line 568.
 (pdftex.def)             Requested size: 539.76524pt x 364.36035pt.
-[14 <./dual_graph_3.png>] [15 <./thickness.png>] [16]
-
-LaTeX Warning: Citation `MR3576328' on page 17 undefined on input line 617.
-
-
-LaTeX Warning: Citation `M2D2' on page 17 undefined on input line 617.
-
+ [14 <./dual_graph_3.png>] [15 <./thickness.png>] [16]
 [17]
-<cluster_picture.png, id=94, 575.90157pt x 154.32657pt>
+<cluster_picture.png, id=93, 575.90157pt x 154.32657pt>
 File: cluster_picture.png Graphic file (type png)
 <use cluster_picture.png>
 Package pdftex.def Info: cluster_picture.png  used on input line 654.
 (pdftex.def)             Requested size: 575.90016pt x 154.32617pt.
  [18 <./cluster_picture.png>] [19]
-<tree.png, id=104, 303.38344pt x 164.86594pt>
+<tree.png, id=103, 303.38344pt x 164.86594pt>
 File: tree.png Graphic file (type png)
 <use tree.png>
 Package pdftex.def Info: tree.png  used on input line 729.
 (pdftex.def)             Requested size: 303.38269pt x 164.86551pt.
-<hypgraph.png, id=105, 222.8325pt x 130.98938pt>
+<hypgraph.png, id=104, 222.8325pt x 130.98938pt>
 File: hypgraph.png Graphic file (type png)
 <use hypgraph.png>
 Package pdftex.def Info: hypgraph.png  used on input line 735.
 (pdftex.def)             Requested size: 222.83195pt x 130.98904pt.
-<special_fibre_ex.png, id=106, 491.58656pt x 191.9672pt>
+<special_fibre_ex.png, id=105, 491.58656pt x 191.9672pt>
 File: special_fibre_ex.png Graphic file (type png)
 <use special_fibre_ex.png>
 Package pdftex.def Info: special_fibre_ex.png  used on input line 743.
 (pdftex.def)             Requested size: 491.58536pt x 191.96672pt.
- [20 <./tree.png> <./hypgraph.png> <./special_fibre_ex.png>]
-
-LaTeX Warning: Citation `MR1045822' on page 21 undefined on input line 774.
-
-[21] [22]
-<elliptic_neron.png, id=116, 518.6878pt x 517.935pt>
+ [20 <./tree.png> <./hypgraph.png> <./special_fibre_ex.png>] [21] [22]
+<elliptic_neron.png, id=115, 518.6878pt x 517.935pt>
 File: elliptic_neron.png Graphic file (type png)
 <use elliptic_neron.png>
 Package pdftex.def Info: elliptic_neron.png  used on input line 837.
 (pdftex.def)             Requested size: 518.68654pt x 517.93372pt.
- [23 <./elliptic_neron.png>] [24] [25] [26] [27] [28] [29] [30]
-No file bristol_lecture_1_to_4.bbl.
-[31] (bristol_lecture_1_to_4.aux)
+ [23 <./elliptic_neron.png>] [24] [25] [26]
+[27] [28] [29] [30] (bristol_lecture_1_to_4.bbl)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 1109
+.
 
-LaTeX Warning: There were undefined references.
-
+("C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\t1cmtt.
+fd"
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [31] (bristol_lecture_1_to_4.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20025 strings out of 492969
- 369939 string characters out of 3123920
- 451696 words of memory out of 3000000
- 23305 multiletter control sequences out of 15000+200000
- 26883 words of font info for 83 fonts, out of 3000000 for 9000
+ 20056 strings out of 492969
+ 370555 string characters out of 3123920
+ 451914 words of memory out of 3000000
+ 23334 multiletter control sequences out of 15000+200000
+ 27346 words of font info for 83 fonts, out of 3000000 for 9000
  1302 hyphenation exceptions out of 8191
- 55i,10n,48p,3263b,401s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,10n,48p,3263b,667s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\d
 pi600\ectt1000.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
 ur\jknappen\ec\dpi600\eccc1000.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Adam Morgan\AppDat
-a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\Ad
-am Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1000.pk> <C:\Users\Adam Morgan\AppDat
+a\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1000.pk> <C:\Users\Ad
+am Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.
 pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\
-dpi600\ecrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
-our\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\Adam Morgan\AppDa
-ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk> <C:\Users\A
+dpi600\ecrm0600.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> <C:\Users\Adam Morgan\AppDa
+ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk> <C:\Users\A
 dam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\eccc1200
 .pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec
 \dpi600\ecrm1200.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\2.9\fonts\pk\lj
@@ -1229,9 +1186,9 @@ r/eufm10.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX 2.9/fonts/type
 MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Adam Morgan
 /AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.p
 fb>
-Output written on bristol_lecture_1_to_4.pdf (31 pages, 1385900 bytes).
+Output written on bristol_lecture_1_to_4.pdf (31 pages, 1403979 bytes).
 PDF statistics:
- 653 PDF objects out of 1000 (max. 8388607)
+ 698 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
