@@ -1,0 +1,291 @@
+\def\Dbar{\leavevmode\lower.6ex\hbox to 0pt{\hskip-.23ex \accent"16\hss}D}
+  \def\cfac#1{\ifmmode\setbox7\hbox{$\accent"5E#1$}\else
+  \setbox7\hbox{\accent"5E#1}\penalty 10000\relax\fi\raise 1\ht7
+  \hbox{\lower1.15ex\hbox to 1\wd7{\hss\accent"13\hss}}\penalty 10000
+  \hskip-1\wd7\penalty 10000\box7}
+  \def\cftil#1{\ifmmode\setbox7\hbox{$\accent"5E#1$}\else
+  \setbox7\hbox{\accent"5E#1}\penalty 10000\relax\fi\raise 1\ht7
+  \hbox{\lower1.15ex\hbox to 1\wd7{\hss\accent"7E\hss}}\penalty 10000
+  \hskip-1\wd7\penalty 10000\box7}
+% \bib, bibdiv, biblist are defined by the amsrefs package.
+\begin{bibdiv}
+\begin{biblist}
+
+\bib{MR1086888}{incollection}{
+      author={Bloch, Spencer},
+      author={Kato, Kazuya},
+       title={{$L$}-functions and {T}amagawa numbers of motives},
+        date={1990},
+   booktitle={The {G}rothendieck {F}estschrift, {V}ol.\ {I}},
+      series={Progr. Math.},
+      volume={86},
+   publisher={Birkh\"auser Boston, Boston, MA},
+       pages={333\ndash 400},
+      review={\MR{1086888}},
+}
+
+\bib{MR1717533}{article}{
+      author={Bosch, Siegfried},
+      author={Liu, Qing},
+       title={Rational points of the group of components of a {N}\'eron model},
+        date={1999},
+        ISSN={0025-2611},
+     journal={Manuscripta Math.},
+      volume={98},
+      number={3},
+       pages={275\ndash 293},
+         url={http://dx.doi.org/10.1007/s002290050140},
+      review={\MR{1717533 (2000i:11094)}},
+}
+
+\bib{MR570874}{article}{
+      author={Bloch, S.},
+       title={A note on height pairings, {T}amagawa numbers, and the {B}irch
+  and {S}winnerton-{D}yer conjecture},
+        date={1980},
+        ISSN={0020-9910},
+     journal={Invent. Math.},
+      volume={58},
+      number={1},
+       pages={65\ndash 76},
+         url={http://dx.doi.org/10.1007/BF01402274},
+      review={\MR{570874}},
+}
+
+\bib{MR1045822}{book}{
+      author={Bosch, Siegfried},
+      author={L{\"u}tkebohmert, Werner},
+      author={Raynaud, Michel},
+       title={N\'eron models},
+      series={Ergebnisse der Mathematik und ihrer Grenzgebiete (3) [Results in
+  Mathematics and Related Areas (3)]},
+   publisher={Springer-Verlag, Berlin},
+        date={1990},
+      volume={21},
+        ISBN={3-540-50587-3},
+      review={\MR{1045822 (91i:14034)}},
+}
+
+\bib{MR0179169}{article}{
+      author={Cassels, J. W.~S.},
+       title={Arithmetic on curves of genus 1. {VIII}. {O}n conjectures of
+  {B}irch and {S}winnerton-{D}yer},
+        date={1965},
+        ISSN={0075-4102},
+     journal={J. Reine Angew. Math.},
+      volume={217},
+       pages={180\ndash 199},
+         url={http://dx.doi.org/10.1515/crll.1965.217.180},
+      review={\MR{0179169}},
+}
+
+\bib{MR0463176}{article}{
+      author={Coates, J.},
+      author={Wiles, A.},
+       title={On the conjecture of {B}irch and {S}winnerton-{D}yer},
+        date={1977},
+        ISSN={0020-9910},
+     journal={Invent. Math.},
+      volume={39},
+      number={3},
+       pages={223\ndash 251},
+         url={http://dx.doi.org/10.1007/BF01402975},
+      review={\MR{0463176}},
+}
+
+\bib{MR2831512}{article}{
+      author={Dokchitser, Tim},
+      author={Dokchitser, Vladimir},
+       title={Root numbers and parity of ranks of elliptic curves},
+        date={2011},
+        ISSN={0075-4102},
+     journal={J. Reine Angew. Math.},
+      volume={658},
+       pages={39\ndash 64},
+         url={http://dx.doi.org/10.1515/CRELLE.2011.060},
+      review={\MR{2831512 (2012h:11084)}},
+}
+
+\bib{MR1608788}{incollection}{
+      author={Grothendieck, Alexander},
+       title={Formule de {L}efschetz et rationalit\'e des fonctions {$L$}},
+        date={1995},
+   booktitle={S\'eminaire {B}ourbaki, {V}ol.\ 9},
+   publisher={Soc. Math. France, Paris},
+       pages={Exp.\ No.\ 279, 41\ndash 55},
+      review={\MR{1608788}},
+}
+
+\bib{MR833192}{article}{
+      author={Gross, Benedict~H.},
+      author={Zagier, Don~B.},
+       title={Heegner points and derivatives of {$L$}-series},
+        date={1986},
+        ISSN={0020-9910},
+     journal={Invent. Math.},
+      volume={84},
+      number={2},
+       pages={225\ndash 320},
+         url={http://dx.doi.org/10.1007/BF01388809},
+      review={\MR{833192}},
+}
+
+\bib{MR0463157}{book}{
+      author={Hartshorne, Robin},
+       title={Algebraic geometry},
+   publisher={Springer-Verlag, New York-Heidelberg},
+        date={1977},
+        ISBN={0-387-90244-9},
+        note={Graduate Texts in Mathematics, No. 52},
+      review={\MR{0463157 (57 \#3116)}},
+}
+
+\bib{MR954295}{article}{
+      author={Kolyvagin, V.~A.},
+       title={Finiteness of {$E({\bf Q})$} and {$\Sha$}{$(E,{\bf Q})$} for a
+  subclass of {W}eil curves},
+        date={1988},
+        ISSN={0373-2436},
+     journal={Izv. Akad. Nauk SSSR Ser. Mat.},
+      volume={52},
+      number={3},
+       pages={522\ndash 540, 670\ndash 671},
+      review={\MR{954295}},
+}
+
+\bib{MR2261462}{book}{
+      author={Milne, J.~S.},
+       title={Arithmetic duality theorems},
+     edition={Second},
+   publisher={BookSurge, LLC, Charleston, SC},
+        date={2006},
+        ISBN={1-4196-4274-X},
+      review={\MR{2261462 (2007e:14029)}},
+}
+
+\bib{MR0414558}{article}{
+      author={Milne, J.~S.},
+       title={On a conjecture of {A}rtin and {T}ate},
+        date={1975},
+        ISSN={0003-486X},
+     journal={Ann. of Math. (2)},
+      volume={102},
+      number={3},
+       pages={517\ndash 533},
+         url={http://dx.doi.org/10.2307/1971042},
+      review={\MR{0414558}},
+}
+
+\bib{MR861974}{incollection}{
+      author={Milne, J.~S.},
+       title={Abelian varieties},
+        date={1986},
+   booktitle={Arithmetic geometry ({S}torrs, {C}onn., 1984)},
+   publisher={Springer, New York},
+       pages={103\ndash 150},
+      review={\MR{861974}},
+}
+
+\bib{MR1740984}{article}{
+      author={Poonen, Bjorn},
+      author={Stoll, Michael},
+       title={The {C}assels-{T}ate pairing on polarized abelian varieties},
+        date={1999},
+        ISSN={0003-486X},
+     journal={Ann. of Math. (2)},
+      volume={150},
+      number={3},
+       pages={1109\ndash 1149},
+         url={http://dx.doi.org/10.2307/121064},
+      review={\MR{1740984 (2000m:11048)}},
+}
+
+\bib{MR1081832}{article}{
+      author={Shioda, Tetsuji},
+       title={On the {M}ordell-{W}eil lattices},
+        date={1990},
+        ISSN={0010-258X},
+     journal={Comment. Math. Univ. St. Paul.},
+      volume={39},
+      number={2},
+       pages={211\ndash 240},
+      review={\MR{1081832}},
+}
+
+\bib{MR2514094}{book}{
+      author={Silverman, Joseph~H.},
+       title={The arithmetic of elliptic curves},
+     edition={Second},
+      series={Graduate Texts in Mathematics},
+   publisher={Springer, Dordrecht},
+        date={2009},
+      volume={106},
+        ISBN={978-0-387-09493-9},
+         url={http://dx.doi.org/10.1007/978-0-387-09494-6},
+      review={\MR{2514094}},
+}
+
+\bib{MR3148103}{article}{
+      author={Skinner, Christopher},
+      author={Urban, Eric},
+       title={The {I}wasawa main conjectures for {$\rm GL_2$}},
+        date={2014},
+        ISSN={0020-9910},
+     journal={Invent. Math.},
+      volume={195},
+      number={1},
+       pages={1\ndash 277},
+         url={http://dx.doi.org/10.1007/s00222-013-0448-1},
+      review={\MR{3148103}},
+}
+
+\bib{MR1610977}{incollection}{
+      author={Tate, John},
+       title={On the conjectures of {B}irch and {S}winnerton-{D}yer and a
+  geometric analog},
+        date={1995},
+   booktitle={S\'eminaire {B}ourbaki, {V}ol.\ 9},
+   publisher={Soc. Math. France, Paris},
+       pages={Exp.\ No.\ 306, 415\ndash 440},
+      review={\MR{1610977}},
+}
+
+\bib{MR1826411}{article}{
+      author={Zhang, Shouwu},
+       title={Heights of {H}eegner points on {S}himura curves},
+        date={2001},
+        ISSN={0003-486X},
+     journal={Ann. of Math. (2)},
+      volume={153},
+      number={1},
+       pages={27\ndash 147},
+         url={http://dx.doi.org/10.2307/2661372},
+      review={\MR{1826411}},
+}
+
+\bib{MR3307716}{incollection}{
+      author={Zhang, Wei},
+       title={The {B}irch--{S}winnerton-{D}yer conjecture and {H}eegner points:
+  a survey},
+        date={2014},
+   booktitle={Current developments in mathematics 2013},
+   publisher={Int. Press, Somerville, MA},
+       pages={169\ndash 203},
+      review={\MR{3307716}},
+}
+
+\bib{MR3295917}{article}{
+      author={Zhang, Wei},
+       title={Selmer groups and the indivisibility of {H}eegner points},
+        date={2014},
+        ISSN={2168-0930},
+     journal={Camb. J. Math.},
+      volume={2},
+      number={2},
+       pages={191\ndash 253},
+         url={http://dx.doi.org/10.4310/CJM.2014.v2.n2.a2},
+      review={\MR{3295917}},
+}
+
+\end{biblist}
+\end{bibdiv}
