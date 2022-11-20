@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.4)  20 NOV 2022 20:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.4)  20 NOV 2022 20:37
 entering extended mode
 **./curriculum_vitae.tex
 (curriculum_vitae.tex
@@ -624,7 +624,7 @@ Overfull \hbox (18.08357pt too wide) in paragraph at lines 147--148
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 174--206
+Underfull \hbox (badness 10000) in paragraph at lines 183--216
 
  []
 
@@ -649,9 +649,9 @@ TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Adam Morgan/AppData/
 Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/A
 dam Morgan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
 s/msbm10.pfb>
-Output written on curriculum_vitae.pdf (4 pages, 116033 bytes).
+Output written on curriculum_vitae.pdf (4 pages, 116655 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
+ 257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
