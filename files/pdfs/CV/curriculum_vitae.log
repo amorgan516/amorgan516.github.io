@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.4)  20 JAN 2024 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.4)  23 SEP 2024 14:55
 entering extended mode
 **./curriculum_vitae.tex
 (curriculum_vitae.tex
@@ -617,13 +617,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Package xypdf Info: Line width: 0.39998pt on input line 18.
  [1
 
-{C:/Users/Adam Morgan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+{C:/Users/Adam Morgan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Overfull \hbox (15.5119pt too wide) in paragraph at lines 166--167
+[]\T1/cmr/m/it/10 On Ga-lois cov-ers of curves and arith-metic of Ja-co-bians\T
+1/cmr/m/n/10 , with A. Kon-stanti-nou, July 2024, arXiv:2407.18258 
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 202--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--252
+Underfull \hbox (badness 10000) in paragraph at lines 222--270
 
  []
 
@@ -631,7 +637,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--252
 Here is how much of TeX's memory you used:
  7824 strings out of 492969
  118997 string characters out of 3123920
- 232452 words of memory out of 3000000
+ 233452 words of memory out of 3000000
  11571 multiletter control sequences out of 15000+200000
  10553 words of font info for 36 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -648,9 +654,9 @@ type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs
 ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
 rs/Adam Morgan/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
 mbols/msbm10.pfb>
-Output written on curriculum_vitae.pdf (5 pages, 119255 bytes).
+Output written on curriculum_vitae.pdf (5 pages, 120236 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
+ 263 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
