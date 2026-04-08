@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  8 APR 2026 09:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  8 APR 2026 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1301,8 +1301,7 @@ nd-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count350
 \l__pdf_internal_box=\box139
-)
-No file india_notes.aux.
+) (india_notes.aux)
 \openout1 = `india_notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
@@ -1382,6 +1381,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring ON on input line 87.
+ (india_notes.out) (india_notes.out)
 \@outlinefile=\write5
 \openout5 = `india_notes.out'.
 
@@ -1425,134 +1425,42 @@ Package xypdf Info: Line width: 0.39998pt on input line 87.
 Class amsart Warning: Abstract should precede \maketitle in AMS document classe
 s; reported on input line 99.
 
-No file india_notes.toc.
+(india_notes.toc)
 \tf@toc=\write6
 \openout6 = `india_notes.toc'.
+
 
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
 (amsrefs)                instead of \cite[...]{...} on input line 114.
 
-
-LaTeX Warning: Citation `ctsko21' on page 1 undefined on input line 114.
-
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-14.
-(C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
-File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-)
-
-LaTeX Warning: Citation `MR1740984' on page 1 undefined on input line 125.
-
 [1{C:/Users/Adam Morgan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-
-LaTeX Warning: Reference `CT_homog_space' on page 2 undefined on input line 138
-.
-
-[2]
-
-LaTeX Warning: Citation `MR2915483' on page 3 undefined on input line 179.
-
-
-LaTeX Warning: Reference `PS_quad_refinement_prop' on page 3 undefined on input
- line 191.
-
-
-Overfull \hbox (6.36118pt too wide) in paragraph at lines 191--192
+[2] [3]
+Overfull \hbox (8.27737pt too wide) in paragraph at lines 191--192
 []\T1/cmr/m/it/10 Remark \T1/cmr/m/n/10 2.8\T1/cmr/m/it/10 . []\T1/cmr/m/n/10 P
-ropo-si-tion [] is par-tic-u-larly use-ful when con-sid-er-ing the be-haviour o
-f Selmer/Shafarevich--
+ropo-si-tion [][]2.7[][] is par-tic-u-larly use-ful when con-sid-er-ing the be-
+haviour of Selmer/Shafarevich--
  []
 
-[3]
 
 LaTeX Warning: Reference `ex:Kummer' on page 4 undefined on input line 223.
-
-
-LaTeX Warning: Citation `SZ17' on page 4 undefined on input line 223.
 
 
 LaTeX Warning: Reference `ex:Kummer' on page 4 undefined on input line 223.
 
 [4]
-
-LaTeX Warning: Citation `NSW08' on page 5 undefined on input line 252.
-
-
-Overfull \hbox (2.08598pt too wide) in paragraph at lines 252--253
-[]\T1/cmr/m/n/10 See [[][]\T1/cmtt/m/n/10 ?NSW08[][]\T1/cmr/m/n/10 , Corol-lary
- 7.2.6] for non-archimedean $\OML/cmm/m/it/10 v$ \T1/cmr/m/n/10 and op. cit. Th
-e-o-rem 7.2.17 for archimedean
+Overfull \hbox (3.91887pt too wide) in paragraph at lines 252--253
+[]\T1/cmr/m/n/10 See [[][]NSW08[][], Corol-lary 7.2.6] for non-archimedean $\OM
+L/cmm/m/it/10 v$ \T1/cmr/m/n/10 and op. cit. The-o-rem 7.2.17 for archimedean
  []
 
-[5]
-
-LaTeX Warning: Reference `basic_conds_lemma' on page 6 undefined on input line 
-310.
-
-
-LaTeX Warning: Reference `kummer_seq' on page 6 undefined on input line 310.
-
-
-LaTeX Warning: Reference `basic_conds_lemma' on page 6 undefined on input line 
-342.
-
-
-LaTeX Warning: Reference `basic_conds_lemma' on page 6 undefined on input line 
-344.
-
-[6]
-
-LaTeX Warning: Citation `Har19' on page 7 undefined on input line 352.
-
-
-LaTeX Warning: Citation `MazRub2010' on page 7 undefined on input line 352.
-
-
-LaTeX Warning: Reference `eq:selmer_change_dims' on page 7 undefined on input l
-ine 374.
-
-
-LaTeX Warning: Reference `summed_tate_pairing' on page 7 undefined on input lin
-e 384.
-
-
-LaTeX Warning: Reference `prop:mazur_rubin_harpaz' on page 7 undefined on input
- line 403.
-
-
-LaTeX Warning: Reference `lem:local_conds' on page 7 undefined on input line 41
-5.
-
-
-LaTeX Warning: Reference `prop:mazur_rubin_harpaz' on page 7 undefined on input
- line 415.
-
-
-LaTeX Warning: Reference `basic_conds_lemma' on page 7 undefined on input line 
-415.
-
-
-LaTeX Warning: Reference `basic_conds_lemma' on page 7 undefined on input line 
-415.
-
-[7]
-
-LaTeX Warning: Citation `MR3951582' on page 8 undefined on input line 432.
-
+[5] [6] [7] [8]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 442
 .
+
 (C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-
-LaTeX Warning: Citation `mor2025' on page 8 undefined on input line 449.
-
-[8]
-
-LaTeX Warning: Citation `MR2261462' on page 9 undefined on input line 454.
-
-[9] (india_notes.aux)
+) [9] [10] (india_notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1561,65 +1469,55 @@ L3 programming layer <2024-01-04>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `india_notes.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `india_notes.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  CD2FFD03118C8C0D0D94953B813D2B98;893.
+Package rerunfilecheck Info: File `india_notes.out' has not changed.
+(rerunfilecheck)             Checksum: CD2FFD03118C8C0D0D94953B813D2B98;893.
  ) 
 Here is how much of TeX's memory you used:
- 32721 strings out of 474479
- 639737 string characters out of 5740723
- 1944542 words of memory out of 5000000
- 54179 multiletter control sequences out of 15000+600000
- 577036 words of font info for 92 fonts, out of 8000000 for 9000
+ 32716 strings out of 474479
+ 639635 string characters out of 5740723
+ 1945542 words of memory out of 5000000
+ 54169 multiletter control sequences out of 15000+600000
+ 576723 words of font info for 91 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 116i,8n,121p,3252b,628s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,8n,121p,3252b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecbx0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\tcrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/
 ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Adam Morgan\AppDat
 a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\Adam M
-organ\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\
-Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
+organ\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\
+Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1
 000.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\eccc1000.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\eccc0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\font
-s/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Adam Morgan\AppData\Local
-\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk><C:/Users/Adam Morgan/Ap
-pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
-/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Adam Morgan/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Adam Mo
-rgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
-Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmr6.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Adam Morgan/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Adam Morgan/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Adam 
-Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-euler/eufm10.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/euler/eufm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Adam Morgan/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/U
-sers/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symb
-ols/msbm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cyrillic/wncyr10.pfb>
-Output written on india_notes.pdf (9 pages, 379064 bytes).
+dpi600\eccc0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\font
+s/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk><C:/Users/Adam Morgan/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Adam Morgan
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Us
+ers/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+mi5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Adam Morgan/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Adam Morgan/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Adam M
+organ/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
+/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmr7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmr8.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Adam Morgan/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Adam Morgan/AppDa
+ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Ada
+m Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10
+.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/euler/eufm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Adam Morgan/AppData/Local/P
+rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Adam Mo
+rgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pf
+b><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
+ts/cyrillic/wncyr10.pfb>
+Output written on india_notes.pdf (10 pages, 375981 bytes).
 PDF statistics:
- 695 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
