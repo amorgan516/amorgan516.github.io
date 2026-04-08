@@ -1,0 +1,936 @@
+
+\documentclass[10pt]{amsart}
+
+\usepackage{tikz-cd,amsmath,amssymb,amstext,amsgen,amsbsy,amsopn,amsfonts,graphicx,amsthm,semtkzX,mathdots,multicol,mathrsfs}
+\usepackage[alphabetic]{amsrefs}
+\usepackage{titletoc}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage{xcolor}
+\definecolor{Burgundy1}{RGB}{128,0,32}
+\hypersetup{
+    colorlinks,
+    linkcolor={Burgundy1!90!black},
+    citecolor={teal!70!black},
+    urlcolor={blue!80!black}
+}
+\usepackage{cleveref}
+ 
+
+%\usepackage{parskip}
+\usepackage[left=3cm, right=3cm, top=3.5cm, bottom=3cm,footskip=1cm,headsep=1.5cm]{geometry}
+%example of geometry package \geometry{verbose,tmargin=3cm,bmargin=3.5cm,lmargin=3.5cm,rmargin=3.5cm,headheight=3cm,headsep=4cm,footskip=2cm}
+\usepackage[all]{xy}
+\usepackage[OT2,T1]{fontenc}
+%\usepackage[latin9]{inputenc}
+
+\usepackage{float}
+%\usepackage{relsize}
+
+\renewcommand{\baselinestretch}{1}
+
+\crefname{equation}{}{}
+\numberwithin{equation}{section}
+
+
+
+\newtheorem{theorem}[equation]{Theorem}
+\newtheorem{lemma}[equation]{Lemma}
+\newtheorem{cor}[equation]{Corollary}
+\Crefname{cor}{Corollary}{Corollaries}
+\newtheorem{conjecture}[equation]{Conjecture}
+\newtheorem{proposition}[equation]{Proposition}
+
+\newcommand{\hooklongrightarrow}{\lhook\joinrel\longrightarrow}
+
+\theoremstyle{remark}
+\newtheorem{remark}[equation]{Remark}
+\theoremstyle{definition}
+\newtheorem{example}[equation]{Example}
+\theoremstyle{definition}
+\newtheorem{construction}[equation]{Construction}
+\theoremstyle{definition}
+\newtheorem{defi}[equation]{Definition}
+\theoremstyle{definition}
+\newtheorem{notation}[equation]{Notation}
+\theoremstyle{definition}
+\newtheorem{convention}[equation]{Convention}
+\theoremstyle{definition}
+\newtheorem{assumption}[equation]{Assumption}
+\theoremstyle{definition}
+\newtheorem{condition}[equation]{Condition}
+\theoremstyle{definition}
+\newtheorem{caution}[equation]{Caution}
+ 
+
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+\def\K{\ensuremath K}
+\def\L{\ensuremath L}
+\def\O{\ensuremath\mathcal{O}}
+\def\A{\ensuremath\mathcal{A}}
+\def\W{\ensuremath\mathcal{W}}
+\def\F{\ensuremath\mathbb{F}}
+\def\Q{\ensuremath\mathbb{Q}}
+\def\N{\ensuremath N_{L/K}}
+\def\c{\ensuremath \mathfrak{s}}
+\def\s{\ensuremath \mathfrak{s}}
+\def\cR{\ensuremath \mathcal{R}}
+\def\Z{\ensuremath \mathbb{Z}}
+\def\ub{\"ubereven}
+ 
+
+\def\kbar{\ensuremath \bar{k}}
+
+%\subjclass[2010]{11G40 (11G10, 11G20, 11G30, 14G10, 14K15)}
+
+
+\begin{document}
+
+ 
+
+\title{Rational Points on Kummer Varieties and Swinnerton-Dyer's method}
+
+\author{Adam Morgan}
+\setcounter{tocdepth}{1}
+\maketitle
+
+
+
+\begin{abstract}
+These lectures are designed to serve as an introduction to Swinnerton-Dyer’s descent fibration method.  This is a versatile method for studying the Hasse principle and Brauer—Manin obstruction for certain classes of varieties, and works well in situations where the existence of rational points can be related to the existence of rational points on families of torsors under abelian varieties. Following Swinnerton-Dyer’s original work, the method has been developed by Colliot-Thélène, Skorobogatov, Harpaz, Wittenberg and others, and examples of varieties it has been successfully applied to include K3 surfaces, cubic surfaces and quartic del Pezzo surfaces.  
+We will primarily illustrate the method in the special case of K3 Kummer surfaces. Time permitting, I will also touch on degree 4 del Pezzo surfaces, which will be discussed in more detail in later lectures of Lyczak. A sizeable portion of the course will be dedicated to the study of 2- and 4-Selmer groups in quadratic twist families, which forms a large part of the technical input to some of the results referenced above.
+\end{abstract}
+
+\tableofcontents
+\vspace{-10pt}
+
+\section{Introduction}
+
+The aim of these notes is to give an introduction to Swinnerton-Dyer's method in the worked example of rational points on Kummer varieties, with a particular focus on (generalized) Kummer surfaces associated to Jacobians of genus $2$ curves. A secondary aim is to discuss the behaviour of $2$- and $4$-Selmer groups in quadratic twist families. 
+
+\subsection{Notation/background}
+Throughout, $k$ will denote a number field and $G_k$ its absolute Galois group of $k$. For a smooth projective variety $X$ over $k$ we have the algebraic Brauer group
+\[\textup{Br}_1(X)=\ker\big(\textup{Br}(X)\to \textup{Br}(X_{\bar{k}})\big).\] 
+We also write $\textup{Br}_0(X)$ for the image of $\textup{Br}(k)$ in $\textup{Br}(X)$. Since $H^3(k,\overline{k}^{\times})=0$ we have an isomorphism $\textup{Br}_1(X)/\textup{Br}_0(X)\cong H^1\big(k,\textup{Pic}(X_{\bar{k}})\big)$; see \cite[Proposition 4.3.2]{ctsko21} for details.
+
+\section{The Cassels--Tate pairing}
+
+Let $A/k$ be an abelian variety. The Galois cohomology group $H^1(k,A)$ classifies isomorphism classes of $A$-torsors $X/k$. The Shafarevich--Tate group of $A$ is defined as
+\[\Sha(A)=\ker\bigg(H^1(k,A)\to \prod_{v\textup{ place of }k}H^1(k_v,A)\bigg).\]
+It is the subgroup of $H^1(k,A)$ consisting of elements represented by everywhere locally soluble torsors, i.e. torsors $X$ under $A$ with $X(\mathbb{A}_k)\neq \emptyset$. A major open conjecture is that $\Sha(A)$ is finite. 
+
+The Cassels--Tate pairing is a bilinear pairing 
+\[\left \langle ~,~\right \rangle_{\textup{CT}}:\Sha(A)\times \Sha(A^\vee)\to \mathbb{Q}/\mathbb{Z},\]
+where $A^\vee$ denotes the dual abelian variety. 
+It has several equivalent definitions; see \cite{MR1740984}. One definition, the \textit{homogeneous space definition}, is as follows. 
+
+\begin{defi}[Cassels--Tate pairing]
+Let $X$ be an everywhere locally soluble $A$-torsor, so that $X$ represents a class in $\Sha(A)$. We have a canonical isomorphism of $G_k$-modules $\textup{Pic}^0(X_{\bar{k}})\cong  \textup{Pic}^0(A_{\bar{k}})=A^\vee(\bar{k})$.  This induces a homomorphism
+\[\Phi_X: \Sha(A^\vee)\to H^1\big(k,\textup{Pic}(X_{\bar{k}})\big)\cong  \textup{Br}_1(X)/\textup{Br}_0(X).\]
+We note that since elements of $\Sha(A^\vee)$ are everywhere locally trivial, the image of this map consists of elements of $\textup{Br}_1(X)$ that everywhere locally lie in the image of $\textup{Br}(k_v)$ in $\textup{Br}(X_{k_v})$. Now take $\eta\in \Sha(A^\vee)$ and let $\alpha \in \textup{Br}_1(X)$ be any element representing the class of $\Phi_X(\eta)$. Define 
+\begin{equation} \label{CT_homog_space}
+\left \langle [X], \eta\right \rangle_{\textup{CT}}=\sum_{v\textup{ place of }k}\textup{inv}_v\alpha(x_v),
+\end{equation}
+where $x_v\in X(k_v)$ is any choice of $k_v$-point on $X$. 
+\end{defi}
+
+\begin{remark}
+The right hand side of \eqref{CT_homog_space} is independent of the choice of $x_v$ since $\alpha$ is everywhere locally in the image of $\textup{Br}(k_v)$, hence the evaluation map  $X(k_v)\to \textup{Br}(k_v)$ given by $x_v\mapsto \alpha(x_v)$ is constant. Further, by reciprocity for the Brauer group of $k$, it is independent of the choice of representative $\alpha \in \textup{Br}_1(X)$ for $\Phi_X(\eta)\in \textup{Br}_1(X)/\textup{Br}_0(X)$. 
+\end{remark}
+
+The key property that the Cassels--Tate pairing has is that its left (resp. right) kernel is the maximal divisible subgroup of $\Sha(A)$ (resp. $\Sha(A^\vee)$). If $\Sha(A)$ is finite as expected then so is $\Sha(A^\vee)$ and, in particular, the Cassels--Tate pairing is non-degenerate.  
+
+In his 1970 ICM talk, Manin defined what is now known as the Brauer--Manin obstruction, and observed the following. 
+
+\begin{theorem}[Manin]
+Suppose that $\Sha(A)$ is finite. Then the Brauer--Manin obstruction explains all failures of the Hasse principle for torsors under $A$. 
+\end{theorem}
+
+\begin{proof}
+Let $X$ be a torsor under $A$. We can assume that $X$ is everywhere locally soluble, in which case $X$ defines a class $[X]\in \Sha(A)$. Suppose that $X(k)=\emptyset$. Then $[X]\neq 0$. Since $\Sha(A)$ is finite, the Cassels--Tate pairing is non-degenerate, hence there is $\eta\in \Sha(A^\vee)$ with $\left \langle [X],\eta\right \rangle_{\textup{CT}}\neq 0$. Then any lift $\alpha \in \textup{Br}_1(X)$ of $\Phi_X(\eta)$  gives a Brauer--Manin obstruction to the Hasse principle on $X$.
+\end{proof}
+
+\subsection{The obstruction to being alternating}
+
+Suppose now that $A$ admits a principal polarisation $\lambda:A \to A^\vee$. Via $\lambda$ we identify $A$ with $A^\vee$ and thus view the Cassels--Tate pairing as a $\mathbb{Q}/\mathbb{Z}$-valued bilinear pairing on $\Sha(A)$. As shown by Flach, this pairing is antisymmetric. That is, for all $x,y\in \Sha(A)$, we have $\left \langle x,y\right \rangle_{\textup{CT}}=-\left \langle y,x\right \rangle_{\textup{CT}}$. In particular, one has $2\left \langle x,x\right \rangle_{\textup{CT}}=0$ for all $x\in \Sha(A)$. One can ask whether, moreover, the Cassels--Tate pairing is alternating (i.e.   $\left \langle x,x\right \rangle_{\textup{CT}}=0$ for all $x\in \Sha(A)$). This question was answered by Poonen and Stoll in \cite{MR1740984}. We recall their result. %For simplicity, we will assume in this subsection that $\Sha(A)$ is finite. To avoid this assumption, one can, for each prime $p$, work instead with the quotient of $\Sha(A)[p^\infty]$ by its maximal divisible subgroup; see \cite{MR1740984} for details.
+
+We have a short exact sequence of $G_k$-modules 
+\[0 \to A^\vee(\bar{k})\to \textup{Pic}(A_{\bar{k}})\to NS(A_{\bar{k}})\to 0.\] 
+The associated long exact sequence for Galois cohomology induces a connecting map
+\[\delta: NS(A_{\bar{k}})^{G_k} \to H^1(k,A^\vee).\]
+The principal polarisation $\lambda$ gives a class in $NS(A_{\bar{k}})^{G_k}$, so we obtain a class $\delta(\lambda)\in H^1(k,A^\vee)$. Denote by $c$ the image of this class under the isomorphism $H^1(k,A^\vee)\cong H^1(k,A)$ induced by $\lambda$. 
+
+\begin{theorem}[Poonen--Stoll, \cite{MR1740984} Theorem 5]
+The element $c$ lies in $\Sha(A)[2]$. Moreover, for all $x\in \Sha(A)$, we have $\left \langle x,x\right \rangle_{\textup{CT}}=\left \langle x,c\right \rangle_{\textup{CT}}.$ In particular, $\left \langle ~,~\right \rangle_{\textup{CT}}$ is alternating if and only if $c$ lies in the maximal divisible subgroup of $\Sha(A)$.
+\end{theorem}
+
+\begin{cor}[\cite{MR1740984} Theorem 8 and Corollary 9]
+Suppose that $\Sha(A)$ is finite. If $\left \langle c,c\right \rangle_{\textup{CT}}=0$ then $\Sha(A)\cong T\times T$ for some finite abelian group $T$. In particular, $\dim_{\mathbb{F}_2}\Sha(A)[2]$ is even and $\Sha(A)$ has square order. Conversely, if $\left \langle c,c\right \rangle_{\textup{CT}}=1/2$, then $\Sha(A)\cong \mathbb{Z}/2\mathbb{Z}\times T\times T$ for some finite abelian group $T$, $\dim_{\mathbb{F}_2}\Sha(A)[2]$ is odd and the order of $\Sha(A)$ is twice a square. 
+\end{cor}
+
+\begin{proof}
+In general, suppose we have a finite abelian group $M$, equipped with a non-degenerate  antisymmetric bilinear pairing $P:M\times M\to \mathbb{Q}/\mathbb{Z}$. The antisymmetry means that the map $x\mapsto P(x,x)$ is a homomorphism $M\to \tfrac{1}{2}\mathbb{Z}/\mathbb{Z}$, hence has the form $P(-,c)$ for a unique $c\in M[2]$. The map $\phi:M\to M$ given by 
+\[m\mapsto \begin{cases}m~~&~~P(m,c)=0,\\ m+c~~&~~P(m,c)=1/2, \end{cases}\]
+is a homomorphism. The bilinear pairing $\widetilde{P}:M\times M\to \mathbb{Q}/\mathbb{Z}$ given by $\widetilde{P}(x,y)=P(x,\phi(y))$ is then alternating. Its kernel is $\ker(\phi)$, which is $0$ if $P(c,c)=0$, and is $\left \langle c\right \rangle \cong \mathbb{Z}/2\mathbb{Z}$ if $P(c,c)=1/2$. In this latter case, we have $M\cong \left \langle c\right \rangle \oplus  \left \langle c\right \rangle^\perp,$ where the orthogonal complement is taken with respect to $P$ and, moreover, $\widetilde{P}$ is a non-degenerate alternating pairing on $\left \langle c\right \rangle^{\perp}$. Recall that any finite abelian group admitting a non-degenerate alternating pairing is isomorphic to $T\times T$ for some finite abelian group $T$. We deduce that there is a finite abelian group $T$ such that:
+\[M\cong \begin{cases}T\times T~~&~~P(c,c)=0,\\ \mathbb{Z}/2\mathbb{Z}\times T\times T~~&~~P(c,c)=1/2. \end{cases}\]
+ Applying this with $M=\Sha(A)$ and $P$ the Cassels--Tate pairing gives the result.
+\end{proof}
+
+The class $\delta(\lambda)\in H^1(k,A^\vee)$ is the $A^\vee$-torsor associated to the $G_k$-set of line bundles $\mathcal{L}\in \textup{Pic}(A_{\bar{k}})$ inducing the given principal polarisation $\lambda$ (that is, such that $\lambda$ is given by $x\mapsto \tau^*_x\mathcal{L}\otimes \mathcal{L}^{-1}$ where $\tau_x:A\to A$ is translation by $x$). This admits a natural refinement to an $A^\vee[2]$-torsor. Namely, a lift of $\delta(\lambda)$ to $H^1(k,A^\vee[2])$ is given by the class associated to the $G_k$-set of symmetric line bundles inducing $\lambda$. This gives a useful interpretation of the Poonen--Stoll class $c$ as follows; see \cite[Section 3.4]{MR2915483} for details. Via the principal polarisation $\lambda$, we view the Weil pairing $e_2:A[2]\times A^\vee[2]\to \mu_2$ as a pairing $A[2]\times A[2]\to \mu_2$, which by an abuse of notation we denote by $e_2$ also. It is non-degenerate, bilinear, alternating and $G_k$-equivariant. In particular, it is antisymmetric hence (since $A[2]$ is $2$-torsion) symmetric. A \textit{quadratic refinement} of $e_2$ is a map $q:A[2]\to \mu_2$ such that \[q(x+y)q(x)^{-1}q(y)^{-1}=e_2(x,y)\] for all $x,y\in A[2]$. The $G_k$-set of quadratic refinements of the Weil pairing on $A[2]$ is a principal homogeneous space for $A[2]$, hence gives rise to a class $c_2\in H^1(k,A[2])$. This class  lifts $c\in H^1(k,A)$ to $H^1(k,A[2])$. Recall that, by definition, the preimage of $\Sha(A)[2]$ in $H^1(k,A[2])$ is the $2$-Selmer group $\textup{Sel}_2(A)$. We deduce the following result from the above discussion:
+
+\begin{proposition} \label{PS_quad_refinement_prop}
+The class $c_2$ lies in $\textup{Sel}_2(A)$. Moreover, writing $G=\textup{Gal}(k(A[2])/k)$, the class $c_2$ arises via inflation from $H^1(G,A[2])$.\footnote{Since the Galois action on $A[2]$ determines the Galois action on the set of quadratic refinements of $e_2$.} In particular, if $G_k$ acts on $A[2]$ through the orthogonal group $O(q)$ of a quadratic refinement $q$ of the Weil pairing (e.g. if $A[2]\subseteq A(k)$) then $c=0$. In this case, if $\Sha(A)$ is finite then $\dim_{\mathbb{F}_2}\Sha(A)[2]$ is even.  
+\end{proposition}  
+
+\subsection{Quadratic twists}
+Let $\chi: G_k \to \mu_2$ be a quadratic character. Denote by $A^\chi$ the quadratic twist of $A$ by $\chi$. That is,  $A^\chi$ is the twist of $A$ given by viewing $\chi$ as a $1$-cocycle valued in $\{\pm 1\}\subseteq \textup{Aut}(A_{\bar{k}})$. Thus, $A^\chi$ is equipped with a $\bar{k}$-isomorphism $\phi:A\to A^\chi$ such that $\phi^{-1}\circ \sigma \phi \sigma^{-1}$ is multiplication by $\chi(\sigma)$. In particular, $A^\chi$ is isomorphic to $A$ over the quadratic extension cut out by $\chi$.  
+
+Note that $\phi$ gives a Galois equivariant isomorphism $A[2]\cong A^\chi[2]$. Via this map, we will always identify $A^\chi[2]$ with $A[2]$ in what follows. The principal polarisation on $A$ descends via $\phi$ to a principal polarisation on $A^\chi$ (since multiplication by $-1$ acts trivially on the N\'{e}ron--Severi group of $A$) and the identification of $A[2]$ with $A^\chi[2]$ is compatible with the resulting Weil pairings. 
+
+\begin{remark}
+Proposition \ref{PS_quad_refinement_prop} is particularly useful when considering the behaviour of Selmer/Shafarevich--Tate groups under quadratic twist. Indeed, if $A'$ is a quadratic twist of $A$, then $A'$ is also principally polarised (more precisely, the given polarisation $\lambda$ descends to a principal polarisation on $A'$) and there is an isomorphism of Galois modules $A[2]\cong A'[2]$ identifying the respective Weil pairings. This shows, for example, that if $G_k$ acts on $A[2]$ through the orthogonal group $O(q)$ of a quadratic refinement $q$ of the Weil pairing, and the Shafarevich--Tate groups of all quadratic twists of $A$ are finite, then  $\dim_{\mathbb{F}_2}\Sha(A')[2]$ is even for every quadratic twist $A'$ of $A$. 
+\end{remark}
+
+\section{Remarks on Swinnerton-Dyer's method for Kummer varieties}
+
+%For motivation, we briefly outline the geometry of some situations where 
+
+The following is a situation in which one might hope that the existence of rational points on a given variety can be related to the existence of rational points on torsors under abelian varieties.
+ 
+%\begin{example}[Kummer varieties] \label{ex:Kummer}
+\subsection{Generalised Kummer varieties} Let $A/k$ be a principally polarised abelian variety of dimension at least $2$. The Kummer variety $X$ associated to $A$ is a  desingularisation of the quotient $X_\textup{sing}=A/\pm 1$. More specifically, $X_\textup{sing}$ is singular at the image of $A[2]$ and  $X$ is the blow up of $X_\textup{sing}$ at these points. When $A$ has dimension $2$, $X$ is a $K3$ surface. Note that $X(k)\neq \emptyset$ since the same is true of $A$. However, there is a generalisation of this construction that yields varieties where the existence of rational points is much more interesting. 
+
+Fix a non-zero class $\alpha \in H^1(k,A[2])$ and denote by $Y_\alpha$ the corresponding $2$-covering of $A$. Thus, $Y_\alpha$ is a torsor under $A$ equipped with an involution $\iota$ compatible with multiplication by $-1$ on $A$. The generalised Kummer variety $X_\alpha$ associated to $\alpha$ is the blow up of the quotient $Y_\alpha/\left \langle \iota\right \rangle$ at the image of the fixed points of $\iota$. It is a twist of $X$. Denote by $\widetilde{Y}_\alpha$ the blow up of $Y_\alpha$ at the fixed points of $\iota$. Then $\iota$ extends uniquely to an involution $\widetilde{\iota}$ on  $\widetilde{Y}_\alpha$  and  $X_\alpha=\widetilde{Y}/\left \langle\widetilde{\iota}\right \rangle$. 
+
+Now let $\chi:G_k\to \mu_2$ be a quadratic character. We identify $\mu_2$ with $\left \langle \iota \right \rangle \leq \textup{Aut}_{\bar{k}}(Y_\alpha)$ and thus view $\chi$ as a $1$-cocycle valued in  $\textup{Aut}_{\bar{k}}(Y_\alpha)$. Denote by $Y_\alpha^\chi$ the corresponding quadratic twist of $Y_\alpha$ by $\chi$. It is the $2$-covering for $A^\chi$ arising from viewing $\alpha$ as an element of $H^1(k,A^\chi[2])$ via the identification $A[2]\cong A^\chi[2]$ discussed above. Since the construction of $X_\alpha$ involves taking the quotient by $\left \langle\iota \right \rangle$, the Kummer variety associated to $Y_\alpha^\chi$ is (isomorphic over $k$ to) $X_\alpha$. Thus, for each quadratic character $\chi$, we have a degree $2$ morphism $\widetilde{Y}_\alpha^\chi\to X_\alpha$. Note, in particular, that if $Y_\alpha^\chi(k)\neq \emptyset$ for some $\chi$ then $X_\alpha(k)\neq \emptyset$. Conversely, if $X_\alpha(k)\neq \emptyset$, say $x\in X_\alpha(k)$, then the preimage of $x$ under the quotient map $f:\widetilde{Y}_\alpha\to X_\alpha$   has order at most $2$ and is stable under $G_k$. We deduce from this that, after a suitable quadratic twist, the fibre over $x$ is defined over $k$. That is, there is a quadratic character $\chi$ such that $\widetilde{Y}_\alpha^\chi(k)\neq \emptyset$, which is the case if and only if $Y_\alpha^\chi(k)\neq \emptyset$. In this way, the existence of a $k$-point on $X_\alpha$ is equivalent to the existence of a $k$-point on  $Y_\alpha^\chi$ for some $\chi$, reducing the study of rational points on $X_\alpha$ to the study of rational points in a family of torsors under abelian varieties.
+%\end{example}
+
+%\textbf{Following examples extremely brief, just to give a hint/flavour.} 
+
+%\begin{example}[Diagonal cubic surfaces]
+%\end{example}
+
+%\begin{example}[Diagonal quartic surfaces]
+%\end{example}
+
+%\begin{example}[Pencils of genus $1$ curves]
+%\end{example}
+
+%\begin{example}[Degree $4$ del Pezzo surfaces]
+%\end{example}
+
+\subsection{Basic strategy}
+ Take the notation from Example \ref{ex:Kummer}. By a conjecture of Skorobogatov, one expects that the Brauer--Manin obstruction explains all failures of the Hasse principle for $K3$ surfaces, hence in particular Kummer surfaces. The Brauer group of generalised Kummer varieties is studied by Skorobogatov--Zarhin \cite{SZ17}. Suppose we are in a situation where (we do not expect) the Brauer group to obstruct the Hasse principle on $X_\alpha$.  Suppose also that $X_\alpha(\mathbb{A}_k)\neq \emptyset$. From the discussion in Example \ref{ex:Kummer} this implies, in particular, that for each place $v$ of $k$, there is a quadratic character $\chi_v:G_{k_v}\to \mu_2$ such that $Y_\alpha^{\chi_v}(k_v)\neq \emptyset$. The basic strategy (which often turns out to be too optimistic) for establishing the existence of a $k$-point on $X_\alpha$ conditional on finiteness of Shafarevich--Tate groups, goes as follows: 
+ \begin{itemize}
+ \item find a global quadratic character $\chi:G_k\to \mu_2$ such that $Y_\alpha^\chi(\mathbb{A}_k)\neq \emptyset$. Equivalently, such that $\alpha \in \textup{Sel}_2(A^\chi)$.  
+ \item construct a sequence $\chi=\chi_1,\chi_2,...,\chi_n$ of quadratic characters such that passing from $\chi_i$ to $\chi_{i+1}$ induces a controlled change on the $2$-Selmer group, say
+ \[\textup{Sel}_2(A^\chi)\supsetneq \textup{Sel}_2(A^{\chi_2})\supsetneq\textup{Sel}_2(A^{\chi_3})\supsetneq \dots \supsetneq  \textup{Sel}_2(A^{\chi_n})=\left \langle \alpha \right \rangle.\]
+ The idea here is to alter $\chi$ in such a way that $\alpha$ remains in the $2$-Selmer group at each step, but such that the $2$-Selmer group of $A^{\chi_{i+1}}$ is strictly smaller than that of $A^{\chi_{i}}$. If one can always do this, one eventually arrives at a situation where $\textup{Sel}_2(A^{\chi_n})$ is $1$-dimensional, generated by $\alpha$ (this can only be possible when $A(k)[2]=0$, but one can consider variants where $\textup{Sel}_2(A^{\chi_n})$ is generated by $\alpha$ and the image  of the $k$-rational $2$-torsion points, etc.).   
+ \item We have a surjective map $\textup{Sel}_2(A^{\chi_n})\to \Sha(A^{\chi_n})[2]$. If we are in a situation where finiteness of $\Sha(A^{\chi_n})$ implies that $\Sha(A^{\chi_n})[2]$ is even dimensional (e.g. if $G_k$ acts on $A[2]$ through the orthogonal group of some quadratic refinement of the Weil pairing) then, conditional on finiteness of Shafarevich--Tate groups, we must have  $\Sha(A^{\chi_n})[2]=0$. Thus the class of $\alpha$ in $\Sha(A^{\chi_n})$ is trivial, hence $Y^\alpha(k)\neq \emptyset$. Thus also $X_\alpha(k)\neq \emptyset$. 
+ \end{itemize}
+ We will see later some situations where the strategy works in exactly this way. However, there are many others where this strategy runs into difficutly and additional tricks must be found to save it. A key recent innovation, due to Harpaz, is to incorporate a second descent step (more about this later). 
+ 
+ 
+
+\section{Selmer groups}
+
+We begin with the abstract famework of Selmer structures, before specialising to Selmer groups of abelian varieties. 
+
+\subsection{Selmer structures} Let $M$ be a finite $G_k$-module with exponent $n$.  Define the \textit{dual} of $M$, $M^*=\textup{Hom}(M, \mu_n)$. Define, for $v$ a non-archimedean place of $K$, the \textit{unramified subspace} 
+\[H^1_{\textup{ur}}(k_v,M):=\ker\left(H^1(k_v,M)\stackrel{\textup{res}}{\longrightarrow}H^1(k_v^{\textup{ur}},M)\right),\]
+where $k_v^{\textup{ur}}$ denotes the maximal unramified extension of $k_v$. The inflation-restriction exact sequence means that each class in $H^1_{\textup{ur}}(k_v,M)$ can be represented by a $1$-cocycle that factors through $\textup{Gal}(k_v^{\textup{ur}}/k_v)$.
+ 
+
+For each place $v$ of $k$, define the \textit{local Tate pairing}  
+\[\left \langle~,~\right \rangle_v:H^1(k_v,M)\times H^1(k_v,M^*)\longrightarrow H^2(k_v,  \mu_n)=\textup{Br}(K_v)[2]\hookrightarrow \mathbb{Q}/\mathbb{Z}\] given by the composition of cup-product and the local invariant map.
+
+\begin{theorem}[Tate local duality]
+For each place $v$ of $k$, the local Tate pairing  is non-degenerate. Moreover, for each nonarchimedean place $v\nmid n$ such that the inertia group  acts trivially on $M$, $H^1_{\textup{ur}}(k_v,M)$ and $H^1_{\textup{ur}}(k_v,M^*)$ are orthogonal complements.
+\end{theorem}
+
+\begin{proof}
+See \cite[Corollary 7.2.6]{NSW08} for non-archimedean $v$ and op. cit. Theorem 7.2.17 for archimedean $v$. The claim about  unramified subspaces is op. cit. Theorem 7.2.15.
+\end{proof}
+
+
+%\begin{example}
+%Take $M=\boldsymbol \mu_2$, which is self-dual. For each place $v$ of $K$, Kummer theory gives a canonical isomorphism $H^1(K_v,\boldsymbol \mu_2)\cong K_v^\times/K_v^{\times 2}$ (and we have the corresponding isomorphism globally also). For any nonarchimedean place $v\nmid 2$ of $K$  we have 
+%\[H^1_{\textup{ur}}(K_v,\boldsymbol \mu_2)= \mathcal{O}_{K_v}^\times/\mathcal{O}_{K_v}^{\times 2}\subseteq  K_v^\times/K_v^{\times 2}.\]
+%The local Tate pairing 
+%\[K_v^{\times}/K_v^{\times 2}\times K_v^{\times}/K_v^{\times 2}\longrightarrow \mathbb{Q}/\mathbb{Z}\]
+%is the quadratic Hilbert symbol $(x,y)\mapsto (x,y)_v\in \{\pm 1\}\cong \frac{1}{2}\mathbb{Z}/\mathbb{Z}$. 
+%\end{example}
+ 
+
+\begin{defi}[Selmer structure]
+A \textit{Selmer structure} $\mathcal{L}=\{\mathcal{L}_v\}_{v}$ for $M$ is a collection of subspaces $\mathcal{L}_v\subseteq H^1(k_v,M)$ for each place $v$ of $k$, such that $\mathcal{L}_v=H^1_\textup{ur}(k_v,M)$ for all but finitely many $v$. The associated \textit{Selmer group} $\textup{Sel}_\mathcal{L}(M)$ is defined as
+\[ \textup{Sel}_\mathcal{L}(M)=\{x\in H^1(k,M)~~:~~\textup{res}_v(x)\in \mathcal{L}_v \textup{ for all places }v\textup{ of }k\}.\]
+The assumption that  $\mathcal{L}_v=H^1_\textup{ur}(k_v,M)$ for all but finitely many places ensures that $\textup{Sel}_\mathcal{L}(M)$ is finite.  
+Define the \textit{dual Selmer structure} $\mathcal{L}^*=\{\mathcal{L}_v^*\}$ for $M^*$ by  taking $\mathcal{L}_v^*$ to be the orthogonal complement of $\mathcal{L}_v$ for each place $v$. We refer to $\textup{Sel}_{\mathcal{L}^*}(M)$ as the \textit{dual Selmer group}. 
+\end{defi}
+ 
+
+%We will need to compare various Selmer groups to each other. In the situation of interest, $M$ will be self-dual (i.e. there will be a fixed $G_k$-equivariant isomorphism $M\cong M^*$ via which we identify $M^*$ with $M$) and the Selmer structures we consider will be self-dual. That is, each $\mathcal{L}_v$ will be its own orthogonal complement under the local Tate pairing $H^1(k_v,M)\times H^1(k_v,M)\to \mathbb{Q}/\mathbb{Z}$.
+%
+%\begin{proposition}
+%Suppose that $M$ is self-dual and let $\mathcal{L}$, $\mathcal{F}$ be self-dual Selmer structures for $M$. 
+%\end{proposition}
+%
+%This is achieved via Poitou--Tate duality. Let $\mathcal{L}\leq \mathcal{F}$ be Selmer structures for $M$ (i.e. $\mathcal{L}_v\subseteq \mathcal{F}_v$ for each $v$), noting that $\mathcal{F}^*\leq \mathcal{L}^*$ as Selmer structures for $M^*$. Let $S$ be a finite set of places such that $\mathcal{L}_v=\mathcal{F}_v$ for all $v\notin S$. We have exact sequences
+%\[0\longrightarrow \textup{Sel}_\mathcal{L}(M)\longrightarrow \textup{Sel}_{\mathcal{F}}(M)\longrightarrow \bigoplus_{v\in S}\mathcal{F}_v/\mathcal{L}_v\]
+%and
+%\[0\longrightarrow \textup{Sel}_{\mathcal{F}^*}(M^*)\longrightarrow \textup{Sel}_{\mathcal{L}^*}(M^*)\longrightarrow \bigoplus_{v\in S}\mathcal{L}_v^*/\mathcal{F}_v^*.\]
+%
+%\begin{theorem}[Poitou--Tate duality] \label{thm:poitou--Tate}
+%The images of $\textup{Sel}_\mathcal{F}(M^*)$ in $\bigoplus_{v\in S}\mathcal{F}_v/\mathcal{L}_v$ and $ \textup{Sel}_{\mathcal{L}^*}(M)$ in $\bigoplus_{v\in S}\mathcal{L}_v^*/\mathcal{F}_v^*$ are orthogonal complements under the sum of the local Tate pairings.
+%\end{theorem}
+%
+%\begin{proof}
+%See \cite[Theorem 2.3.4]{MazRub2004}.
+%\end{proof}
+
+\subsection{Selmer groups of abelian varieties}
+
+Let $A$ be a principally polarised abelian variety over $k$. We now specalise to the case that $M=A[n]$ for some integer $n\geq 2$. The assumption that $A$ is principally polarised means that $A[n]$ is self-dual via the Weil pairing. For each place $v$, taking Galois cohomology of the short exact sequence 
+\begin{equation} \label{kummer_seq}
+0\to A[n] \to A \stackrel{n}{\longrightarrow}A\to 0
+\end{equation}
+induces a connecting map $\delta:A(k_v)/nA(k_v)\hookrightarrow H^1(k_v,A[n])$. 
+
+\begin{lemma} \label{basic_conds_lemma}
+Let $v$ be a place of $k$.
+\begin{itemize}
+\item[(i)] $\delta(A(k_v))$ is its own orthogonal complement with respect to the local Tate pairing,
+\item[(ii)] Suppose that $v\nmid n$ is a nonarchimedean place of $k$. Then
+\[\#\delta(A(k_v))=\#A(k_v)[n].\] 
+Moreover, if $A$ has good reduction at $v$, then $\delta(A(k_v))=H^1_{\textup{ur}}(k_v,A[n])$.
+ \end{itemize}
+\end{lemma}
+
+As a result of  Lemma \ref{basic_conds_lemma}, setting $\mathcal{L}_v=\delta(A(k_v))$ gives a self-dual Selmer structure for $A[n]$. The resulting Selmer group is the $n$-Selmer group of $A$, $\textup{Sel}_n(A)\subseteq H^1(k,A[n])$. Taking Galois cohomology of the sequence \eqref{kummer_seq} over both $k$ and $k_v$, we deduce the existence of a the well-known short exact sequence 
+\[0\to A(k)/nA(k)\to \textup{Sel}_n(A)\to \Sha(A)[n]\to 0.\]
+
+\subsection{$2$-Selmer groups in quadratic twist families}
+
+Let $\chi:G_k\to \mu_2$ be a quadratic character. As above, we identify $A[2]$ with $A^\chi[2]$ as $G_k$-modules. In particular, we view $\textup{Sel}_2(A^\chi)$ as a subgroup of $H^1(k,A[2])$. We can thus hope to compare $\textup{Sel}_2(A)$ and $\textup{Sel}_2(A^\chi)$ by comparing the relevant local conditions subgroups. Note that since the isomorphism $A[2]\cong A^\chi[2]$ is compatible with the Weil pairing, it identifies the local Tate pairings also.
+
+
+Let $v$ be a place of $k$. We will denote by $\delta$ both the map $A(k_v)/2A(k_v)\to H^1(k_v,A[2])$ considered previously, and the map $A^\chi(k_v)/2A^\chi(k_v)\to H^1(k_v,A^\chi[2])\cong H^1(k_v,A[2])$ given by composing the connecting map for $A^\chi$ with the isomorphism $A^\chi[2]\cong A[2]$ induced by $\phi^{-1}$. We thus have two self-dual Selmer structures $\{\delta(A(k_v))\}_v$ and $\{\delta(A^\chi(k_v))\}_v$ on $A[2]$. Note that restricting these connecting maps to $A[2]\cong A^\chi[2]$ gives two different connecting maps $\delta:A(k_v)[2]\to H^1(k,A[2])$. The first is the connecting map associated to the short exact sequence  $0\to A[2]\to A[4]\stackrel{2}{\to} A[2]\to 0$. The second is the connecting map associated to the sequence $0\to A[2]\to A^\chi[4]\stackrel{2}{\to} A[2]\to 0$. We denote the second by $\delta_\chi:A(k_v)[2]\to H^1(k,A[2])$.  
+
+
+\begin{lemma}
+For $x\in A(k_v)[2]$ we have $\delta_\chi(x)=\delta(x)+\chi \cup x$. 
+\end{lemma}
+
+\begin{proof}
+Let $y\in A[4]$ be such that $2y=x$. Then for all $\sigma \in G_k$, we have 
+\[\delta_\chi(x)(\sigma)=\phi^{-1}(\sigma \phi(y)-\phi(y))=\chi(\sigma)\sigma y -y=\begin{cases} \delta(x)(\sigma)~~&~~\chi(\sigma)=1,\\ \delta(x)(\sigma)+x~~&~~\chi(\sigma)=-1,\end{cases}\]
+from which the result follows.
+\end{proof}
+
+\begin{lemma} \label{lem:local_conds}
+Let $v\nmid 2$ be a nonarchimedean place of good reduction for $A$. Let $\chi:G_k\to \mu_2$ be a quadratic character. 
+\begin{itemize}
+\item[(i)] If $\chi$ is unramified at $v$ then 
+\[\delta(A(k_v))=H^1_{\textup{ur}}(k_v,A[2])=\delta(A^\chi(k_v)).\]
+\item[(ii)] If $\chi$ is ramified at $v$ then we have $\delta(A^\chi(k_v))=\delta_\chi(A(k_v)[2])$. Moreover, we have 
+\[\delta(A(k_v))\cap \delta^\chi(A(k_v))=0.\]
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+(i). Since $\chi$ is unramified at $v$, both $A$ and $A^\chi$ have good reduction at $v$ and the result follows from Lemma \ref{basic_conds_lemma} (ii). 
+
+(ii). Since $A$ has good reduction at $v$, $A[4]$ is unramified. On the other hand, since $\chi$ is ramified at $v$, there is $\sigma$ in the inertia group $I_v$ at $v$ such that $\chi(\sigma)=-1$. Then $\sigma$ acts a multiplication by $-1$ on $A^\chi[4]$. From this, we deduce that $H^0(k_v,A^\chi[4])=A(k_v)[2]$. Thus, $\delta_\chi:A(k^{\textup{ur}}_v)[2]\to H^1(k^{\textup{ur}},A[2])$ is injective. In particular, $\delta_\chi:A(k_v)[2] \to H^1(k_v,A[2])$ is injective. Lemma \ref{basic_conds_lemma} (ii) gives $\#\delta(A^\chi(k_v))=\#A(k_v)[2]$, so we deduce that $\delta(A^\chi(k_v))=\delta_\chi(A(k_v)[2])$. Finally, we have $\delta(A(k_v))=H^1_{\textup{ur}}(k_v,A[2])$ so we must show that $H^1_{\textup{ur}}(k_v,A[2])\cap \delta_\chi(A(k_v)[2])=0$. This follows from the injectivity of $\delta_\chi:A(k^{\textup{ur}}_v)[2]\to H^1(k^{\textup{ur}},A[2])$ noted previously. 
+\end{proof}
+
+Let $S$ be a finite set of places of $k$ and let $\chi:G_k\to \mu_2$ be a quadratic character. Write 
+\[
+V_{S}  = \textup{im}\left(\textup{Sel}_2(A) \stackrel{\oplus_{v\in S}\textup{res}_v}{\longrightarrow} \bigoplus_{v\in S} \frac{\delta(A(k_v))}{\delta(A(k_v))\cap \delta(A^{\chi}(k_v))}\right),
+\]
+and define $V_{S}^{\chi}$ similarly by interchancing $A$ and $A^\chi$ in the definition.  
+The following result is due to Harpaz  \cite{Har19}*{Lemma 3.27}, building on work of Mazur--Rubin \cite{MazRub2010}*{Section 3}.
+
+\begin{proposition} \label{prop:mazur_rubin_harpaz}
+Suppose that $\delta(A(k_v))=\delta(A^{\chi}(k_v))$ for all $v\notin S$. Then 
+\begin{equation} \label{eq:selmer_change_dims}
+\dim_{\mathbb{F}_2} \textup{Sel}_2(A^{\chi}) = \dim_{\mathbb{F}_2} \textup{Sel}_2(A) + \dim_{\mathbb{F}_2} V_S^{\chi} - \dim_{\mathbb{F}_2} V_S.
+\end{equation}
+Moreover, we have 
+\[
+\dim_{\mathbb{F}_2} V_S  + \dim_{\mathbb{F}_2} V_S^{\chi} \leq \sum_{v \in S} \dim_{\mathbb{F}_2} \frac{\delta(A(k_v))}{\delta(A(k_v)) \cap \delta(A^{\chi}(k_v))}.
+\]
+ \end{proposition}
+
+ 
+
+\begin{proof}
+To ease notation, for each place $v$ if $k$, write 
+$\mathcal{L}_v= \delta(A(k_v))$ and $ \mathcal{F}_v=  \delta(A^\chi(k_v)).$
+Define a Selmer structure $\mathcal{G}$ for $A[2]$ by setting $\mathcal{G}_v=\mathcal{L}_v\cap \mathcal{F}_v$ for each place $v$. We have evident exact sequences 
+\[0\to \textup{Sel}_\mathcal{L}(A[2])\to \textup{Sel}_2(A)\stackrel{\oplus_{v\in S}\textup{res}_v}{\to} V_S\to 0\]
+and 
+\[0\to \textup{Sel}_\mathcal{L}(A[2])\to \textup{Sel}_2(A^\chi)\stackrel{\oplus_{v\in S}\textup{res}_v}{\to} V_S^\chi\to 0.\]
+Taking $\mathbb{F}_2$-dimensions gives Equation \eqref{eq:selmer_change_dims}.
+
+For each place $v$, since both $\mathcal{F}_v$ and $\mathcal{L}_v$ are their own orthogonal complements with respect to the local Tate pairing, we have a non-degenerate pairing
+\[\mathcal{L}_v/\mathcal{G}_v\times \mathcal\mathcal{F}_v/\mathcal{G}_v\to \tfrac{1}{2}\mathbb{Z}/\mathbb{Z}\]
+given by restricting the local Tate pairing. Summing over $v\in S$ gives a non-degenerate pairing
+\begin{equation} \label{summed_tate_pairing}
+\oplus_{v\in S}\mathcal{L}_v/\mathcal{G}_v \times \oplus_{v\in S}\mathcal{F}_v/\mathcal{G}_v\to \tfrac{1}{2}\mathbb{Z}/\mathbb{Z}.
+\end{equation}
+For each $x\in \textup{Sel}_2(A)$ and $y\in \textup{Sel}_2(A^\chi)$, reciprocity for the Brauer group of $k$ gives 
+\[\sum_{v\textup{ place of }k}\textup{inv}_v(x\cup y)=0.\]
+Further, since the Selmer conditions for $A$ and $A^\chi$ agree for all places $v\notin S$, we have $\textup{inv}_v(x\cup y)=0$ for all $v\notin S$. Thus, we deduce that $V_S$ and $V_S^\chi$ are orthogonal with respect to the pairing \eqref{summed_tate_pairing}. In particular, we have 
+\[\dim_{\mathbb{F}_2}V_S+\dim_{\mathbb{F}_2}V_S^\chi\leq \dim_{\mathbb{F}_2}\oplus_{v\in S}\mathcal{L}_v/\mathcal{G}_v,\]
+from which the result follows.
+%Define self-dual Selmer structures $\mathcal{L}, \mathcal{F}$ for $A[2]$ by setting
+%\
+%for each place $v$. 
+%Since both $\delta(A(k_v))$ and $\delta(A^\chi(k_v))$ are their own orthogonal complement with respect ot the local Tate pairing, the Selmer structures $\mathcal{L}$ and $\mathcal{F}$ are mutually dual. Moreover, for each place $v\notin S$, we have $\mathcal{L}_v=\mathcal{F}_v=\delta(A(k_v))=\delta(A^\chi(k_v))$. 
+%
+%
+%Next, note that $\textup{Sel}_2(A)\cap \textup{Sel}_2(A^\chi)=\textup{Sel}_{\mathcal{L}}(A[2])$ and $ \textup{Sel}_2(A)+\textup{Sel}_2(A^\chi)\subseteq \textup{Sel}_\mathcal{F}(A[2])$. Now $\textup{Sel}_{\mathcal{F}}(A[2])/\textup{Sel}_{\mathcal{L}}(A[2])$ is isomorphic to the image of $\textup{Sel}_{\mathcal{F}}(A[2])$ in $\oplus_{v\in S}\mathcal{F}_v/\mathcal{L}_v$. Theorem \ref{thm:poitou--Tate} shows that this image is its own orthogonal complement, hence has dimensional equal to \[\tfrac{1}{2} \sum_{v\in S} \dim_{\mathbb{F}_2} \mathcal{F}_v/\mathcal{L}_v=\sum_{v \in S} \dim_{\mathbb{F}_2} \frac{\delta(A(k_v))}{\delta(A(k_v)) \cap \delta(A^{\chi}(k_v))}.\]
+%Here the final equality follows from the fact that $\dim_{\mathbb{F}_2}\delta(A(k_v))=\dim_{\mathbb{F}_2}\delta(A^\chi(k_v))$, e.g. since both are maximal isotropic subspaces of $H^1(k_v,A[2])$. All in all, we have 
+%\begin{eqnarray*}
+%\dim V_S+\dim V_{S^\chi}&=&\dim \textup{Sel}_2(A)/\textup{Sel}_{\mathcal{L}}(A[2])+\dim \textup{Sel}_2(A^\chi)/\textup{Sel}_{\mathcal{L}}(A[2])  \\
+%&\leq &\dim \textup{Sel}_{\mathcal{F}}(A[2])/\textup{Sel}_\mathcal{L}(A[2])=\sum_{v \in S} \dim  \frac{\delta(A(k_v))}{\delta(A(k_v)) \cap \delta(A^{\chi}(k_v))},
+%\end{eqnarray*}
+%giving the result.
+\end{proof}
+
+\begin{remark}
+One can strengthen Proposition \ref{prop:mazur_rubin_harpaz} by showing that we moreover have 
+\[
+\dim_{\mathbb{F}_2} V_S  + \dim_{\mathbb{F}_2} V_S^{\chi} \equiv  \sum_{v \in S} \dim_{\mathbb{F}_2} \frac{\delta(A(k_v))}{\delta(A(k_v)) \cap \delta(A^{\chi}(k_v))} \pmod 2.
+\]
+This is more subtle to prove and uses the existence of certain quadratic refinements of the local Tate pairing arising from Mumford theta groups; see \cite{Har19}*{Lemma 3.27} for details. However, it can be very useful in practice, in particular if one wants to twist to increase the $2$-Selmer group -- it sometimes lets one deduce that $\dim_{\mathbb{F}_2}V_S^\chi>0$ just by understanding $V_S$. 
+\end{remark}
+ 
+\begin{cor}
+Let $\Sigma$ be a finite set of places of $k$ containing all archimedean places, all places dividing $2$ and all places of bad reduction for $A$. Suppose that $\chi:G_k\to \mu_2$ is a quadratic character that is trivially locally at all places in $\Sigma$. Suppose that $\chi$ is ramified at a single place $v\notin \Sigma$ and that the restriction map $\textup{res}_v:\textup{Sel}_2(A)\to H^1_{\textup{ur}}(k_v,A[2])$ is surjective. Then \[\dim_{\mathbb{F}_2} \textup{Sel}_2(A^{\chi}) = \dim_{\mathbb{F}_2} \textup{Sel}_2(A)  - \dim_{\mathbb{F}_2} A(k_v)[2].\]
+\end{cor}
+
+\begin{proof}
+ By  Lemma \ref{lem:local_conds}(i) and our assumptions on $\chi$, we may take $S=\{v\}$ in  Proposition \ref{prop:mazur_rubin_harpaz}. Using  Lemma \ref{basic_conds_lemma}(ii) and the proposition, we have $\dim V_S+\dim V_S^\chi\leq \dim A(k_v)[2].$ Moreover, Lemma \ref{basic_conds_lemma} and the assumption that the restriction map is surjective shows that $V_S=H^1_{\textup{ur}}(k_v,A[2])$. Now $\dim H^1_{\textup{ur}}(k_v,A[2])=\dim A(k_v)[2]$ so we deduce from the inequality that $V_S^\chi=0$, from which the result follows.
+\end{proof}
+
+\subsection{Parity of Selmer ranks}
+
+A predicted consequence of the Birch and Swinnerton-Dyer conjecture is the parity conjecture: 
+\[(-1)^{\textup{rk}A}=w(A).\]
+Here the right hand side is the \textit{global root number} of $A$. By definition, $w(A)\in \{\pm 1\}$ is a product of \textit{local root numbers}:
+\[w(A)=\prod_{v\textup{ place of }k}w(A/k_v).\]
+One expects that $w(A)$ is the sign in the (conjectural) functional equation for the $L$-function of $A$, hence controls the parity of the order of vanishing of the $L$-function at $s=1$, which is why the parity conjecture is predicted by the Birch and Swinnerton-Dyer conjecture. This means that the parity of $\textup{rk}A$ should be determined by quite simple local invariants of $A$, namely the local root numbers $w(A/k_v)\in \{\pm 1\}$. We remark that if $A$ has good reduction at $v$ then $w(A/k_v)=1$. 
+
+Now let $\chi$ be a quadratic character with corresponding quadratic extension $F/k$. We have 
+\[\textup{rk}(A/F)=\textup{rk}(A/k)+\textup{rk}(A^\chi/k).\]
+In particular, the parity conjecture predicts that 
+\[(-1)^{\textup{rk}(A^\chi/K)}=(-1)^{\textup{rk}A}\prod_{w\textup{ place of }F}w(A/F_w).\]
+Since $w(A/F_w)=1$ whenever $w$ lies over a place of good reduction for $A$,  we see that the parity of $\textup{rk}(A^\chi/k)$ depends on $\chi$ only through its restriction to $k_v$ for the finitely many places $v$ of $k$ at which $A$ has bad reduction. Assuming finiteness of Shafarevich--Tate groups, a version of this can be proven unconditionally. 
+
+\begin{theorem}[\cite{MR3951582}, Theorem 10.12]
+Let $\Sigma$ be a finite set of places of $k$ consisting of all archimedean places, all places dividing $2$ and all places at which $A$ has bad reduction. For each $v\in \Sigma$, let $\chi_v:G_{k_v}\to \{\pm 1\}$ be a local quadratic character. Assume that the Shafarevich--Tate group of each quadratic twist of $A$ is finite. Then there are local invariants $\Omega_v(\chi_v)\in \{\pm 1\}$ such that, for all global quadratic characters $\chi:G_k\to \{\pm 1\}$, we have 
+\[(-1)^{\textup{rk}A^\chi}=(-1)^{\textup{rk}A}\prod_{v\in \Sigma}\Omega_v(\textup{res}_v(\chi)).\]
+\end{theorem}
+
+While it is not known that the local invariants $\kappa_v$ agree with the corresponding local root numbers in general, it is known in some cases. It what follows it will be useful to know that $A$ has a quadratic twist of odd (hence positive) rank, at least assuming finiteness of Shafarevich--Tate groups. Part (i) of the following result, which is predicted by root numbers, serves to accomplish this in many instances. 
+
+\begin{proposition} 
+ Suppose $v\nmid 2\infty$ is a place of $k$ such that $A$ has semistable reduction at $v$, and such that the group of geometric connected components of the special fibre of the N\'{e}ron model of $A$ over $k_v$ has odd order. Let $\chi$ be the unique non-trivial unramified quadratic character of $G_{k_v}$.
+ \begin{itemize}
+ \item[(i)] We have \[\Omega_v(\chi)=(-1)^{\mathfrak{f}(A/k_v)},\]
+ where $\mathfrak{f}(A/k_v)$ denotes the conductor exponent of $A$ at $v$.
+ \item[(ii)] We have $\delta(A(k_v))=H^1_{\textup{ur}}(k_v,A[2])=\delta(A^\chi(k_v))$.
+ \end{itemize}   
+\end{proposition}
+
+\begin{proof}
+ (i) This is \cite{mor2025}, Proposition 6.3. 
+
+(ii).  Since N\'{e}ron models commute with unramified base change, it suffices to prove this for $\delta(A(k_v))$. Since $v\nmid 2\infty$, we have
+\[\dim H^1_{\textup{ur}}(k_v,A[2])=\dim A(k_v)[2]=\dim \delta(A(k_v)),\]
+hence it suffices to show that $H^1_{\textup{ur}}(k_v,A[2])$ is contained in $\delta(A(k_v))$. Equivalently, we want to show that the image of $H^1_{\textup{ur}}(k_v,A[2])$ in $H^1(k_v,A)$ is trivial. 
+By  \cite[Proposition I.3.8]{MR2261462} we have \[H^1_{\textup{ur}}(k_{v},A)\cong H^1_{\textup{ur}}(k_{v},\Phi),\]
+where $\Phi$ is the group of geometric connected components of the special fibre of the N\'{e}ron model. 
+Since $\Phi$ has odd order, it follows that  $H^1_{\textup{ur}}(k_{v},A)[2]$ is trivial, hence so is the image of $H^1_{\textup{ur}}(k_v,A[2])$ in $H^1(k_v,A)$.
+\end{proof}
+ 
+ 
+%\section{Rational points on Kummer varieties I}
+
+%\subsection{Extensions defined by cocyles}
+
+%Write $G=\textup{Gal}(k(A[2])/k)$. Let $T=\{\alpha_1,...,\alpha_t\}$ be a finite subset of $H^1(k,A[2])$ and represent each $\alpha_i$ by a $1$-cocycle $\tilde\alpha_i:G_k\to A[2]$. 
+%Then the map $\varphi_T:G_k\to A[2]^T\rtimes G$, given by %
+%$$\sigma\mapsto\big(\tilde\alpha_1(\sigma),\ldots,\tilde\alpha_t(\sigma),\bar{\sigma}\big)$$,
+%is a homomorphism. Here $\bar{\sigma}$ denotes the image of $\sigma$ in $G$.   
+%Denote by $k_T$ the fixed field of the kernel of this homomorphism, so that 
+%we have an injection $\varphi_T\colon\textup{Gal}(k_T/k)\hookrightarrow A[2]^T\rtimes G$.  Choosing different cocycle representatives for $\alpha_1,...,\alpha_t$ conjugates  $\varphi_T$ by an element of $G^T$. The extension $k_T/k$  contains $k(A[2])/k$ and is the smallest Galois extension of $k$ through which each of the cocycles $\tilde\alpha_1,\ldots,\tilde\alpha_t$ factor.   
+
+%Consider the following condition:
+%
+%\begin{condition} \label{cond:simple}
+%We have 
+%\begin{itemize}
+%\item[(a)] $H^1(G,A[2])=0$,
+%\item[(b)] $A[2]$ is a simple $\mathbb{F}_2[G]$-module and $\textup{End}_{G}(A[2])=\mathbb{F}_2$. 
+%\end{itemize} 
+%\end{condition}
+%
+%\begin{lemma}
+%Suppose that parts (a) and (b) of Condition \ref{cond:simple} are satisfied. Suppose also that $T$ is $\mathbb{F}_2$-linearly indepdendent. Then $\varphi_T:\textup{Gal}(k_T/k)\to A[2]^T\rtimes G$ is an isomorphism. 
+%\end{lemma}
+%
+%\begin{proof}
+%It suffices to show that the restriction of $\varphi_T$ to $L=k(A[2])$ induces a surjection $\textup{Gal}(k_T/L)\to A[2]^T$.  Since $H^1(k,A[2])=0$, the inflation-restriction exact sequence shows that $\{\alpha_1|_{L},...,\alpha_t|_L\}$ is a linearly independent subset of $\textup{Hom}_G\big(\textup{Gal}(k_T/L),A[2]\big)$, where $G$ acts on $\textup{Gal}(k_T/L)$ by conjugation. Note in particular that $\dim_{\mathbb{F}_2}\textup{Hom}_G(\textup{Gal}(k_T/L),A[2])\geq t$.
+%
+%Let $M=\varphi_T(\textup{Gal}(k_T/L)).$  Then $M$ is an $\mathbb{F}_2[G]$-submodule of $A[2]^T$. Since $A[2]$ is a simple $\mathbb{F}_2[G]$-module, and $M\leq A[2]^T$, we have $M\cong A[2]^r$ for some $r\leq t$. On the other hand, using Condition \ref{cond:simple} (b) we compute
+%\[\dim_{\mathbb{F}_2}\textup{Hom}_G(\textup{Gal}(k_T/L),A[2])=\dim_{\mathbb{F}_2}\textup{Hom}_G(M,A[2])=\dim_{\mathbb{F}_2}\textup{Hom}_G(A[2]^r,A[2])=r.\]
+%Comparing with the first paragraph we obtain $r\geq t$. We thus conclude that $r=t$, hence $M=A[2]^T$.
+%\end{proof}
+%
+%\begin{lemma}
+%Suppose that Part (b) of Condition \ref{cond:simple} is satisfied and that $\varphi_T:\textup{Gal}(k_T/k)\to A[2]^T\rtimes G$ is an isomorphism. Let $k_T^{\textup{ab}}$ denote the maximal abelian subextension of $k_T/k$. Then $k_T^{\textup{ab}}\subseteq k(A[2])$.
+%\end{lemma}
+%
+%\begin{proof}
+%It suffices to show that the derived subgroup of $A[2]^T\rtimes G$ contains $A[2]^T$. Let $x\in A[2]$ and $\sigma \in G$. Then the commutator of $(0,...,x,0,...,1)$ and $(0,...,0,\sigma)$ is $(0,...,\sigma x-x,0,...,1)$. Since $A[2]$ is a simple $\mathbb{F}_2[G]$-module, it is generated over $\mathbb{F}_2$ by all elements of the form $\sigma x-x$ for $\sigma \in G, x\in A[2]$. 
+%\end{proof}
+%
+%\subsection{Quadratic characters with specified local behaviour}
+%
+%
+%
+%For this subsection, fix a finite Galois extension $F/k$ with Galois group $\Gamma$. Fix also a finite set $\Sigma$ of places of $k$ containing all places dividing $2\infty$, and all places ramified in $F/k$. 
+%
+%\begin{notation}
+%Let $\mathcal{C}\subseteq \Gamma$ be a non-empty union of conjugacy classes and write $\mathcal{P}(\mathcal{C})$ for the set of primes $\mathfrak{p}\notin \Sigma$ for which the Frobenius element $\textup{Frob}_\mathfrak{p}\in \Gamma$ lies in $\mathcal{C}$. Let $\mathcal{A}(\mathcal{C})$ denote the set of quadratic characters $\chi:\Gamma\rightarrow \{\pm 1\}$ satisfying $\chi(\sigma)=1$ for all $\sigma \in \mathcal{C}$. 
+%\end{notation}
+% 
+%
+%\begin{lemma} \label{approximating_extensions_lemma}
+%Let  $(\chi_v)_{v\in \Sigma}$ be a collection of quadratic characters $\chi_v:G_{k_v}\rightarrow \mu_2$. Assume that, for every $\psi\in \mathcal{A}(\mathcal{C})$, we have
+%\begin{equation*} \label{reciprocity_condition}
+%\sum_{v\in \Sigma}\textup{inv}_v(\chi_v\cup \textup{res}_v(\psi))=0.
+%\end{equation*}
+%%Suppose that, for each non-trivial homomorphism $\psi:\Gamma\rightarrow \mu_2$, there is $\sigma \in S$ with $\psi(\sigma)=-1$. 
+%Then there is a global quadratic character $\chi:G_k\rightarrow \mu_2$ such that $\textup{res}_v(\chi)=\chi_v$ for all $v\in \Sigma$, and such that $\chi$ is unramified outside $\Sigma \cup \mathcal{P}(\mathcal{C})$.
+%\end{lemma}
+%
+%\begin{proof}
+%Exactness at the middle term of the Poitou--Tate exact sequence (see, for example, \cite[Theorem I.4.10]{MR2261462}) applied to the set $\Sigma \cup  \mathcal{P}(\mathcal{C})$ of places, and to the self-dual $G_k$-module $\mu_2$,  shows that 
+%\[\text{im}\Big(H^1(k_{\Sigma \cup  \mathcal{P}(\mathcal{C})}/k,\mu_2) \stackrel{\textup{res}}{\longrightarrow}\sideset{}{'}\prod_{v\in \Sigma \cup  \mathcal{P}(\mathcal{C})} H^1(k_v,\mu_2)\Big)\]  is its own  orthogonal complement under the sum of the local Tate pairings. Here $k_{\Sigma \cup  \mathcal{P}(\mathcal{C})}$ denotes the maximal extension of $k$ unramified outside $\Sigma \cup \mathcal{P}(\mathcal{C})$, and the restricted direct product is taken with respect to the subgroups of  unramified classes. Projecting onto $\prod_{v\in \Sigma} H^1(k_v,\mu_2)$, it follows formally that the image of $H^1(k_{\Sigma \cup \mathcal{P}(\mathcal{C})}/k,\mu_2)$  in $\prod_{v\in \Sigma} H^1(k_v,\mu_2)$ is the orthogonal complement  of the image of
+%\begin{equation} \label{poitou_tate_kernel}
+%\ker\Big(H^1(k_{\Sigma }/k,  \mu_2)\stackrel{\textup{res}}{\longrightarrow }\sideset{}{'}\prod_{v\in \mathcal{P}(\mathcal{C})}H^1(k_v, \mu_2)\Big)
+%\end{equation}
+% in $\prod_{v\in \Sigma}H^1(k_v,  \mu_2)$. Now let $\psi \in H^1(k_\Sigma/k,\mu_2)$. If either $\psi$ does not factor through $\Gamma$, of if there is $\sigma \in \mathcal{C}$ with $\psi(\sigma)=-1$, then by the Chebotarev density theorem   we can find a prime $\mathfrak{p}\in \mathcal{P}(\mathcal{C})$ such that the restriction of $\chi$ to $G_{k_\mathfrak{p}}$ is non-trivial. From this we conclude that the kernel in  \eqref{poitou_tate_kernel} is equal to $\mathcal{A}(\mathcal{C})$, giving the result. 
+%\end{proof}
+%
+%\subsection{Hasse principle for Kummer surfaces}
+%
+%\begin{theorem}
+% Let $f(x)\in \mathcal{O}_k[x]$ be a separable monic quintic polynomial and let $C:y^2=f(x)$ be the corresponding genus $2$ curve. Let $A$ be the Jacobian of $C$. Suppose that $\textup{Gal}(f)\in \{A_5,S_5\}$ and that there is an odd prime $\mathfrak{p}$ of $k$ with $\textup{ord}_{\mathfrak{p}}\textup{disc}(f)=1$. Let $\alpha \in H^1(k,A[2])$ and suppose that $\alpha$ is unramified at $\mathfrak{p}$. Assume that the Shafarevich--Tate group of each quadratic twist of $A$ is finite. Then the Kummer surface $X_\alpha$ satisfies the Hasse principle. 
+%\end{theorem}
+%
+%\begin{proof}
+%aa
+%\end{proof}
+%
+%Results of Harpaz--Skorobogatov using twisting of $2$-Selmer and Mazur--Rubin lemma. Fibration step potentially deduced from Poitou--Tate rather than as an application of the fibration method(?) 
+%
+%\section{Variation of the Cassels--Tate pairing under quadratic twist and second descent}
+%
+%Construction of governing fields for the Cassels--Tate pairing on $2$-Selmer. 
+%
+%\section{Rational points on Kummer varieties II}
+%
+%Incorporation of a second descent step:  potentially some stuff on Harpaz's paper, or my paper on Kummers or both. 
+%
+%\section{Brief discussion of dp4s?}
+% 
+%Brief discussion of how (parts of) paper with Alexei works if there's time left over (most likely not?).
+
+\begin{thebibliography}{CFKSABCD}
+ 
+%
+%\bibitem[AW67]{MR0219512}
+% M. F. Atiyah and C. T. C. Wall, \textit{Cohomology of groups}, Algebraic {N}umber {T}heory ({P}roc. {I}nstructional {C}onf., {B}righton, 1965), 94--115.
+% 
+%% @article {hyperuser,
+%%    AUTHOR = {Best, A. J. and Betts, L. A. and Bisatt, M. and van Bommel, R. and Dokchitser, V. and Faraggi, O. and Kunzweiler, S. and Maistret, C. and Morgan, A. and Muselli, S. and Nowell, S.},
+%%     TITLE = {A user's guide to the local arithmetic of hyperelliptic curves},
+%%   JOURNAL = {To appear in Bulletin of the London Mathematical Society},
+%%  FJOURNAL = {To appear in Bulletin of the London Mathematical Society},
+%%     
+%%    }
+%    
+%\bibitem[BBB$^\textup{+}$]{hyperuser}
+%A. J. Best,  L. A.  Betts, M. Bisatt,  R. van Bommel,  V. Dokchitser,  O. Faraggi,  S. Kunzweiler,  C. Maistret,  A. Morgan,  S. Muselli,  and  S. Nowell, \textit{A user's guide to the local arithmetic of hyperelliptic curves}, to appear in Bulletin of the London Mathematical Society.
+% 
+%  \bibitem[BD19]{MR3933907}
+% L. A.  Betts and  V. Dokchitser, \textit{Variation of {T}amagawa numbers of semistable abelian
+%              varieties in field extensions}, Math. Proc. Cambridge Philos. Soc.  \textbf{166} (2019), no. 3, 487--521. With an appendix by V. Dokchitser and A. Morgan.
+% 
+%  \bibitem[Bet22]{MR4330930}
+% L. A.  Betts, \textit{Variation of {T}amagawa numbers of {J}acobians of
+%              hyperelliptic curves with semistable reduction}, J. Number Theory \textbf{231} (2022), 158--213.  
+% 
+%
+%\bibitem[BL99]{MR1717533}
+% S.\,Bosch and Q. Liu,  \textit{Rational points of the group of components of a {N}\'eron
+%              model}, Manuscripta Math. \textbf{98} (1999), no. 3, 275--293. 
+% 
+%  
+\bibitem[BLR90]{MR1045822}
+ S.\,Bosch, W.\,L\"utkebohmert, M.\,Raynaud, 
+%\webtitle{
+\textit{N\'eron Models},
+%}{https://doi.org/10.1007/978-3-642-51438-8}, 
+Erg. Math., vol. 21, Springer, Berlin, 1990.
+% 
+% 
+% \bibitem[Cas67]{MR0222054}
+% J. W. S. Cassels, \textit{Global fields}, Algebraic {N}umber {T}heory ({P}roc. {I}nstructional {C}onf.,
+%              {B}righton, 1965), 1967, 42--84. 
+% 
+%  \bibitem[\v{C}es16]{MR3552491}
+% K. \v{C}esnavi\v{c}ius, \textit{The {$p$}-parity conjecture for elliptic curves with a
+%              {$p$}-isogeny}, J. Reine Angew. Math. \textbf{719} (2016), 45--73.
+%              
+
+   %  \bibitem[Bha21]{Bhargava2021}
+   %  M. Bhargava, \textit{Galois groups of random integer polynomials and van der Waerden's Conjecture}, preprint, arXiv:2111.06507 (2021).  
+  
+  
+  
+ %    \bibitem[BSW22]{Bhargava2022}
+%     M. Bhargava, A. Shankar and X. Wang, \textit{Squarefree values of polynomial discriminants II}, preprint, arXiv:2207.05592 (2022).  
+     
+      \bibitem[CF96]{CasselsFlynn96}
+     J. W. S. Cassels and E. V. Flynn. \textit{Prolegomena to a middlebrow arithmetic of curves of genus 2}. London Mathematical Society Lecture Note Series 230. Cambridge University Press, Cambridge, 1996.
+
+ % \bibitem[\v{C}es18]{MR3860395}
+ %K. \v{C}esnavi\v{c}ius, \textit{The {$\ell$}-parity conjecture over the constant quadratic
+       %       extension}, Math. Proc. Cambridge Philos. Soc. \textbf{165} (2018), no. 3, 385--409.  
+              
+ 
+              
+ % \bibitem[CTSDS98]{skoroswin98}
+%J.-L. Colliot-Th\`{e}l\'{e}ne, A. Skorobogatov and P. Swinnerton-Dyer, \textit{Hasse principle for
+%pencils of curves of genus one whose Jacobians have rational 2-division points}, Inventiones Mathematicae \textbf{134} (1998), p. 579–650. 
+              
+ \bibitem[CTS21]{ctsko21}   J.-L. Colliot-Th\'el\`ene and A.~N. Skorobogatov, {\it The Brauer-Grothendieck group}, Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge. A Series of Modern Surveys in Mathematics, 71, Springer, Cham, [2021] \copyright 2021.
+%              
+%  \bibitem[\v{C}I16]{MR3577895}
+% K. \v{C}esnavi\v{c}ius and N. Imai, \textit{The remaining cases of the {K}ramer-{T}unnell conjecture},
+% Compos. Math. \textbf{152} (2016),  no. 11, 2255--2268.                
+% 
+%\bibitem[CFKS10]{MR2551757}
+%J. Coates, T. Fukaya, K. Kato, R. Sujatha,
+%%\webtitle{
+%\textit{Root numbers, Selmer groups and non-commutative Iwasawa theory},
+%%}{https://doi.org/10.1090/S1056-3911-09-00504-9},
+%J. Alg. Geom. \textbf{19} (2010), 19--97.
+%
+%  \bibitem[Cor01]{MR1865865}
+%  G. Cornelissen, \textit{Two-torsion in the {J}acobian of hyperelliptic curves over
+%              finite fields}, Arch. Math. (Basel) \textbf{77} (2001), no. 3, 241--246.
+%              
+%              
+%  \bibitem[Cor05]{MR2169307}
+%  G. Cornelissen, Erratum to: `\textit{Two-torsion in the {J}acobian of hyperelliptic curves over
+%              finite fields}', Arch. Math. (Basel) \textbf{85} (2005), no. 6, loose erratum.
+%              
+% \bibitem[CST14]{MR3290950}
+%  W. Castryck, M.  Streng, and D. Testa,  \textit{Curves in characteristic 2 with non-trivial 2-torsion}, Adv. Math. Commun. \textbf{8} (2014), no. 4, 479--495. 
+% 
+%  \bibitem[DD09]{MR2534092}
+%  T. Dokchitser  and V. Dokchitser, \textit{Regulator constants and the parity conjecture}, Invent. Math. \textbf{178} (2009), no. 1, 23--71.
+%  
+%  
+%  \bibitem[DD10]{MR2680426}
+%  T. Dokchitser  and V. Dokchitser, \textit{On the {B}irch-{S}winnerton-{D}yer quotients modulo squares}, Ann. of Math. (2) \textbf{172} (2010), no. 1, 567--596.  
+%  
+%    \bibitem[DD11]{MR2831512}
+%  T. Dokchitser  and V. Dokchitser, \textit{Root numbers and parity of ranks of elliptic curves}, J. Reine Angew. Math. \textbf{658} (2011), 39--64. 
+%  
+%      \bibitem[DDMM18]{DDMM18}
+%  T. Dokchitser, V. Dokchitser, C. Maistret and A. Morgan, \textit{Arithmetic of hyperelliptic curves over local fields},  To appear in Mathematische Annalen. 
+%  
+%  \bibitem[DM19]{DM19}
+% V. Dokchitser and C. Maistret, \textit{Parity conjecture for abelian surfaces}, Preprint arxiv: 1911.04626 (2019).
+
+%\bibitem[DM96]{DM96}
+%J. Dixon and B. Mortimer. \textit{Permutation groups}, Graduate Texts in Mathematics, 163. Springer-Verlag, New York (1996)
+
+ 
+
+\bibitem[Dol12]{Dol12}
+I. V. Dolgachev. \textit{Classical algebraic geometry. A modern view}, Cambridge University Press, Cambridge, 2012. xii+639 pp.
+
+%\bibitem[Dye77]{Dye77}
+%R. H. Dye. \textit{A geometric characterization of the special orthogonal groups and the Dickson invariant}, J. London Math. Soc. (2) \textbf{13(3)} (1977), 472–476.
+
+
+   %  \bibitem[FY23]{Fisher_Yan23}
+%T. Fisher and J. Yan, \textit{Computing the Cassels-Tate pairing on the $2$-Selmer group of a genus $2$ Jacobian}, preprint, arXiv:2306.06011
+% (2023).  
+     
+
+ %    \bibitem[FTvL12]{Flynn_testa_van_luijk}
+        %  E.V. Flynn, D. Testa and R. van Luijk. Two-coverings of Jacobians of curves of genus two. Proc. London Math. Soc. (3) \textbf{104} (2012), 387—429.
+     
+% 
+%   \bibitem[FN20]{MR4201122}
+%O. Faraggi and S. Nowell, \textit{Models of hyperelliptic curves with tame potentially
+%              semistable reduction}, Trans. London Math. Soc. \textbf{7} (2020), no. 1, 49--95.
+%              
+%   \bibitem[Fon85]{MR807070}
+%   J.-M. Fontaine, \textit{Il n'y a pas de vari\'et\'e ab\'elienne sur {${\bf Z}$}}, Invent. Math. \textbf{81} (1985), no. 3, 515--538.
+%  
+%    \bibitem[GM21]{GM21}
+%H. Green and C. Maistret, \textit{$2$-parity conjecture for elliptic curves with isomorphic $2$-torsion}, Preprint arxiv: 2110.06718 (2021).
+%
+%\bibitem[Gru67]{MR0225922}
+% K. Gruenberg, \textit{Profinite groups}, Algebraic {N}umber {T}heory ({P}roc. {I}nstructional {C}onf.,
+%              {B}righton, 1965), 1967, 116--127. 
+%             
+ 
+  %    \bibitem[GCH22]{GHC22}
+%D. Gvirtz-Chen and Z. Huang, \textit{Rational curves and the Hilbert Property on Jacobian Kummer varieties}, preprint, arXiv:2205.04364 (2022).  
+ 
+ \bibitem[Har19a]{Har19}
+ Y. Harpaz, \textit{Second descent and rational points on Kummer varieties}, Proc. London Math. Soc. (3)  \textbf{118} (2019) 606-648.
+ 
+ % \bibitem[Har19b]{Har19b}
+% Y. Harpaz, \textit{Integral points on conic log K3 surfaces},  J. Eur. Math. Soc. \textbf{21} 3 (2019),   627–664.
+ 
+ 
+% \bibitem[HS16]{HS16}
+% Y. Harpaz, and A.N. Skorobogatov,  \textit{Hasse principle for Kummer varieties}, Algebra and Number Theory \textbf{10} (2016) 813-841.
+ 
+ \bibitem[KMR13]{MR3043582}
+ Z. Klagsbrun, B. Mazur, and K. Rubin, \textit{Disparity in {S}elmer ranks of quadratic twists of elliptic curves}, Ann. of Math. (2) \textbf{178} (2013), no. 1, 287--320.
+              
+%\bibitem[Kra81]{MR597871}
+%K. Kramer, \textit{Arithmetic of elliptic curves upon quadratic extension}, Trans. Amer. Math. Soc. 264 (1981), no. 1, 121--135.
+%
+%\bibitem[KT82]{MR664648}
+%K. Kramer and J. Tunnell, \textit{Elliptic curves and local {$\varepsilon $}-factors}, Compositio Math. \textbf{46} (1982), no. 3, 307--352.   
+%
+%\bibitem[Lic69]{MR242831}
+%S. Lichtenbaum, \textit{Duality theorems for curves over {$p$}-adic fields}, Invent. Math. \textbf{7} (1969), 120--136.
+%
+%\bibitem[Liu02]{MR1917232}
+%Q. Liu,  \textit{Algebraic geometry and arithmetic curves}, Oxford Graduate Texts in Mathematics, vol. 6, Oxford University Press, Oxford, 2002. Translated from the French by Reinie Ern{\'e},
+%              Oxford Science Publications.
+%              
+% \bibitem[Liu94a]{MR1302311}
+%Q. Liu,  \textit{Conducteur et discriminant minimal de courbes de genre {$2$}},  Compositio Math. \textbf{94} (1994), no. 1, 51--79.
+%
+% \bibitem[Liu94b]{MR1285783}
+%Q. Liu, \textit{Mod\`{e}les minimaux des courbes de genre deux}, J. Reine Angew. Math.  \textbf{453} (1994), 137--164. 
+%
+% \bibitem[Liu96]{MR1363944}
+%Q. Liu, \textit{Mod\`eles entiers des courbes hyperelliptiques sur un corps de
+%              valuation discr\`{e}te}, Trans. Amer. Math. Soc. \textbf{348} (1996), no. 11, 4577--4610.
+%              
+%   \bibitem[Lor11]{MR2961846}
+%D. Lorenzini, \textit{Torsion and {T}amagawa numbers}, Ann. Inst. Fourier (Grenoble) \textbf{61} (2011), no. 5, 1995--2037.
+%
+%   \bibitem[LR78]{MR0491735}
+% J.  Lubin and M. I. Rosen, \textit{The norm map for ordinary abelian varieties}, J. Algebra \textbf{52} (1978), no. 1, 236--240.
+% 
+
+  %\bibitem[Lur01]{Lur01}
+%J. Lurie, \textit{On simply laced Lie algebras and their minuscule representations}, Comment. Math.  Helv. \textbf{76} (2001), 515--575.
+              
+    %\bibitem[Maz72]{MR0444670}
+%B. Mazur, \textit{Rational points of abelian varieties with values in towers of
+     %         number fields}, Invent. Math. \textbf{18} (1972), 183--266.
+%              
+% \bibitem[MR07]{MR2373150}
+%  B. Mazur and K. Rubin, \textit{Finding large {S}elmer rank via an arithmetic theory of local
+%              constants}, Ann. of Math. (2) \textbf{166} (2007), no. 2, 579--612.
+%              
+% \bibitem[MRS07]{MR2331769}
+%  B. Mazur, K. Rubin, and A. Silverberg,  \textit{Twisting commutative algebraic groups}, J. Algebra \textbf{314} (2007), no.1, 419--438. 
+%   MR2261462
+
+ \bibitem[MR04]{MazRub2004}
+B. Mazur and K. Rubin, Kolyvagin systems, Mem. Amer. Math. Soc. {\bf 168} (2004), no.~799, viii+96 pp.; MR2031496
+
+ \bibitem[MR10]{MazRub2010}
+B. Mazur and K. Rubin, \textit{Ranks of twists of elliptic curves and Hilbert’s tenth problem}, Invent. math. 181 (2010), 54--575.
+   
+             
+ \bibitem[Mil06]{MR2261462}
+J.S. Milne,  \textit{Arithmetic Duality Theorems}, Perspective in Mathematics, vol. 1, Academic Press, Inc., Boston, MA, 1986. 
+%              
+% \bibitem[Mil72]{MR0330174}
+%J. S. Milne, \textit{On the arithmetic of abelian varieties}, Invent. Math. \textbf{17} (1972), 177--190. 
+%
+% \bibitem[Mil86]{MR861974}
+%J. S. Milne, \textit{Abelian varieties}, Arithmetic geometry ({S}torrs, {C}onn., 1984), 1986, 103--150.
+%
+% \bibitem[Mor15]{AMo15}
+%A. Morgan, \textit{$2$-Selmer parity for Jacobians of hyperelliptic curves in quadratic extensions}, PhD Thesis, University of Bristol (2015).
+%
+ \bibitem[Mor19]{MR3951582}
+A. Morgan, \textit{Quadratic twists of abelian varieties and disparity in
+              {S}elmer ranks},  Algebra \& Number Theory \textbf{13} (2019), no. 4, 839--899.
+              
+               \bibitem[Mor23]{mor2023}
+A. Morgan, \textit{2-Selmer parity for hyperelliptic curves in quadratic extensions}, Proc. London Math. Soc. 127 (2023), no. 5, 1507-1576.
+
+  \bibitem[Mor25]{mor2025}
+A. Morgan, \textit{ Hasse principle for Kummer varieties in the case of generic 2-torsion}, Proc. London Math. Soc. 131 (2025), no. 1.
+              
+              
+                  %  \bibitem[MS21]{MS222}
+%  A. Morgan and A. Smith, \textit{The Cassels--Tate pairing for finite Galois modules}, Preprint arXiv:2103.08530 (2021).  
+  
+              %              \bibitem[MS22]{MS21}
+  %A. Morgan and A. Smith, \textit{Field change for the Cassels-Tate pairing and applications to class groups}, Preprint arXiv:2206.13403 (2022).  
+  
+        
+              
+%              
+% \bibitem[Mum71]{Mum71}
+% D. Mumford, \textit{Theta characteristics of an algebraic curve}, Ann. Sci. de l'École Norm. Sup. \textbf{4} (1971),  181-192.
+%              
+% \bibitem[NU73]{MR0369362}
+%Y. Namikawa and K. Ueno, \textit{The complete classification of fibres in pencils of curves of
+%              genus two}, Manuscripta Math. \textbf{9} (1973), 143--186.
+%              
+%\bibitem[Nek13]{MR3101073}
+%J. Nekov{\'a}{\v{r}}, \textit{Some consequences of a formula of {M}azur and {R}ubin for
+%              arithmetic local constants}, Algebra \& Number Theory \textbf{7} (2013), no. 5, 1101--1120. 
+% 
+%  \bibitem[Now22]{NowellThesis}
+%S. Nowell, \textit{Models of hyperelliptic curves over $p$-adic fields}, PhD Thesis, University College London (2022).
+%
+% \bibitem[OS19]{ObSrin2019}
+%P. Srinivasan, \textit{Conductor-discriminant inequality for hyperelliptic curves in odd residue characteristic}, Preprint arxiv: 	1910.02589 (2019) 
+%
+%\bibitem[Ogg66]{MR0201437}
+% A. P. Ogg, \textit{On pencils of curves of genus two}, Topology \textbf{5} (1966), 355--362.
+% 
+   \bibitem[NSW08]{NSW08}
+J. Neukirch and A. Schmidt and K. Wingberg. \textit{ Cohomology of Number Fields}, 2nd edn (Grundlehren
+der Mathematischen Wissenschaften, 323), Springer, Berlin, 2008. 
+
+ 
+
+% \bibitem[Pol71]{Pol71}
+%H. Pollatsek \textit{First cohomology groups of some linear groups over fields of characteristic two}, Illinois J. Math. \textbf{15} (1971) 393--417.
+ 
+
+ \bibitem[PR11]{MR2915483}
+  B. Poonen and E. Rains, \textit{Self cup products and the theta characteristic torsor}, Math. Res. Lett. \textbf{18} (2011), no. 6, 1305--1318.
+% 
+  %\bibitem[PR12]{MR2833483}
+  %B. Poonen and E. Rains, \textit{Random maximal isotropic subspaces and {S}elmer groups},   J. Amer. Math. Soc. \textbf{25} (2012), no. 1, 245--269.
+  
+    %\bibitem[PS97]{MR1465369}
+  %B. Poonen and E. F. Schaefer, \textit{Explicit descent for {J}acobians of cyclic covers of the
+       %       projective line}, J. Reine Angew. Math. \textbf{488} (1997), 141--188. 
+              
+ \bibitem[PS99]{MR1740984}
+  B. Poonen and M. Stoll,  \textit{The {C}assels-{T}ate pairing on polarized abelian varieties}, Ann. of Math. (2) \textbf{150} (1999), no. 3, 1109--1149.
+  
+  \bibitem[Sch96]{MR1370197}
+E. F. Schaefer, \textit{Class groups and {S}elmer groups}, J. Number Theory \textbf{56} (1996), no. 1, 79--114.
+  
+    % \bibitem[Sko09]{Skoro2009}
+%A.  Skorobogatov, \textit{Diagonal quartic surfaces}, Explicit methods in number theory, K. Belabas, H.W. Lenstra, D.B. Zagier, eds. Oberwolfach report \textbf{33} (2009) 76-79. 
+
+\bibitem[SZ17]{SZ17} A.~N. Skorobogatov and Y.~G. Zarhin, Kummer varieties and their Brauer groups, Pure Appl. Math. Q. {\bf 13} (2017), no.~2, 337--368; MR3858012
+  
+   \bibitem[SSD05]{SkoroSwinDyer2005}
+A.  Skorobogatov and P.  Swinnerton-Dyer, \textit{2-descent on elliptic curves and rational points on certain Kummer surfaces}, Adv. Math. 198 (2005), no. 2, 448–483
+  
+ % \bibitem[SZ08]{SkoroZarhin2008}
+%  A. Skorobogatov and Y. Zarhin, \textit{A finiteness theorem for the Brauer group of abelian varieties and surfaces}, J. Algebraic Geom. \textbf{17} (2008), 481-502
+    
+  %  \bibitem[SZ17]{SkoroZarhin2017}
+  %A. Skorobogatov and Y. Zarhin, \textit{Kummer varieties and their Brauer groups}, Pure Appl. Math. Quart. \textbf{13} (2017), 337-368
+ 
+  
+%\bibitem[Smi16]{smi16}
+%A. Smith, \textit{Governing fields and statistics for 4-Selmer groups and 8-class groups}, 
+  %Preprint arXiv:1607.07860 (2016).  
+  
+    %\bibitem[Smi22a]{smith2022distribution1}
+%A. Smith, \textit{The distribution of $\ell^\infty$-selmer groups in degree $\ell$
+ % twist families I}, preprint,  arXiv:2207.05674 (2022).  
+  
+     % \bibitem[Smi22b]{smith2022distribution2}
+%A. Smith, \textit{The distribution of $\ell^\infty$-selmer groups in degree $\ell$
+  %twist families II}, preprint, arXiv:2207.05143 (2022).
+  
+ %\bibitem[SD95]{SwinDyer1995}
+%P. Swinnerton-Dyer   \textit{Rational points on certain intersections of two quadrics}, Abelian Varieties, ed. W. Barth, K. Hulek and H. Lange, de Gruyter, Berlin, 1995, p. 273-292. 
+  
+   %\bibitem[SD00]{SwinDyer2000}
+%P. Swinnerton-Dyer   \textit{Arithmetic of diagonal quartic surfaces II}, Proceedings of the London Mathematical Society \textbf{80}  (2000), no. 3, 513–544
+
+  
+% \bibitem[SD01]{SwinDyer2001}
+%P. Swinnerton-Dyer   \textit{The solubility of diagonal cubic surfaces}, Ann. Sci. École Norm. Sup. (4) 34 (2001), no. 6, 891–912
+ 
+   
+%\bibitem[Tah72]{tah72}
+%K. Tahara,  \textit{On the second cohomology groups of semidirect products}, Math. Z. \textbf{129} (1972), 365--379.   
+  
+%\bibitem[Wit07]{witt07}
+%O. Wittenberg, \textit{Intersections de deux quadriques et pinceaux de courbes de genre 1}, Lecture Notes in Mathematics, Vol. 1901, Springer, 2007.
+
+%   \bibitem[Wil09]{wilson09}
+%R.A. Wilson,  \textit{The finite simple groups}, Graduate Texts in Mathematics, vol. 251, Springer-Verlag London, Ltd., London, 2009. 
+
+ 
+%  
+% \bibitem[Ray71]{MR0427326}
+%M. Raynaud,   \textit{Vari\'{e}t\'{e}s ab\'{e}liennes et g\'{e}om\'{e}trie rigide}, Actes du {C}ongr\`{e}s {I}nternational des {M}ath\'{e}maticiens
+%              ({N}ice, 1970), {T}ome 1, 1971, 473--477.
+%              
+% \bibitem[Rei61]{MR0122892}
+%I. Reiner, \textit{The {S}chur index in the theory of group representations}, Michigan Math. J. \textbf{8} (1961), 39--47. 
+%
+% \bibitem[Sab07]{MR2309184}
+%M. Sabitova, \textit{Root numbers of abelian varieties}, Trans. Amer. Math. Soc. \textbf{359} (2007), no. 9, 4259--4284.
+%
+% \bibitem[Sad14]{MR3264495}
+%M. Sadek, \textit{On quadratic twists of hyperelliptic curves}, Rocky Mountain J. Math. \textbf{44} (2014), no. 3, 1015--1026.
+%
+% \bibitem[Sch96]{MR1370197}
+%E. F. Schaefer, \textit{Class groups and {S}elmer groups}, J. Number Theory \textbf{56} (1996), no. 1, 79--114.
+%
+% \bibitem[Ser79]{MR554237}
+%J.-P. Serre, \textit{Local fields}, Graduate Texts in Mathematics, vol. 67, Springer-Verlag, New York-Berlin, 1979. Translated from the French by M. J. Greenberg.
+%   
+%\bibitem[SGA7$_{\rm I}$]{SGA7IX}
+%A.\,Grothendieck, 
+%%\webtitle{
+%\textit{Mod\`eles de N\'eron et monodromie},
+%%}{https://doi.org/10.1007/BFb0068694}, 
+%SGA7-I, Expose IX, LNM 288, Springer, 1972.
+%
+% \bibitem[Sri16]{Srin2016}
+%P. Srinivasan, \textit{Invariants linked to models of curves over discrete valuation rings}, PhD Thesis, Massachusetts Institute of Technology (2016).
+%
+% \bibitem[Sri19]{Srin2019}
+%P. Srinivasan, \textit{Conductors and minimal discriminants of hyperelliptic curves: a comparison in the tame case}, Preprint arxiv: 1910.08228 (2019) 
+ 
+
+\end{thebibliography}
+
+
+
+
+ 
+
+
+\end{document}

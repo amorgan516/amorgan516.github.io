@@ -1,0 +1,401 @@
+\usepackage{pbox}
+\usepackage{tkz-graph}
+\usetikzlibrary{snakes,fit,positioning,calc,shapes}
+
+% DEFAULT SETTINGS
+
+\definecolor{amethyst}{rgb}{0.6, 0.4, 0.8}
+\definecolor{atomictangerine}{rgb}{1.0, 0.6, 0.4}
+\definecolor{deeppeach}{rgb}{1.0, 0.8, 0.64}
+\definecolor{eggshell}{rgb}{0.94, 0.92, 0.84}
+\definecolor{lightapricot}{rgb}{0.99, 0.84, 0.69}
+\definecolor{lemonchiffon}{rgb}{1.0, 0.98, 0.8}
+\definecolor{roundabout}{rgb}{1.0, 0.91, 0.75}
+\definecolor{atomictangerine}{rgb}{1.0, 0.6, 0.4}
+\definecolor{deepcerise}{rgb}{0.85, 0.2, 0.53}
+\definecolor{deepskyblue}{rgb}{0.0, 0.75, 1.0}
+\definecolor{electricviolet}{rgb}{0.56, 0.0, 1.0}
+\definecolor{turquoise}{rgb}{0.03, 0.91, 0.87}
+\definecolor{ruby}{rgb}{0.88, 0.07, 0.37}
+\definecolor{sapphire}{rgb}{0.03, 0.15, 0.4}
+
+\def\rootsep{0.1}               % horizontal space between roots in a cluster picture
+\def\clustersep{0.06}            % horizontal and vertical space between parent & child cluster
+\def\cnamescale{0.5}             % cluster names font size 
+\def\cdepthscale{0.8}            % cluster depths and signs font size 
+\def\cltopskip{1pt}              % space above a cluster picture
+\def\clbottomskip{1pt}           % space below a cluster picture
+
+% Default root scale and color
+\def\rootscale{0.55}   \def\rootcolor{gray}
+% Celine's root scales and colors A,B,C,D
+\def\rootscaleA{0.55}  \def\rootcolorA{ruby}
+\def\rootscaleB{0.57}  \def\rootcolorB{sapphire}
+\def\rootscaleC{0.4}  \def\rootcolorC{turquoise}
+\def\rootscaleD{0.55}  \def\rootcolorD{gray}
+\def\rootscaleDot{0.2}  \def\rootcolorDot{black}
+
+% Celine's cluster styles A,B,C,D,...,Z
+\tikzset{
+  clA/.style = {very thick,black},
+  clB/.style = {thick,purple}
+}
+
+\def\clgraphyofs{0.3}
+\def\clpicscale{0.95}
+\def\clgraphscale{0.6}
+\def\cltabskip{17pt}             
+\def\cltabintskip{1pt}
+\def\graphdslabelscale{0.8}
+
+\def\GraphScale{0.6}
+\def\SnakeWiggle{4pt}
+\def\SnakeAmplitude{0.8pt}
+\def\InfLabel{\relax}
+
+
+% CLUSTER PICTURES & GRAPHS
+
+\tikzset{
+  root/.style = {circle,scale=\rootscale, fill=\rootcolor},
+    rc/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},root}, rr/.style = {right=\rootsep of {#1.east|-first},root},
+  roott/.style = {circle,inner sep=-2pt,minimum size=5pt,black,font=\ttfamily\footnotesize},
+    rct/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},roott}, rrt/.style = {right=\rootsep of {#1.east|-first},roott},
+  rootA/.style = {circle,scale=\rootscaleA,ball color=\rootcolorA},
+    rcA/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},rootA}, rrA/.style = {right=\rootsep of {#1.east|-first},rootA},
+  rootB/.style = {regular polygon,regular polygon sides=6,scale=\rootscaleB,ball color=\rootcolorB},
+    rcB/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},rootB}, rrB/.style = {right=\rootsep of {#1.east|-first},rootB},
+  rootC/.style = {diamond,scale=\rootscaleC,ball color=\rootcolorC},
+    rcC/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},rootC}, rrC/.style = {right=\rootsep of {#1.east|-first},rootC},
+  rootD/.style = {circle,scale=\rootscaleD,fill=\rootcolorD},
+    rcD/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},rootD}, rrD/.style = {right=\rootsep of {#1.east|-first},rootD},
+      rootDot/.style = {circle,scale=\rootscaleDot,fill=\rootcolorDot},
+    rcDot/.style 2 args = {right=#1*1.5*\clustersep of {#2.east|-first},rootDot}, rrDot/.style = {right=\rootsep of {#1.east|-first},rootDot},
+      cluster/.style = {draw=black,thick,rounded corners,inner sep=22*\clustersep,outer xsep=22*\clustersep,fit=#1},
+  clabel/.style  = {anchor=west,scale=\cdepthscale,black,inner sep=0,outer xsep=1,outer ysep=0},
+  clabelL/.style = {above right=-\clustersep of #1t.north east,clabel},
+  clabelD/.style = {below right=-\clustersep of #1t.south east,clabel},
+  clouter/.style = {inner sep=0,outer sep=0,fit=#1}
+}
+
+\def\ClusterLD #1[#2][#3] = #4;{
+  \node[cluster=#4] (#1t) {}; \node[clabelL=#1] (#1l) {$#2$}; 
+  \node[clabelD=#1] (#1d) {$#3$}; \node[clouter=(#1t)(#1l)(#1d)] (#1) {};}
+\def\ClusterLDName #1[#2][#3][#4] = #5;{
+  \node[cluster=#5] (#1t) {}; \node[clabelL=#1] (#1l) {$#2$}; 
+  \node[clabelD=#1] (#1d) {$#3$}; 
+  \node[scale=\cnamescale,above=\clustersep/3 of #1t,inner sep=0, outer sep=0] (#1n) {$#4$}; 
+  \node[clouter=(#1l)(#1d)(#1t)(#1n)] (#1) {};}
+
+\newcommand{\Root}[4][]{
+  \ifx\relax#2\relax\node[rr#1=#3] (#4) {};\else\node[rc#1={#2}{#3}] (#4) {};\fi}
+\newcommand{\RootT}[5][]{
+  \ifx\relax#2\relax\node[rrt#1=#3] (#4) {#5};\else\node[rct#1={#2}{#3}] (#4) {#5};\fi}
+
+\def\frob(#1)(#2){\path[draw,thick,shorten <=-22*\clustersep,shorten >=-22*\clustersep](#1.east)--(#2.west|-#1){};}
+
+\long\def\clusterpicture#1\endclusterpicture{\pb{\vbox to \cltopskip{\vfill}\\%
+  \begin{tikzpicture}\node[coordinate] (first) {};#1\end{tikzpicture}\\[-11pt]\vbox to \clbottomskip{\vfill}}}   
+\long\def\clusterpictureopt#1#2\endclusterpicture{\pb{\vbox to \cltopskip{\vfill}\\%
+  \begin{tikzpicture}[#1]\node[coordinate] (first) {};#2\end{tikzpicture}\\[-11pt]\vbox to \clbottomskip{\vfill}}}   
+
+
+\def\pushbox#1#2{\begin{scope}[scale = 0.03,line width=1pt,green!90!black,
+     line cap=round, line join=round, rounded corners=1pt,
+     shift={($(#1.east)+(#2,0)$)},anchor=west]
+  \draw (0,0) coordinate (A) -- ++(1,-4) coordinate (B);
+  \draw (B) -- ++(1,-3) -- ++(2,-3);
+  \draw (B) -- ++(-1,-3) -- ++(2,-3);
+  \draw (A) -- ++(-2,-1) -- ++(-2,0);
+  \draw (A) -- ++(-2,-3) -- ++(-2,0);
+  \fill (A) ++(0,1.5) circle (1.5);
+\end{scope}}
+
+% SPECIAL FIBRE GRAPHS
+
+\def\LabelEdgeDepth#1#2#3{   % graph: label edges with depths
+  \node [color=black, scale=\graphdslabelscale] at ($(#1)+(#2)$) {$\scriptstyle #3$};}
+
+% swap <-> two vertices [graph/tree]
+\def\VSwap#1#2#3#4{\path[draw](#1) edge[<->,#3,shorten >=#4pt,shorten <=#4pt] (#2){};}
+\def\VArr#1#2#3#4{\path[draw](#1) edge[->,#3,shorten >=#4pt,shorten <=#4pt] (#2){};}
+
+% swap <-> two edges [tree]
+\def\ESwap#1#2#3#4#5{\VSwap{$(#1)!0.5!(#2)$}{$(#3)!0.5!(#4)$}{#5}{1.5}}
+\def\ESwapOfs#1#2#3#4#5#6#7#8{\VSwap{$(#1)!0.5!(#2) + (#6)$}{$(#3)!0.5!(#4) + (#7)$}{#5}{#8}}
+\def\ESwapPerc#1#2#3#4#5#6{\VSwap{$(#1)!#6!(#2)$}{$(#3)!#6!(#4)$}{#5}{1.5}}
+\def\EArr#1#2#3#4#5{\VArr{$(#1)!0.5!(#2)$}{$(#3)!0.5!(#4)$}{#5}{1.5}}
+\def\EArrOfs#1#2#3#4#5#6#7#8{\VArr{$(#1)!0.5!(#2) + (#6)$}{$(#3)!0.5!(#4) + (#7)$}{#5}{#8}}
+
+\def\EdgeSign(#1)(#2)#3(#4)#5{
+  \node at ($(#1)!#3!(#2) + (#4)$) [color=black, scale=\graphdslabelscale] {$\scriptstyle #5$};
+}
+
+\def\TreeEdgeSignDist{0.30}
+\def\GraphEdgeSignDist{0.55}
+
+\def\TreeEdgeSignN(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(0,\TreeEdgeSignDist){#4}}
+\def\TreeEdgeSignS(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(0,-\TreeEdgeSignDist){#4}}
+\def\TreeEdgeSignW(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(-\TreeEdgeSignDist,0){#4}}
+\def\TreeEdgeSignE(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(\TreeEdgeSignDist,0){#4}}
+\def\GraphEdgeSignN(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(0,\GraphEdgeSignDist){#4}}
+\def\GraphEdgeSignS(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(0,-\GraphEdgeSignDist){#4}}
+\def\GraphEdgeSignW(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(-\GraphEdgeSignDist,0){#4}}
+\def\GraphEdgeSignE(#1)(#2)#3#4{\EdgeSign(#1)(#2)#3(\GraphEdgeSignDist,0){#4}}
+\def\TreeSignAt(#1)(#2)#3{\EdgeSign(#1)(#1){0.5}(#2){#3}}
+
+% New depth decorations END
+
+\def\ecluster(#1)(#2)#3{
+  \path(#1) coordinate (#2a){}; 
+  \path($(#1)+(0.3,0)$) coordinate (#2c){}; 
+  \path($(#1)+(#3/2,0)-(0,#3)$) coordinate (#2t); 
+  \path[draw,-,thick] (#2a)--($(#2a)-(0,0.15)$);
+  \path[draw,-,thick] (#2a) edge[out=90,in=90] (#2c);
+  \path[draw,-,thick] (#2c) edge[out=270,in=180] (#2t);
+  \expandafter\edef\csname lastnode#2\endcsname{#2t}
+  \expandafter\let\csname cltype#2\endcsname\epsilon
+}
+
+\def\ocluster(#1)(#2)#3{
+  \path(#1) coordinate (#2a); 
+  \path($(#1)-(0,0.1)$) coordinate (#2b); 
+  \path($(#1)+(#3/2,0)-(0,#3)$) coordinate (#2t); 
+  \path[draw,-,thick] ($(#2a)+(0,0.15)$)--(#2b);
+  \path[draw,-,thick] (#2b) edge[out=270,in=180] (#2t);
+  \expandafter\edef\csname lastnode#2\endcsname{#2t}
+  \expandafter\let\csname cltype#2\endcsname\omega
+}
+
+\def\tocluster(#1)(#2)#3{
+  \path(#1) coordinate (#2a); 
+  \path(#1) coordinate (#2b); 
+  \path(#1) coordinate (#2t); 
+  \expandafter\edef\csname lastnode#2\endcsname{#2t}
+  \expandafter\let\csname cltype#2\endcsname\omega
+}
+
+\def\tecluster(#1)(#2)#3{
+  \path(#1) coordinate (#2a); 
+  \path(#1) coordinate (#2b); 
+  \path(#1) coordinate (#2t); 
+  \expandafter\edef\csname lastnode#2\endcsname{#2t}
+  \expandafter\let\csname cltype#2\endcsname\epsilon
+}
+
+\def\tucluster(#1)(#2)#3{
+  \path(#1) coordinate (#2a); 
+  \path(#1) coordinate (#2c); 
+  \path(#1) coordinate (#2t); 
+  \path($(#2c)-(0,0.1)$) coordinate (#2b); 
+  \path(#2b) coordinate (#2d); 
+  \expandafter\edef\csname lastnode#2\endcsname{#2t}
+  \expandafter\let\csname cltype#2\endcsname\upsilon
+}
+
+\def\uclustergen(#1)(#2)#3#4{
+  \path($(#1)+(0.1,0)$) coordinate (#2c){}; 
+  \path($(#2c)-(0,0.1)$) coordinate (#2d){}; 
+  \path($(#2c)+(#3/2,0)-(0,#3)$) coordinate (#2t); 
+  \path[draw,-,thick] ($(#2c)+(0,0.15)$)--(#2d);
+  \path[draw,-,thick] (#2d) edge[out=270,in=180] (#2t);
+  \path($(#1)$) coordinate (#2a){}; 
+  \path($(#2a)-(0,0.1)$) coordinate (#2b){}; 
+  \path($(#2d)+(#3/2,0)-(0,#3)$) coordinate (#2u); 
+  \path[draw,-,thick#4] ($(#2a)+(0,0.15)$)--(#2b);          % possibly 
+  \path[draw,-,thick#4] (#2u) edge[out=180,in=270] (#2b);   % shorten
+  \expandafter\edef\csname lastnode#2\endcsname{#2t}
+  \expandafter\let\csname cltype#2\endcsname\upsilon
+}
+
+\def\ucluster(#1)(#2)#3{\uclustergen(#1)(#2){#3}{}}
+\def\uclusterbr(#1)(#2)#3{\uclustergen(#1)(#2){#3}{,shorten >=1.1pt}}
+
+
+\def\clusterNWlabel(#1)#2{
+  \path(#1a) node[color=blue,anchor=east] {$#2$}; 
+}
+\def\clusterSWlabel(#1)#2{
+  \path(#1t) node[color=blue,anchor=east] {$#2$}; 
+}
+
+\def\subroot #1-#2 #3{
+  \edef\lastnode{\csname lastnode#1\endcsname}
+  \path($(\lastnode)+(#3,0)$) node[root](#2){};
+  \path[draw,-,thick](\lastnode)--(#2){};
+  \expandafter\def\csname lastnode#1\endcsname{#2}
+}
+
+\def\subrootname #1-#2 #3#4{
+  \subroot #1-#2 {#3}
+  \node (#2n) [color=purple!50!black,below=of #2.south,scale=0.7,yshift=0pt,font=\ttfamily, anchor=north] {$#4$};  
+}
+
+\def\endcluster #1 #2{
+  \edef\lastnode{\csname lastnode#1\endcsname}
+  \path($(\lastnode)+(#2,0)$) node[coordinate](#1end){};
+  \path[draw,-,thick](\lastnode)--(#1end){};
+  \expandafter\ifx\csname cltype#1\endcsname\upsilon
+    \path[draw,-,thick]($(\lastnode)-(0,0.1)$)--($(#1end)-(0,0.1)$){};  
+  \else\fi
+  \expandafter\def\csname lastnode#1\endcsname{#1end}
+}
+
+\def\subcluster #1 #2-#3 (#4,#5){
+  \edef\lastnode{\csname lastnode#2\endcsname}
+  \expandafter\ifx\csname cltype#2\endcsname\upsilon
+    \expandafter\ifx #1u
+      \uclusterbr($(\lastnode)+(#4,0)$)(#3){#5}               % ubereven child of an ubereven disk
+    \else
+      \csname#1cluster\endcsname($(\lastnode)+(#4,0)$)(#3){#5}
+    \fi
+  \else
+    \csname#1cluster\endcsname($(\lastnode)+(#4,0)$)(#3){#5}
+  \fi
+  \path[draw,-,thick](\lastnode)--(#3a){};
+  \expandafter\ifx\csname cltype#2\endcsname\upsilon
+    \path[draw,-,thick]($(\lastnode)-(0,0.1)$)--($(#3a)-(0,0.1)$){};  
+    \expandafter\ifx\csname cltype#3\endcsname\upsilon      % ubereven child of an ubereven disk
+      \path($(#3c)+(1.1pt,0)$) node[coordinate] (#3e) {};
+      \path($(#3d)+(1.1pt,0)$) node[coordinate] (#3f) {};
+      \path[draw,-,thick] (#3a)--($(#3e)-(2.2pt,0)$) {};  
+      \path[draw,-,thick] (#3b)--(#3f) {};  
+      \expandafter\def\csname lastnode#2\endcsname{#3e}
+    \else
+      \expandafter\def\csname lastnode#2\endcsname{#3a}
+    \fi 
+  \else
+    \expandafter\def\csname lastnode#2\endcsname{#3a}
+  \fi
+}
+
+% HYPERELLIPTIC GRAPHS & BY TREES
+
+\def\pb#1{\pbox[c]{\textwidth}{\hfil #1\hfil}}
+
+\def\GraphVertices{\SetVertexNormal[Shape=circle, FillColor=blue!50, LineColor=blue!50, LineWidth=0.8pt]
+  \tikzset{VertexStyle/.append style = {inner sep=0.5pt,minimum size=0.3em,font = \tiny\bfseries}}}
+\let\BlueVertices\GraphVertices
+\def\InfVertices{\SetVertexNormal[Shape=rectangle,FillColor=white, LineColor=white, LineWidth=0pt]
+  \tikzset{VertexStyle/.append style = {inner sep=1pt,minimum size=0.3em,font = \footnotesize}}}
+\def\YellowVertices{\SetVertexNormal[Shape=circle, FillColor=roundabout, LineColor=orange,LineWidth=0.8pt]
+  \tikzset{VertexStyle/.append style = {inner sep=1pt,minimum size=0.5em}}
+}
+\def\YellowEdges{\SetUpEdge[lw=1pt,color=orange]
+   \tikzset{EdgeStyle/.append style = {snake=snake,segment length=\SnakeWiggle,
+    segment amplitude=\SnakeAmplitude,shorten <=1pt,shorten >=1pt}}}
+\def\BlueEdges{  \SetUpEdge[lw=0.8pt,color=blue!70]
+   \tikzset{EdgeStyle/.append style = {shorten <=0.5pt,shorten >=0.5pt}}}
+\def\BendedEdges{  \SetUpEdge[lw=0.8pt,color=blue!70]
+   \tikzset{EdgeStyle/.append style = {shorten <=0.5pt,shorten >=0.5pt,bend left=30}}}
+\def\LoopW(#1){
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=155,in=90] ($(#1)-(1.3,0)$);
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=210,in=270] ($(#1)-(1.3,0)$);
+}
+\def\LoopE(#1){
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=25,in=90] ($(#1)+(1.3,0)$);
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=-25,in=270] ($(#1)+(1.3,0)$);
+}
+\def\LoopS(#1){
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=115,in=180] ($(#1)+(0,1.2)$);
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=65,in=0] ($(#1)+(0,1.2)$);
+}
+\def\LoopN(#1){
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=-115,in=180] ($(#1)-(0,1.2)$);
+  \path[draw,-,thick,color=blue!70] (#1) edge[out=-65,in=0] ($(#1)-(0,1.2)$);
+}
+\def\EdgeW(#1){
+  \path[draw,-,thick,color=blue!70] (#1+) edge[out=180,in=90] ($(#1+)-(1.3,0.3)$);
+  \path[draw,-,thick,color=blue!70] (#1-) edge[out=180,in=270] ($(#1+)-(1.3,0.3)$);
+}
+\def\EdgeE(#1){
+  \path[draw,-,thick,color=blue!70] (#1+) edge[out=0,in=90] ($(#1-)+(1.3,0.3)$);
+  \path[draw,-,thick,color=blue!70] (#1-) edge[out=0,in=270] ($(#1-)+(1.3,0.3)$);
+}
+\def\EdgeS(#1){
+  \path[draw,-,thick,color=blue!70] (#1+) edge[out=90,in=0] ($(#1-)+(0.3,1.3)$);
+  \path[draw,-,thick,color=blue!70] (#1-) edge[out=90,in=180] ($(#1-)+(0.3,1.3)$);
+}
+\def\EdgeN(#1){
+  \path[draw,-,thick,color=blue!70] (#1+) edge[out=270,in=0] ($(#1+)-(0.3,1.3)$);
+  \path[draw,-,thick,color=blue!70] (#1-) edge[out=270,in=180] ($(#1+)-(0.3,1.3)$);
+}
+\def\GCircle(#1,#2)(#3,#4){
+  \path(#1,#2) node[coordinate] (1) {};
+  \path(#3,#4) node[coordinate] (2) {};
+  \path[draw,-,thick,color=blue!70] (1) edge[out=90,in=90] (2);
+  \path[draw,-,thick,color=blue!70] (2) edge[out=270,in=270] (1);
+}
+
+% Vertex labels
+
+\def\vertlabelscale{0.8}
+\def\vertlabeldist{0.6}
+\def\VertexLabelAt#1(#2)#3{
+  \node at ($(#1)+(#2)$) [scale=\vertlabelscale,color=black] {#3};
+}
+\def\VertexLN[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(0,\vertlabeldist){#3}}
+\def\VertexLS[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(0,-\vertlabeldist){#3}}
+\def\VertexLW[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(-\vertlabeldist,0){#3}}
+\def\VertexLE[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(\vertlabeldist,0){#3}}
+\def\VertexLSE[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(\vertlabeldist,-\vertlabeldist){#3}}
+\def\VertexLNW[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(-\vertlabeldist/1.5,\vertlabeldist/1.8){#3}}
+\def\VertexLNE[#1]#2#3{\Vertex[#1]{#2}\VertexLabelAt#2(\vertlabeldist/1.5,\vertlabeldist/1.8){#3}}
+
+% Set minus
+
+\newcommand{\mysetminusD}{\hbox{\tikz{\draw[line width=0.6pt,line cap=round] (3pt,0) -- (0,6pt);}}}
+\newcommand{\mysetminusT}{\mysetminusD}
+\newcommand{\mysetminusS}{\hbox{\tikz{\draw[line width=0.45pt,line cap=round] (2pt,0) -- (0,4pt);}}}
+\newcommand{\mysetminusSS}{\hbox{\tikz{\draw[line width=0.4pt,line cap=round] (1.5pt,0) -- (0,3pt);}}}
+
+\newcommand{\mysetminus}{\mathbin{\mathchoice{\mysetminusD}{\mysetminusT}{\mysetminusS}{\mysetminusSS}}}
+\let\setminus\mysetminus
+\definecolor{black}{rgb}{0,0,0}
+%Black Full Dual Graphs
+\def\BlackGraphVertices{\SetVertexNormal[Shape=circle, FillColor=black , LineColor=black , LineWidth=0.8pt]
+  \tikzset{VertexStyle/.append style = {inner sep=0.8pt,minimum size=0.3em,font = \tiny\bfseries}}}
+\let\BlackVertices\BlackGraphVertices
+
+\def\BlackEdges{  \SetUpEdge[lw=0.8pt,color=black ]
+   \tikzset{EdgeStyle/.append style = {shorten <=0.5pt,shorten >=0.5pt}}}
+  
+\def\BendedBlackEdges{  \SetUpEdge[lw=0.8pt,color=black ]
+   \tikzset{EdgeStyle/.append style = {shorten <=0.5pt,shorten >=0.5pt,bend left=30}}}
+
+% TYPE NAMES
+
+\def\FrobL{\raise 0.3pt\hbox{\scalebox{0.3}{$\,\sim\,$}}}
+\def\FrobDot{\hbox{$\hspace{0.6pt}\raise4pt\hbox{\rlap{\scalebox{0.26}{$\kern 0.14em\sim$}}}\cdot\hspace{0.6pt}$}}
+\def\FrobCol{\hbox{$\hspace{0.6pt}\raise5pt\hbox{\rlap{\scalebox{0.26}{$\kern 0.14em\sim$}}}\hbox{:}\hspace{0.6pt}$}}
+\def\FrobO{\hbox{$\hspace{0.6pt}\raise5pt\hbox{\rlap{\scalebox{0.4}{$\>\sim$}}}\circ\hspace{0.6pt}$}}
+\def\FrobX{\hbox{$\hspace{0.6pt}\raise5pt\hbox{\rlap{\scalebox{0.4}{$\kern 0.6em\sim$}}}\times\hspace{0.6pt}$}}
+
+\def\FrobDot{\raise1pt\hbox{\scalebox{0.7}{$\sim$}}}
+\let\FrobCol\FrobDot
+
+\makeatletter
+\def\hetype#1{\hbox{$\tn@main#1\tn@end\tn@end$}}
+\def\tn@und#1#2{{\tn@dound #2\tn@end\tn@end}\tn@main}
+\def\tn@tri#1#2#3{{\smash{\raise2pt\hbox{$\scriptscriptstyle #3$}}}\tn@main}
+\def\tn@main#1{%
+   \ifx#1\tn@end\relax\else   
+   \ifx#1__\expandafter\tn@und\else
+   \ifx#1^ ^\expandafter\tn@tri\else     
+   \ifx#1.\hbox{$\cdot$}\else
+   \ifx#1:\hbox{:}\else
+   \ifx#1o\hbox{$\hspace{0.6pt}\circ\hspace{0.6pt}$}\else
+   \ifx#1x\hbox{$\hspace{0.6pt}\times\hspace{0.6pt}$}\else   
+   \ifx#1I\hbox{I}\else   
+   \ifx#1U\hbox{U}\else   
+   #1\fi\fi\fi\fi\fi\fi
+   \expandafter\expandafter\expandafter\expandafter
+   \expandafter\expandafter\expandafter\tn@main\fi\fi\fi}
+\def\tn@dound#1{%
+  \ifx#1\tn@end\relax\else
+  \ifx#1~\hbox{$\FrobL$}\else #1\fi\expandafter\tn@dound\fi}
+\let\tn@end\relax
+\makeatother
+
+
+
