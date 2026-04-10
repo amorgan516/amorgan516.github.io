@@ -10,6 +10,8 @@
 \contentsline {subsection}{\tocsubsection {}{4.1}{Selmer structures}}{5}{subsection.4.1}%
 \contentsline {subsection}{\tocsubsection {}{4.2}{Selmer groups of abelian varieties}}{6}{subsection.4.2}%
 \contentsline {subsection}{\tocsubsection {}{4.3}{$2$-Selmer groups in quadratic twist families}}{6}{subsection.4.3}%
-\contentsline {subsection}{\tocsubsection {}{4.4}{Parity of Selmer ranks}}{8}{subsection.4.4}%
-\contentsline {section}{\tocsection {}{}{References}}{9}{section*.2}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Parity of ranks}}{8}{subsection.4.4}%
+\contentsline {section}{\tocsection {}{5}{Rational points on Kummer varieties I}}{9}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Extensions defined by cocyles}}{9}{subsection.5.1}%
+\contentsline {section}{\tocsection {}{}{References}}{10}{section*.2}%
 \contentsfinish 
