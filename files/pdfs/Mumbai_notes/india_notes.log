@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  10 APR 2026 09:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  10 APR 2026 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1454,22 +1454,26 @@ LaTeX Font Info:    Trying to load font information for U+euf on input line 460
 
 (C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [9] [10] [11] (india_notes.aux)
+) [9] [10] [11] [12] (india_notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `india_notes.out' has not changed.
-(rerunfilecheck)             Checksum: 704CA636423DE98BFC1FA722C1FDCB7F;1154.
+(rerunfilecheck)             Checksum: DED4A09C26B032C88E2DB32CC5BEBE66;1141.
  ) 
 Here is how much of TeX's memory you used:
- 32732 strings out of 474479
- 639906 string characters out of 5740723
- 1944542 words of memory out of 5000000
- 54177 multiletter control sequences out of 15000+600000
+ 32748 strings out of 474479
+ 640228 string characters out of 5740723
+ 1945542 words of memory out of 5000000
+ 54185 multiletter control sequences out of 15000+600000
  576723 words of font info for 91 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 116i,8n,121p,3252b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,9n,121p,3252b,693s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecbx0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\tcrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/
@@ -1499,15 +1503,16 @@ ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Adam Morgan/AppDa
 ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Ada
 m Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10
 .pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/euler/eufm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Adam Morgan/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Adam Mo
-rgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pf
-b><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cyrillic/wncyr10.pfb>
-Output written on india_notes.pdf (11 pages, 389387 bytes).
+fonts/euler/eufm5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/euler/eufm7.pfb><C:/Users/Adam Morgan/AppData/Local/Prog
+rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Adam Morga
+n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+<C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/symbols/msbm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cyrillic/wncyr10.pfb>
+Output written on india_notes.pdf (12 pages, 408780 bytes).
 PDF statistics:
- 729 PDF objects out of 1000 (max. 8388607)
- 74 named destinations out of 1000 (max. 500000)
+ 754 PDF objects out of 1000 (max. 8388607)
+ 82 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
