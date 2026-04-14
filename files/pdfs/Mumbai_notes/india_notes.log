@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  12 APR 2026 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  14 APR 2026 09:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1479,6 +1479,16 @@ Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  []
 
 [9] [10]
+Overfull \hbox (8.35457pt too wide) in paragraph at lines 588--589
+[]\T1/cmr/bx/n/10 Claim. \T1/cmr/m/n/10 Sup-pose that $\OML/cmm/m/it/10 ^^_ \OT
+1/cmr/m/n/10 : \OML/cmm/m/it/10 G[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 ^^V[]$ 
+\T1/cmr/m/n/10 is a qua-dratic char-ac-ter such that $\OML/cmm/m/it/10  \OMS/c
+msy/m/n/10 2 [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]\OT1/cmr/m/n/10 )$ \T1/cm
+r/m/n/10 and $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]\OT1/cmr/m/n/10 ) \OM
+S/cmsy/m/n/10 ^^U
+ []
+
+
 Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
  (NOTES UNDER CONSTRUCTION) []
@@ -1490,7 +1500,13 @@ Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  (NOTES UNDER CONSTRUCTION) []
  []
 
-[13] (india_notes.aux)
+[13] [14]
+Overfull \hbox (27.74393pt too wide) has occurred while \output is active
+ \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
+ (NOTES UNDER CONSTRUCTION) []
+ []
+
+[15] (india_notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1499,13 +1515,13 @@ Package rerunfilecheck Info: File `india_notes.out' has not changed.
 (rerunfilecheck)             Checksum: DED4A09C26B032C88E2DB32CC5BEBE66;1141.
  ) 
 Here is how much of TeX's memory you used:
- 32766 strings out of 474479
- 640487 string characters out of 5740723
- 1945542 words of memory out of 5000000
- 54195 multiletter control sequences out of 15000+600000
+ 32779 strings out of 474479
+ 640747 string characters out of 5740723
+ 1946542 words of memory out of 5000000
+ 54204 multiletter control sequences out of 15000+600000
  577195 words of font info for 93 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 116i,9n,121p,3252b,564s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,9n,121p,3252b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecbx0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\tcrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/
@@ -1542,9 +1558,9 @@ n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 <C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /symbols/msbm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cyrillic/wncyr10.pfb>
-Output written on india_notes.pdf (13 pages, 423459 bytes).
+Output written on india_notes.pdf (15 pages, 436621 bytes).
 PDF statistics:
- 787 PDF objects out of 1000 (max. 8388607)
- 90 named destinations out of 1000 (max. 500000)
+ 811 PDF objects out of 1000 (max. 8388607)
+ 94 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

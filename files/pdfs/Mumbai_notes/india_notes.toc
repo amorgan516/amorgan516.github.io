@@ -16,5 +16,5 @@
 \contentsline {subsection}{\tocsubsection {}{5.2}{Extensions defined by cocyles}}{10}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{Quadratic characters with specified local behaviour}}{11}{subsection.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.4}{Existence of rational points on Kummer varieties}}{11}{subsection.5.4}%
-\contentsline {section}{\tocsection {}{}{References}}{13}{section*.2}%
+\contentsline {section}{\tocsection {}{}{References}}{14}{section*.2}%
 \contentsfinish 
