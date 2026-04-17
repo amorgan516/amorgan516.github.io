@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  14 APR 2026 09:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  17 APR 2026 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1442,14 +1442,14 @@ Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  []
 
 [3]
-Overfull \hbox (8.27737pt too wide) in paragraph at lines 191--192
-[]\T1/cmr/m/it/10 Remark \T1/cmr/m/n/10 2.8\T1/cmr/m/it/10 . []\T1/cmr/m/n/10 P
-ropo-si-tion [][]2.7[][] is par-tic-u-larly use-ful when con-sid-er-ing the be-
+Overfull \hbox (8.27737pt too wide) in paragraph at lines 197--198
+[]\T1/cmr/m/it/10 Remark \T1/cmr/m/n/10 2.9\T1/cmr/m/it/10 . []\T1/cmr/m/n/10 P
+ropo-si-tion [][]2.8[][] is par-tic-u-larly use-ful when con-sid-er-ing the be-
 haviour of Selmer/Shafarevich--
  []
 
 [4]
-Overfull \hbox (3.91887pt too wide) in paragraph at lines 252--253
+Overfull \hbox (3.91887pt too wide) in paragraph at lines 258--259
 []\T1/cmr/m/n/10 See [[][]NSW08[][], Corol-lary 7.2.6] for non-archimedean $\OM
 L/cmm/m/it/10 v$ \T1/cmr/m/n/10 and op. cit. The-o-rem 7.2.17 for archimedean
  []
@@ -1467,7 +1467,7 @@ Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  []
 
 [7] [8]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 460
+LaTeX Font Info:    Trying to load font information for U+euf on input line 484
 .
 
 (C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
@@ -1479,7 +1479,13 @@ Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  []
 
 [9] [10]
-Overfull \hbox (8.35457pt too wide) in paragraph at lines 588--589
+Overfull \hbox (27.74393pt too wide) has occurred while \output is active
+ \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
+ (NOTES UNDER CONSTRUCTION) []
+ []
+
+[11] [12]
+Overfull \hbox (8.35457pt too wide) in paragraph at lines 635--636
 []\T1/cmr/bx/n/10 Claim. \T1/cmr/m/n/10 Sup-pose that $\OML/cmm/m/it/10 ^^_ \OT
 1/cmr/m/n/10 : \OML/cmm/m/it/10 G[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 ^^V[]$ 
 \T1/cmr/m/n/10 is a qua-dratic char-ac-ter such that $\OML/cmm/m/it/10  \OMS/c
@@ -1494,34 +1500,32 @@ Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  (NOTES UNDER CONSTRUCTION) []
  []
 
-[11] [12]
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
-
 [13] [14]
 Overfull \hbox (27.74393pt too wide) has occurred while \output is active
  \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
  (NOTES UNDER CONSTRUCTION) []
  []
 
-[15] (india_notes.aux)
+[15] [16] (india_notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `india_notes.out' has not changed.
 (rerunfilecheck)             Checksum: DED4A09C26B032C88E2DB32CC5BEBE66;1141.
  ) 
 Here is how much of TeX's memory you used:
- 32779 strings out of 474479
- 640747 string characters out of 5740723
+ 32811 strings out of 474479
+ 641511 string characters out of 5740723
  1946542 words of memory out of 5000000
- 54204 multiletter control sequences out of 15000+600000
+ 54232 multiletter control sequences out of 15000+600000
  577195 words of font info for 93 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 116i,9n,121p,3252b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,15n,121p,3252b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ecbx0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
 pen/ec/dpi600\tcrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/
@@ -1558,9 +1562,9 @@ n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
 <C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /symbols/msbm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/ty
 pe1/public/amsfonts/cyrillic/wncyr10.pfb>
-Output written on india_notes.pdf (15 pages, 436621 bytes).
+Output written on india_notes.pdf (16 pages, 448734 bytes).
 PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 94 named destinations out of 1000 (max. 500000)
+ 837 PDF objects out of 1000 (max. 8388607)
+ 98 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

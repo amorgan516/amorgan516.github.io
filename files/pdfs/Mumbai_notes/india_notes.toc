@@ -11,10 +11,10 @@
 \contentsline {subsection}{\tocsubsection {}{4.2}{Selmer groups of abelian varieties}}{6}{subsection.4.2}%
 \contentsline {subsection}{\tocsubsection {}{4.3}{$2$-Selmer groups in quadratic twist families}}{6}{subsection.4.3}%
 \contentsline {subsection}{\tocsubsection {}{4.4}{Parity of ranks}}{8}{subsection.4.4}%
-\contentsline {section}{\tocsection {}{5}{Rational points on Kummer varieties}}{9}{section.5}%
-\contentsline {subsection}{\tocsubsection {}{5.1}{Jacobians of genus $2$ curves}}{9}{subsection.5.1}%
+\contentsline {section}{\tocsection {}{5}{Rational points on Kummer varieties}}{10}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Jacobians of genus $2$ curves}}{10}{subsection.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.2}{Extensions defined by cocyles}}{10}{subsection.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.3}{Quadratic characters with specified local behaviour}}{11}{subsection.5.3}%
-\contentsline {subsection}{\tocsubsection {}{5.4}{Existence of rational points on Kummer varieties}}{11}{subsection.5.4}%
-\contentsline {section}{\tocsection {}{}{References}}{14}{section*.2}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Existence of rational points on Kummer varieties}}{12}{subsection.5.4}%
+\contentsline {section}{\tocsection {}{}{References}}{15}{section*.2}%
 \contentsfinish 
