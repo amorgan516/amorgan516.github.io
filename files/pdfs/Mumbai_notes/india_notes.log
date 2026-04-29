@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  18 APR 2026 09:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.3) (preloaded format=pdflatex 2025.3.13)  29 APR 2026 23:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1423,7 +1423,7 @@ Package hyperref Info: Link coloring ON on input line 87.
 Package xypdf Info: Line width: 0.39998pt on input line 87.
 
 Class amsart Warning: Abstract should precede \maketitle in AMS document classe
-s; reported on input line 99.
+s; reported on input line 100.
 
 (india_notes.toc)
 \tf@toc=\write6
@@ -1432,60 +1432,35 @@ s; reported on input line 99.
 
 
 Package amsrefs Warning: The form \cite{...}*{...} is recommended
-(amsrefs)                instead of \cite[...]{...} on input line 114.
+(amsrefs)                instead of \cite[...]{...} on input line 112.
+
+
+Package amsrefs Warning: Use of \cites is recommended instead of \cite 
+(amsrefs)                for multiple cites 'SwinDyer1995,skoroswin98,SkoroSwin
+Dyer2005,SwinDyer2000, SwinDyer2001,CT2001,witt07,HS16,Har19,MS24,mor2025' on i
+nput line 114.
 
 [1{C:/Users/Adam Morgan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-[2]
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
-
-[3]
-Overfull \hbox (8.27737pt too wide) in paragraph at lines 197--198
-[]\T1/cmr/m/it/10 Remark \T1/cmr/m/n/10 2.9\T1/cmr/m/it/10 . []\T1/cmr/m/n/10 P
-ropo-si-tion [][]2.8[][] is par-tic-u-larly use-ful when con-sid-er-ing the be-
-haviour of Selmer/Shafarevich--
- []
-
-[4]
-Overfull \hbox (3.91887pt too wide) in paragraph at lines 258--259
+[2] [3] [4] [5]
+Overfull \hbox (3.91887pt too wide) in paragraph at lines 270--271
 []\T1/cmr/m/n/10 See [[][]NSW08[][], Corol-lary 7.2.6] for non-archimedean $\OM
 L/cmm/m/it/10 v$ \T1/cmr/m/n/10 and op. cit. The-o-rem 7.2.17 for archimedean
  []
 
-
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
+[6] [7] [8]
+Overfull \hbox (1.43185pt too wide) in paragraph at lines 476--477
+[]\T1/cmr/bx/n/10 Theorem 4.13 \T1/cmr/m/n/10 ([[][]Mor19[][]], The-o-rem 10.12
+)\T1/cmr/bx/n/10 . []\T1/cmr/m/it/10 Let $\OT1/cmr/m/n/10 ^^F$ \T1/cmr/m/it/10 
+be a fi-nite set of places of $\OML/cmm/m/it/10 k$ \T1/cmr/m/it/10 con-tain-ing
+ all archimedean
  []
 
-[5] [6]
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
-
-[7] [8]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 484
+LaTeX Font Info:    Trying to load font information for U+euf on input line 497
 .
-
 (C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
-
-[9] [10]
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
-
-[11]
-Overfull \hbox (8.35457pt too wide) in paragraph at lines 639--640
+) [9] [10] [11] [12]
+Overfull \hbox (8.35457pt too wide) in paragraph at lines 653--654
 []\T1/cmr/bx/n/10 Claim. \T1/cmr/m/n/10 Sup-pose that $\OML/cmm/m/it/10 ^^_ \OT
 1/cmr/m/n/10 : \OML/cmm/m/it/10 G[] \OMS/cmsy/m/n/10 ! \OML/cmm/m/it/10 ^^V[]$ 
 \T1/cmr/m/n/10 is a qua-dratic char-ac-ter such that $\OML/cmm/m/it/10  \OMS/c
@@ -1494,19 +1469,14 @@ r/m/n/10 and $[] [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A[]\OT1/cmr/m/n/10 ) \OM
 S/cmsy/m/n/10 ^^U
  []
 
-[12]
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
+[13] [14] [15]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+162.
 
-[13] [14]
-Overfull \hbox (27.74393pt too wide) has occurred while \output is active
- \T1/cmr/m/n/7 RATIONAL POINTS ON KUMMER VARIETIES AND SWINNERTON-DYER'S METHOD
- (NOTES UNDER CONSTRUCTION) []
- []
-
-[15] (india_notes.aux)
+(C:\Users\Adam Morgan\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+[16] (india_notes.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -1515,52 +1485,53 @@ Package rerunfilecheck Info: File `india_notes.out' has not changed.
 (rerunfilecheck)             Checksum: DED4A09C26B032C88E2DB32CC5BEBE66;1141.
  ) 
 Here is how much of TeX's memory you used:
- 32810 strings out of 474479
- 641504 string characters out of 5740723
- 1945542 words of memory out of 5000000
- 54232 multiletter control sequences out of 15000+600000
- 577195 words of font info for 93 fonts, out of 8000000 for 9000
+ 32850 strings out of 474479
+ 642394 string characters out of 5740723
+ 1947542 words of memory out of 5000000
+ 54258 multiletter control sequences out of 15000+600000
+ 577508 words of font info for 94 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 116i,15n,121p,3252b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,15n,121p,3252b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecbx0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\tcrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/
-ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKT
+0\ectt0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecbx0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/
+ljfour/jknappen/ec/dpi600\tcrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKT
 eX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\Adam Morgan\AppDat
 a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0700.pk> <C:\Users\Adam M
-organ\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\
-Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1
+organ\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti0800.pk> <C:\
+Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1
 000.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/
-dpi600\eccc0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/
-jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\font
-s/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk><C:/Users/Adam Morgan/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Adam Morgan
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Us
-ers/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-mi5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmmi7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Adam Morgan/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Adam Morgan/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Adam M
-organ/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:
-/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
-/cmr7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr8.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Adam Morgan/AppData/Local/Progr
-ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Adam Morgan/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/Ada
-m Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/euler/eufm10
-.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/euler/eufm5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/euler/eufm7.pfb><C:/Users/Adam Morgan/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Users/Adam Morga
-n/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-<C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/symbols/msbm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cyrillic/wncyr10.pfb>
-Output written on india_notes.pdf (15 pages, 447878 bytes).
+dpi600\eccc1000.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\fonts/pk/ljfour/
+jknappen/ec/dpi600\eccc0800.pk> <C:\Users\Adam Morgan\AppData\Local\MiKTeX\font
+s/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\Adam Morgan\AppData\Local
+\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk><C:/Users/Adam Morgan/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
+/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi1
+0.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Adam Morgan/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Adam Mo
+rgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/
+Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Adam Morgan/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Adam Morgan/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Adam 
+Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
+C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+euler/eufm10.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/euler/eufm5.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/euler/eufm7.pfb><C:/Users/Adam Morgan/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/User
+s/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msbm7.pfb><C:/Users/Adam Morgan/AppData/Local/Programs/MiK
+TeX/fonts/type1/public/amsfonts/cyrillic/wncyr10.pfb>
+Output written on india_notes.pdf (16 pages, 463257 bytes).
 PDF statistics:
- 833 PDF objects out of 1000 (max. 8388607)
- 97 named destinations out of 1000 (max. 500000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 107 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
