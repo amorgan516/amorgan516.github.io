@@ -116,12 +116,20 @@ Instead of attempting to start with a general introduction to the method, we foc
 
 
 \subsection{Acknowledgements}
-This are notes from a mini-course given as part of the Thematic Programme on Rational Points, Algebraic Cycles and the Local-Global Principle at the Lodha Mathematical Sciences Institute, Mumbai, April 2026. I would like to thank the organisers of that programme, Jean-Louis Colliot-Thélène, Parimala Raman and Federico Scavia, for the opportunity to give the course. I would also like to thank the Lodha institute for the  excellent hospitality and working conditions provided, and everyone who attended the course for their questions and comments throughout. 
+These are notes from a mini-course given as part of the Thematic Programme on Rational Points, Algebraic Cycles and the Local-Global Principle at the Lodha Mathematical Sciences Institute, Mumbai, April 2026. I would like to thank the organisers of that programme, Jean-Louis Colliot-Thélène, Parimala Raman and Federico Scavia, for the opportunity to give the course. I would also like to thank the Lodha institute for the  excellent hospitality and working conditions provided, and everyone who attended the course for their questions and comments throughout. 
 
 \subsection{Notation/background}
-For a  field $k$, we will denote by $\bar{k}$ a fixed algebraic closure of $k$, $k^s\subseteq \bar{k}$ the separable closure of $k$ in $\bar{k}$, and $G_k=\textup{Gal}(k^s/k)$ the absolute Galois group of $k$. For a smooth projective variety $X$ over $k$ we write $\textup{Br}(X)$ for the Brauer group of $X$ and set
+For a  field $k$, we will denote by $\bar{k}$ a fixed algebraic closure of $k$, $k^s\subseteq \bar{k}$ the separable closure of $k$ in $\bar{k}$, and $G_k=\textup{Gal}(k^s/k)$ the absolute Galois group of $k$. 
+
+For a smooth projective variety $X$ over $k$ we write $\textup{Br}(X)$ for the Brauer group of $X$ and set
 \[\textup{Br}_1(X)=\ker\big(\textup{Br}(X)\to \textup{Br}(X_{k^s})\big).\] 
-We also write $\textup{Br}_0(X)$ for the image of $\textup{Br}(k)$ in $\textup{Br}(X)$. If $H^3(k,k^{s,\times})=0$ (e.g. if $k$ is a number field) then we have an isomorphism $\textup{Br}_1(X)/\textup{Br}_0(X)\cong H^1\big(k,\textup{Pic}(X_{\bar{k}})\big)$; see \cite[Proposition 4.3.2]{ctsko21} for details.
+We also write $\textup{Br}_0(X)$ for the image of $\textup{Br}(k)$ in $\textup{Br}(X)$. If $H^3(k,k^{s,\times})=0$ (e.g. if $k$ is a number field) then we have an isomorphism $\textup{Br}_1(X)/\textup{Br}_0(X)\cong H^1\big(k,\textup{Pic}(X_{\bar{k}})\big)$; see \cite[Proposition 4.3.2]{ctsko21} for details. In the case that $k$ is a number field, for a place $v$ of $k$ we denote by $k_v$ the completion of $k$ at $v$.  We say that $X$ is \textit{everywhere locally soluble} if $X(k_v)\neq \emptyset$ for all places $v$ of $k$. Equivalently, $X$ is everywhere locally soluble if $X(\mathbb{A}_k)\neq \emptyset$, where $\mathbb{A}_k$ denotes the Adele ring of $k$.  We say that $X$ satisfies the \textit{Hasse principle} if $X$ being everywhere locally soluble implies that $X(k)\neq \emptyset$. 
+
+We now briefly define the Brauer--Manin obstruction to the Hasse principle, referring to \cite[Chapter 12]{ctsko21} for details and examples. For each place $v$ of $k$, we denote by $\textup{Br}(k_v)$ the Brauer group of $k_v$ and by $\textup{inv}_v:\textup{Br}(k_v)\hookrightarrow \mathbb{Q}/\mathbb{Z}$ the local invariant map. There is a natural pairing 
+$X(\mathbb{A}_k)\times \textup{Br}(X)\to \mathbb{Q}/\mathbb{Z}$
+given by 
+\[\big((x_v)_v,\alpha\big)\mapsto \sum_{v\textup{ place of }k}\textup{inv}_v\alpha(x_v),\]
+where $\alpha(x_v)\in \textup{Br}(k_v)$ is the result of evaluating $\alpha \in\textup{Br}(X)$ at the local point $x_v\in  X(k_v)$. We denote by $X(\mathbb{A}_k)^{\textup{Br}(X)}$ the subset of $X(\mathbb{A}_k)$ consisting of elements pairing trivially with $\textup{Br}(X)$. By reciprocity for the Brauer group of $k$, we have $X(k)\subseteq X(\mathbb{A}_k)^{\textup{Br}(X)}$. In general, one can have $ X(\mathbb{A}_k)^{\textup{Br}(X)}=\emptyset$ even if $X(\mathbb{A}_k)\neq \emptyset$. In this case, one says that there is a \textit{Brauer--Manin obstruction} to the Hasse principle on $X$. We say that the Brauer--Manin obstruction is the only obstruction to the Hasse principle on $X$ if $X(\mathbb{A}_k)^{\textup{Br}(X)}\neq \emptyset$ implies that $X(k)\neq \emptyset$.  
 
 \section{The Cassels--Tate pairing}
 
@@ -153,7 +161,7 @@ The key property that the Cassels--Tate pairing has is that its left (resp. righ
 In his 1970 ICM talk  Manin \cite{Man70} defined what is now known as the Brauer--Manin obstruction, and observed the following. 
 
 \begin{theorem}[Manin] 
-Suppose that $\Sha(A)$ is finite. Then the Brauer--Manin obstruction explains all failures of the Hasse principle for torsors under $A$. 
+Suppose that $\Sha(A)$ is finite. Then the Brauer--Manin obstruction is the only obstruction to  the Hasse principle for torsors under $A$. 
 \end{theorem}
 
 \begin{proof}
@@ -164,7 +172,7 @@ The basic aim of Swinnerton-Dyer's method   is  to (provide a framework allowing
 
 \subsection{The obstruction to being alternating}
 
-Suppose now that $A$ admits a principal polarisation $\lambda:A \to A^\vee$. Via $\lambda$ we identify $A$ with $A^\vee$ and thus view the Cassels--Tate pairing as a $\mathbb{Q}/\mathbb{Z}$-valued bilinear pairing on $\Sha(A)$. As shown by Flach \cite{Fla90}, this pairing is antisymmetric. That is, for all $x,y\in \Sha(A)$, we have $\left \langle x,y\right \rangle_{\textup{CT}}=-\left \langle y,x\right \rangle_{\textup{CT}}$. In particular, we have $2\left \langle x,x\right \rangle_{\textup{CT}}=0$ for all $x\in \Sha(A)$. One can ask whether, moreover, the Cassels--Tate pairing is alternating (i.e.   $\left \langle x,x\right \rangle_{\textup{CT}}=0$ for all $x\in \Sha(A)$). This question was given a beautiful answer by Poonen and Stoll in \cite{MR1740984}. We recall their result. %For simplicity, we will assume in this subsection that $\Sha(A)$ is finite. To avoid this assumption, one can, for each prime $p$, work instead with the quotient of $\Sha(A)[p^\infty]$ by its maximal divisible subgroup; see \cite{MR1740984} for details.
+Suppose now that $A$ admits a principal polarisation $\lambda:A \to A^\vee$.\footnote{For each $\mathcal{L}\in \textup{Pic}(A_{\bar{k}})$, one has an associated homomorphism $\phi_{\mathcal{L}}:A_{\bar{k}}\to A_{\bar{k}}^{\vee}$ given by $\phi_{\mathcal{L}}(x)=\tau_{x}^*\mathcal{L}\otimes \mathcal{L}^{-1}$, where $\tau_x$ is translation by $x\in A(\bar{k})$; the homomorphism depends only on the class of $\mathcal{L}$ in the N\'{e}ron--Severi group $NS(A_{\bar{k}})$. A homomorphism $\lambda:A\to A^\vee$ is called a \textit{polarisation} if its base-change to $\bar{k}$ is equal to $\phi_\mathcal{L}$ for some ample $\mathcal{L}\in \textup{Pic}(A_{\bar{k}})$. A polarisation is \textit{principal} if it is an isomorphism.} Via $\lambda$ we identify $A$ with $A^\vee$ and thus view the Cassels--Tate pairing as a $\mathbb{Q}/\mathbb{Z}$-valued bilinear pairing on $\Sha(A)$. As shown by Flach \cite{Fla90}, this pairing is antisymmetric. That is, for all $x,y\in \Sha(A)$, we have $\left \langle x,y\right \rangle_{\textup{CT}}=-\left \langle y,x\right \rangle_{\textup{CT}}$. In particular, we have $2\left \langle x,x\right \rangle_{\textup{CT}}=0$ for all $x\in \Sha(A)$. One can ask whether, moreover, the Cassels--Tate pairing is alternating (i.e.   $\left \langle x,x\right \rangle_{\textup{CT}}=0$ for all $x\in \Sha(A)$). This question was given a beautiful answer by Poonen and Stoll in \cite{MR1740984}. We recall their result. %For simplicity, we will assume in this subsection that $\Sha(A)$ is finite. To avoid this assumption, one can, for each prime $p$, work instead with the quotient of $\Sha(A)[p^\infty]$ by its maximal divisible subgroup; see \cite{MR1740984} for details.
 
 We have a short exact sequence of $G_k$-modules 
 \[0 \to A^\vee(\bar{k})\to \textup{Pic}(A_{\bar{k}})\to NS(A_{\bar{k}})\to 0.\] 
@@ -190,7 +198,7 @@ is then checked to be a homomorphism, and the bilinear pairing $\widetilde{P}:M\
 
 
 \begin{remark} \label{rmk_sha_div}
-Let $\Sha_{\textup{div}}(A)$ denote the maximal divisible subgroup of $\Sha(A)$. Thus, the Cassels--Tate pairing give a non-degenerate pairing on $\Sha_{\textup{nd}}(A):=\Sha(A)/\Sha_{\textup{div}}(A)$. One still does not know unconditionally that $\Sha_{\textup{nd}}(A)$ is finite. However, for all primes $p$, its $p$-part is known to be finite. Corollary  \ref{PS:cor} then holds unconditionally for $\Sha_{\textup{nd}}(A)[2^\infty]$ (meanwhile,  $\Sha_{\textup{nd}}(A)[p^\infty]$ is the square of a finite abelian $p$-group for all odd primes $p$).
+Let $\Sha_{\textup{div}}(A)$ denote the maximal divisible subgroup of $\Sha(A)$. Thus, the Cassels--Tate pairing gives a non-degenerate pairing on $\Sha_{\textup{nd}}(A):=\Sha(A)/\Sha_{\textup{div}}(A)$. One still does not know unconditionally that $\Sha_{\textup{nd}}(A)$ is finite. However, for all primes $p$, its $p$-part is known to be finite. Corollary  \ref{PS:cor} then holds unconditionally for $\Sha_{\textup{nd}}(A)[2^\infty]$ (meanwhile,  $\Sha_{\textup{nd}}(A)[p^\infty]$ is the square of a finite abelian $p$-group for all odd primes $p$).
 \end{remark}
 
 
@@ -246,13 +254,13 @@ Now take $k$ to be a number field.  By a conjecture of Skorobogatov, one expects
  The idea here is to alter $\chi$ in such a way that $\alpha$ remains in the $2$-Selmer group at each step, but such that the $2$-Selmer group of $A^{\chi_{i+1}}$ is strictly smaller than that of $A^{\chi_{i}}$. If one can always do this, one eventually arrives at a situation where $\textup{Sel}_2(A^{\chi_n})$ is $1$-dimensional, generated by $\alpha$ (this can only be possible when $A(k)[2]=0$, but one can consider variants where $\textup{Sel}_2(A^{\chi_n})$ is generated by $\alpha$ and the image  of the $k$-rational $2$-torsion points, etc.).   
  \item[(3)] We have a surjective map $\textup{Sel}_2(A^{\chi_n})\to \Sha(A^{\chi_n})[2]$. If we are in a situation where finiteness of $\Sha(A^{\chi_n})$ implies that $\Sha(A^{\chi_n})[2]$ is even dimensional (e.g. if $G_k$ acts on $A[2]$ through the orthogonal group of some quadratic refinement of the Weil pairing) then, conditional on finiteness of Tate--Shafarevich groups, we must have  $\Sha(A^{\chi_n})[2]=0$. Thus, the class of $\alpha$ in $\Sha(A^{\chi_n})$ is trivial, hence $Y^\alpha(k)\neq \emptyset$. Thus also $X_\alpha(k)\neq \emptyset$. 
  \end{itemize}
- We will see later some situations where the strategy works in exactly this way. However, there are many others where this strategy runs into difficutly and additional tricks must be found to save it. A key recent innovation, due to Harpaz \cite{Har19}, is to incorporate a second descent step (more about this later). 
+ We will see later some situations where the strategy works in exactly this way. However, there are many others where this strategy runs into difficulty and additional tricks must be found to save it. A key recent innovation, due to Harpaz \cite{Har19}, is to incorporate a second descent step (more about this later). 
  
  
 
 \section{Selmer groups}
 
-We begin with the abstract famework of Selmer structures, before specialising to Selmer groups of abelian varieties. In this section, $k$ denotes a number field.
+We begin with the abstract framework of Selmer structures, before specialising to Selmer groups of abelian varieties. In this section, $k$ denotes a number field.
 
 \subsection{Selmer structures} Let $M$ be a finite $G_k$-module with exponent $n$.  Define the \textit{dual} of $M$, $M^\vee=\textup{Hom}(M, \mu_n)$. Define, for $v$ a non-archimedean place of $k$, the \textit{unramified subspace} 
 \[H^1_{\textup{ur}}(k_v,M):=\ker\left(H^1(k_v,M)\stackrel{\textup{res}}{\longrightarrow}H^1(k_v^{\textup{ur}},M)\right),\]
@@ -267,7 +275,7 @@ For each place $v$ of $k$, the local Tate pairing  is non-degenerate. Moreover, 
 \end{theorem}
 
 \begin{proof}
-See \cite[Corollary 7.2.6]{NSW08} for non-archimedean $v$ and op. cit. Theorem 7.2.17 for archimedean $v$. The claim about  unramified subspaces is op. cit. Theorem 7.2.15.
+See \cite[Corollary 7.2.6]{NSW08} for nonarchimedean $v$ and op. cit. Theorem 7.2.17 for archimedean $v$. The claim about  unramified subspaces is op. cit. Theorem 7.2.15.
 \end{proof}
 
 
@@ -309,7 +317,10 @@ Define the \textit{dual Selmer structure} $\mathcal{L}^\perp=\{\mathcal{L}_v^\pe
 
 \subsection{Selmer groups of abelian varieties}
 
-Let $A$ be a principally polarised abelian variety over $k$. We now specalise to the case that $M=A[n]$ for some integer $n\geq 2$. The assumption that $A$ is principally polarised means that $A[n]$ is self-dual via the Weil pairing. For each place $v$, taking Galois cohomology of the short exact sequence 
+Let $A$ be a principally polarised abelian variety over $k$. We now specalise to the case that $M=A[n]$ for some integer $n\geq 2$. The assumption that $A$ is principally polarised implies that $A[n]$ is self-dual via the Weil pairing. We thus view the local Tate pairing as a (non-degenerate, bilinear) self-pairing
+\[\left \langle ~,~\right \rangle_v:H^1(k_v,A[n])\times H^1(k_v,A[n])\to \mathbb{Q}/\mathbb{Z}.\]
+
+For each place $v$, taking Galois cohomology of the short exact sequence 
 \begin{equation} \label{kummer_seq}
 0\to A[n] \to A \stackrel{n}{\longrightarrow}A\to 0
 \end{equation}
@@ -318,7 +329,7 @@ induces a connecting map $\delta_v:A(k_v)/nA(k_v)\hookrightarrow H^1(k_v,A[n])$.
 \begin{lemma} \label{basic_conds_lemma}
 Let $v$ be a place of $k$.
 \begin{itemize}
-\item[(i)] $\delta(A(k_v))$ is its own orthogonal complement with respect to the local Tate pairing,
+\item[(i)] $\delta_v(A(k_v))$ is its own orthogonal complement with respect to the local Tate pairing,
 \item[(ii)] Suppose that $v\nmid n$ is a nonarchimedean place of $k$. Then
 \[\#\delta(A(k_v))=\#A(k_v)[n].\] 
 Moreover, if $A$ has good reduction at $v$, then $\delta(A(k_v))=H^1_{\textup{ur}}(k_v,A[n])$.
@@ -372,7 +383,7 @@ V_{S}  = \textup{im}\left(\textup{Sel}_2(A) \stackrel{\oplus_{v\in S}\textup{res
 \]
 and define $V_{S}^{\chi}$ similarly as 
 \[
-V_{S}  = \textup{im}\left(\textup{Sel}_2(A^\chi) \stackrel{\oplus_{v\in S}\textup{res}_v}{\longrightarrow} \bigoplus_{v\in S} \frac{\textup{im}(\delta_v^\chi)}{\textup{im}(\delta_v)\cap \textup{im}(\delta_v^\chi)}\right).
+V_{S}^\chi  = \textup{im}\left(\textup{Sel}_2(A^\chi) \stackrel{\oplus_{v\in S}\textup{res}_v}{\longrightarrow} \bigoplus_{v\in S} \frac{\textup{im}(\delta_v^\chi)}{\textup{im}(\delta_v)\cap \textup{im}(\delta_v^\chi)}\right).
 \]  
 The following result, stated and proved by Harpaz as  \cite{Har19}*{Lemma 3.27}, has its origins in work of Mazur--Rubin \cite{MazRub2010}*{Section 3}.
 
@@ -450,7 +461,7 @@ Let $\Sigma$ be a finite set of places of $k$ containing all archimedean places,
 
 \subsection{Parity of ranks}
 
-A predicted consequence of the Birch and Swinnerton-Dyer conjecture is the parity conjecture: 
+A predicted consequence of the Birch and Swinnerton-Dyer conjecture together with the predicted functional equal for the $L$-function of $A$ is the parity conjecture: 
 \[(-1)^{\textup{rk}A}=w(A).\]
 Here the right hand side is the \textit{global root number} of $A$. By definition, $w(A)\in \{\pm 1\}$ is a product of \textit{local root numbers}:
 \[w(A)=\prod_{v\textup{ place of }k}w(A/k_v).\]
@@ -481,8 +492,10 @@ Moreover, for any place $v$,  if $\chi_v$ is the trivial character then $\Omega_
 
 \begin{remark} \label{rem:Selmer_parity}
 The fundamental exact sequence \eqref{eq: selmer_descent} (with $n=2$) shows that 
-\[\dim_{\mathbb{F}_2}\textup{Sel}_2(A) = \textup{rk}_2(A)+\dim_{\mathbb{F}_2} A(k)[2]+\dim_{\mathbb{F}_2}\Sha_{\textup{nd}}(A)[2].\]
- The first term, $\dim_{\mathbb{F}_2}A(k)[2]$, is constant in the quadratic twist familiy of $A$. 
+\begin{equation} \label{dimension_of_selmer_etc}
+\dim_{\mathbb{F}_2}\textup{Sel}_2(A) = \textup{rk}_2(A)+\dim_{\mathbb{F}_2} A(k)[2]+\dim_{\mathbb{F}_2}\Sha_{\textup{nd}}(A)[2].
+\end{equation}
+ The first term, $\dim_{\mathbb{F}_2}A(k)[2]$, is constant in the quadratic twist family of $A$. 
 Thus,  if we are in a situation where  $\dim_{\mathbb{F}_2}\Sha_{\textup{nd}}(A^\chi)[2]$ is even for \textit{all} quadratic twists of $A$ (as is the case when the class $c_2$ is zero, for example) then we deduce that the parity of $\dim_{\mathbb{F}_2}\textup{Sel}_2(A^\chi)$ is determined by $\{\textup{res}_v(\chi)\}_{v\in \Sigma}$ also. More precisely, in this situation we have 
 \[(-1)^{\dim \textup{Sel}_2(A^\chi)}=(-1)^{\dim \textup{Sel}_2(A)}\prod_{v\in \Sigma}\Omega_v(\textup{res}_v(\chi)).\]
 \end{remark}
@@ -495,7 +508,7 @@ While it is not known that the local invariants $\Omega_v(\chi_v)$ agree with th
  Suppose $v\nmid 2\infty$ is a place of $k$ such that $A$ has semistable reduction at $v$, and such that the group $\Phi$ of geometric connected components of the special fibre of the N\'{e}ron model of $A$ over $k_v$ has odd order. Let $\chi$ be the unique non-trivial unramified quadratic character of $G_{k_v}$.
  \begin{itemize}
  \item[(i)] We have \[\Omega_v(\chi)=(-1)^{\mathfrak{f}(A/k_v)},\]
- where $\mathfrak{f}(A/k_v)$ denotes the conductor exponent of $A$ at $v$.
+ where $\mathfrak{f}(A/k_v)$ denotes the conductor exponent of $A$ at $v$.\footnote{That is, the conductor exponent associated to the $\ell$-adic Tate module of $A$ for any prime $\ell$  with $v\nmid \ell$; see \cite[Section 2]{Serre_1970} for the definition.}
  \item[(ii)] We have $\delta(A(k_v))=H^1_{\textup{ur}}(k_v,A[2])=\delta(A^\chi(k_v))$.
  \end{itemize}   
 \end{proposition}
@@ -570,7 +583,7 @@ We have
 \end{condition}
 
 \begin{lemma} \label{semidirect_product_lem}
-Suppose that Condition \ref{cond:simple} is satisfied. Suppose also that $T$ is $\mathbb{F}_2$-linearly indepdendent. 
+Suppose that Condition \ref{cond:simple} is satisfied. Suppose also that $T$ is $\mathbb{F}_2$-linearly independent. 
 \begin{itemize}
 \item[(i)] $\varphi_T:\textup{Gal}(k_T/k)\to A[2]^T\rtimes G$ is an isomorphism. 
 \item[(ii)] Let $k_T^{\textup{ab}}$ denote the maximal abelian subextension of $k_T/k$. Then $k_T^{\textup{ab}}\subseteq k(A[2])$.
@@ -621,19 +634,19 @@ Exactness at the middle term of the Poitou--Tate exact sequence (see, for exampl
 The following is a result of Harpaz--Skorobogatov \cite[Theorem B]{HS16} (see \cite[Theorem 2.3]{HS16} for a higher dimensional generalisation). We give a slight variant of their argument, incorporating results on the parity of ranks to enable one to twist only by characters that are trivial at all places of bad reduction. 
  
  \begin{theorem}[Harpaz--Skorobogatov] \label{thm:H_S}
-Let $f(x)\in \mathcal{O}_k[x]$ be a separable monic polynomial of degree $5$ and let $C:y^2=f(x)$ be the corresponding genus $2$ curve. Let $A$ be the Jacobian of $C$. Suppose that $\textup{Gal}(f)\cong S_{5}$ and that there is a prime ideal $\mathfrak{p}$ with $\textup{ord}_{\mathfrak{p}}\textup{disc}(f)=1$. Let $\alpha \in H^1(k,A[2])$ and suppose that $\alpha$ is unramified at $\mathfrak{p}$. Assume that the Tate--Shafarevich group of each quadratic twist of $A$ is finite. Then the Kummer surface $X_\alpha$ satisfies the Hasse principle. 
+Let $f(x)\in \mathcal{O}_k[x]$ be a separable monic polynomial of degree $5$ and let $C:y^2=f(x)$ be the corresponding genus $2$ curve. Let $A$ be the Jacobian of $C$. Suppose that $\textup{Gal}(f)\cong S_{5}$ and that there is a odd prime ideal $\mathfrak{p}$ with $\textup{ord}_{\mathfrak{p}}\textup{disc}(f)=1$. Let $\alpha \in H^1(k,A[2])$ and suppose that $\alpha$ is unramified at $\mathfrak{p}$. Assume that the Tate--Shafarevich group of each quadratic twist of $A$ is finite. Then the Kummer surface $X_\alpha$ satisfies the Hasse principle. 
  \end{theorem}
  
  We begin with a lemma. The key input in its proof is Lemma \ref{approximating_extensions_lemma}. We remark that this lemma can be replaced by an application of the fibration method. This approach relates the existence of  a character as in the statement to the vanishing of a suitable vertical Brauer group and gives a more geometric/conceptual approach to this part of the argument. See \cite[Proposition 6.2]{HS16} and the references therein for details. We have elected to argue via Lemma \ref{approximating_extensions_lemma} instead due to the extra setup involved in the fibration method approach. 
  
- \begin{lemma}
+ \begin{lemma} \label{existence_of_nice_character}
 Take all the notation and assumptions of Theorem \ref{thm:H_S}. Suppose that $\alpha \neq 0$ and   $X_\alpha(\mathbb{A}_k)\neq \emptyset$. Then there is a quadratic character $\chi_0:G_k\to \mu_2$ such that $\alpha \in \textup{Sel}_2(A^{\chi_0})$ and $\dim \textup{Sel}_2(A^{\chi_0})\equiv 1 ~(\textup{mod }2)$. 
  \end{lemma}
  
  \begin{proof}
 Let $\Sigma$ be a finite set of places containing all places dividing $2$, all archimedean places and all places of bad reduction for $A$.  The assumption that $X_\alpha(\mathbb{A}_k)\neq \emptyset$ means that for each place $v\in \Sigma\setminus \{\mathfrak{p}\}$ there is a local quadratic character $\chi_v:G_{k_v}\to \mu_2$ such that $Y_\alpha^{\chi_v}(k_v)\neq \emptyset$. That is, such that $\textup{res}_v(\alpha)\in \textup{im}(\delta_v^{\chi_v})$. 
 
-The assumptions on the special prime $\mathfrak{p}$ entail that the group of geometric connected components of the special fibre of the N\'{e}ron model of $A$ over $k_\mathfrak{p}$ is trivial and that $\mathfrak{f}(A/k_v)=1$ (cf. \cite[Proof of Corollary 2.4]{HS16}). Let $\psi_\mathfrak{p}$ be the unique non-trivial unramified quadratic character. Since $\alpha$ is unramified at $\mathfrak{p}$, it follows from Proposition \ref{prop:Neron_model}(ii) that $\alpha$ lies in both $\textup{im}(\delta_v)$ and $\textup{im}(\delta_v^{\psi_{\mathfrak{p}}})$. Since $\mathfrak{f}(A/k_v)$ is odd, by Proposition \ref{prop:Neron_model}(i), Theorem \ref{Thm:parity} and Remark \ref{rem:Selmer_parity} we can,  choosing $\chi_{\mathfrak{p}}$ to be either the trivial character or non-trivial unramified character as appropriate,  ensure that $\dim \textup{Sel}_2(A^\chi)$ is odd for any global character $\chi:G_k\to \mu_2$ such that $\textup{res}_v(\chi)=\chi_v$ for all $v\in \Sigma$. For any such $\chi$, we further have $\textup{res}_{v}(\alpha)\in \textup{im}(\delta_v^{\chi})$ for each $v\in \Sigma$.
+The assumptions on the special prime $\mathfrak{p}$ entail that the  geometric   special fibre of the N\'{e}ron model of $A$ over $k_\mathfrak{p}$ is connected and that $\mathfrak{f}(A/k_\mathfrak{p})=1$ (cf. \cite[Proof of Corollary 2.4]{HS16}). Let $\psi_\mathfrak{p}$ be the unique non-trivial unramified quadratic character. Since $\alpha$ is unramified at $\mathfrak{p}$, it follows from Proposition \ref{prop:Neron_model}(ii) that $\alpha$ lies in both $\textup{im}(\delta_\mathfrak{p})$ and $\textup{im}(\delta_\mathfrak{p}^{\psi_{\mathfrak{p}}})$. Since $\mathfrak{f}(A/k_\mathfrak{p})$ is odd, by Proposition \ref{prop:Neron_model}(i), Theorem \ref{Thm:parity} and Remark \ref{rem:Selmer_parity} we can,  choosing $\chi_{\mathfrak{p}}$ to be either the trivial character or non-trivial unramified character as appropriate,  ensure that $\dim \textup{Sel}_2(A^\chi)$ is odd for any global character $\chi:G_k\to \mu_2$ such that $\textup{res}_v(\chi)=\chi_v$ for all $v\in \Sigma$. For any such $\chi$, we further have $\textup{res}_{v}(\alpha)\in \textup{im}(\delta_v^{\chi})$ for each $v\in \Sigma$.
 
 Let $T=\{\alpha\}$ and let $\widetilde{\alpha}$ be a $1$-cocycle representing $\alpha$. Lemma \ref{hyperelliptic_twisting_nonsense} and Lemma \ref{semidirect_product_lem} together show that the map $\varphi_T:\textup{Gal}(k_T/k)\to A[2]\rtimes \textup{Gal}(f)$, given by $\sigma \mapsto (\widetilde{\alpha},\bar{\sigma})$, is an isomorphism. We also deduce from Lemma \ref{semidirect_product_lem} that the maximal abelian subextension of $k_T/k$ is $k(\sqrt{\textup{disc}(f)})$. Let $\mathcal{C}\subseteq \textup{Gal}(k_T/k)$ be the set of elements conjugate to an element of $\varphi_T^{-1}(0\times \textup{Gal}(f))$. Since this contains an element acting on the roots of $f(x)$ as an odd permutation, the set $\mathcal{A}(\mathcal{C})$ in Lemma \ref{approximating_extensions_lemma} is trivial. We deduce the existence of a global quadratic character $\chi$ with $\textup{res}_v(\chi)=\chi_v$ for all $v\in \Sigma$ and such that, outside $\Sigma$, $\chi$ is ramified only at primes $\mathfrak{q}$ for which $\textup{Frob}_{\mathfrak{q}}\in \mathcal{C}$. By construction, $\textup{res}_{\mathfrak{q}}(\alpha)=0$ for all such primes. This, combined with the choice of $\{\chi_v\}_{v\in \Sigma}$, ensures that $\alpha\in \textup{Sel}_2(A^\chi)$, completing the proof.
  \end{proof}
@@ -643,7 +656,7 @@ Let $T=\{\alpha\}$ and let $\widetilde{\alpha}$ be a $1$-cocycle representing $\
  
  Since $\deg(f)=5$ the class $c_2$ parameterising quadratic refinements of the Weil pairing is zero (by the discussion preceding Lemma \ref{hyperelliptic_twisting_nonsense}) . Thus, conditional on finiteness of Tate--Shafarevich groups, we have $\dim \Sha(A^{\chi})[2]\equiv 0\pmod 2$ for all quadratic characters $\chi$ (cf. Proposition \ref{PS_quad_refinement_prop}). 
  
-Let $\chi_0:G_k\to \mu_2$ be a character afforded by Lemma \ref{approximating_extensions_lemma}, so that  $\alpha \in \textup{Sel}_2(A^{\chi_0})$ and $\dim \textup{Sel}_2(A^{\chi_0})\equiv 1 ~(\textup{mod }2)$.  
+Let $\chi_0:G_k\to \mu_2$ be a character afforded by Lemma \ref{existence_of_nice_character}, so that  $\alpha \in \textup{Sel}_2(A^{\chi_0})$ and $\dim \textup{Sel}_2(A^{\chi_0})\equiv 1 ~(\textup{mod }2)$.  
  
  
 % Combining Lemma \ref{hyperelliptic_twisting_nonsense} and Lemma \ref{semidirect_product_lem} we see that the extension of $k_\alpha/k$ defined by  $\alpha$   has Galois group $A[2]\rtimes S_5$. Moreover, the maximal abelian subextension of $k_\alpha/k$ is $k(\sqrt{\textup{disc}(f)})/k$. 
@@ -653,7 +666,7 @@ Let $\chi_0:G_k\to \mu_2$ be a character afforded by Lemma \ref{approximating_ex
 \textbf{Claim.} Suppose that $\chi:G_k\to \mu_2$ is a quadratic character such that $\alpha \in \textup{Sel}_2(A^\chi)$ and $\dim \textup{Sel}_2(A^\chi)\geq 3$. Then there is a quadratic character $\chi':G_k\to \mu_2$ such that $\alpha \in \textup{Sel}_2(A^{\chi'})$ and $\dim \textup{Sel}_2(A^{\chi'})=\dim \textup{Sel}_2(A^\chi)-2$. 
  
 
-\textbf{Proof of claim.} To ease notation, take $\alpha_1:=\alpha$. Extend $\alpha_1$ to a basis $T=\{\alpha_1,...,\alpha_t\}$ for $\textup{Sel}_2(A^\chi)$. As above,  the assumptions of Lemma \ref{semidirect_product_lem} are satisfied. Thus, representing each $\alpha_i$ by a $1$-cocycle $\widetilde{\alpha}_i$, the resulting homomorphism 
+\textbf{Proof of claim:} To ease notation, take $\alpha_1:=\alpha$. Extend $\alpha_1$ to a basis $T=\{\alpha_1,...,\alpha_t\}$ for $\textup{Sel}_2(A^\chi)$. As above,  the assumptions of Lemma \ref{semidirect_product_lem} are satisfied. Thus, representing each $\alpha_i$ by a $1$-cocycle $\widetilde{\alpha}_i$, the resulting homomorphism 
 $\varphi_T:\textup{Gal}(k_T/k)\to A[2]^t\rtimes \textup{Gal}(f)$, given by 
 \[\sigma \mapsto (\widetilde{\alpha}_1(\sigma),...,\widetilde{\alpha}_t(\sigma),\bar{\sigma})\] is an isomorphism (here, as before, $\bar{\sigma}$ denotes the image of $\sigma$  in $ \textup{Gal}(f)$). 
 
@@ -662,7 +675,7 @@ Let $\widetilde{\Sigma}\supseteq \Sigma$ be a finite set of places containing al
 Note that $t=\dim\textup{Sel}_2(A^\chi)\geq 3$ by assumption. Fix $\sigma \in \textup{Gal}(k_\mathfrak{m}k_T/k)$ such that:
 \begin{itemize}
 \item $\sigma|_{k_\mathfrak{m}}=1,$
-\item $\varphi_T(\sigma)=(0,x_1,x_2,0,...,0, \tau)$ where $\tau \in \textup{Gal}(f)$ is a double transposition and $\{x_1, x_2\}$ is a basis for the $2$-dimensional $\mathbb{F}_2$-vector space $A[2]/(\tau-1)A[2]$.  
+\item $\varphi_T(\sigma)=(0,x_2,x_3,0,...,0, \tau)$ where $\tau \in \textup{Gal}(f)$ is a double transposition and $\{x_2, x_3\}$ is a basis for the $2$-dimensional $\mathbb{F}_2$-vector space $A[2]/(\tau-1)A[2]$.  
 \end{itemize}
 To see that such an element exists we are using: that $\varphi_T$ is an isomorphism, that $k_\mathfrak{m}/k$ is abelian, that the maximal abelian subextension of $k_T/k$ is $k(\sqrt{\textup{disc}(f)})/k$ (by Lemma \ref{semidirect_product_lem}  and the assumption $\textup{Gal}(f)\cong S_5$), and that $\tau \in A_5$ necessarily acts trivially on $k(\sqrt{\textup{disc}(f)})= k_T\cap k_\mathfrak{m}$. 
 
@@ -671,25 +684,25 @@ Now choose a prime ideal $\mathfrak{q}\notin \widetilde{\Sigma}$ such that the F
 which evaluates cocycles at $\textup{Frob}_\mathfrak{q}$, 
 is surjective thanks to our choice of $\textup{Frob}_\mathfrak{q}\in \textup{Gal}(k_T/k)$ (in fact, the images of $\alpha_2$ and $\alpha_3$ span $A[2]/(\textup{Frob}_\mathfrak{q}-1)A[2]$). 
  We may thus apply Corollary \ref{cor:selmer-change} to $A^\chi$,  giving 
-\[\dim \textup{Sel}_2(A^{\chi'})=\dim \textup{Sel}_2(A^\chi)-\dim A(k_v)[2]=\dim \textup{Sel}_2(A^\chi)-2,\]
+\[\dim \textup{Sel}_2(A^{\chi'})=\dim \textup{Sel}_2(A^\chi)-\dim A(k_\mathfrak{q})[2]=\dim \textup{Sel}_2(A^\chi)-2,\]
 the final equality following from the fact that $\textup{Frob}_\mathfrak{q}$ acts on the roots of $f(x)$ as a double transposition.  Finally, since we chose $\sigma$ such that $\widetilde{\alpha}(\sigma)=0$, we see that $\textup{res}_\mathfrak{q}(\alpha)=0$. Thus $\alpha$ satisfies the Selmer conditions for $A^{\chi'}$ at $\mathfrak{q}$. Since the Selmer conditions for $A^\chi$ and $A^{\chi'}$ agree away from $\mathfrak{q}$, we deduce that $\alpha \in \textup{Sel}_2(A^{\chi'})$, completing the proof of the claim.
 
 To complete the proof of the theorem we apply the claim inductively, starting from $\chi=\chi_0$. Having arranged that $\dim \textup{Sel}_2(A^{\chi_0})$ is odd, we eventually arrive at a quadratic character $\chi'$ for which $\textup{Sel}_2(A^{\chi'})$ is one dimensional, generated by $\alpha$. As above, the fact that $\deg(f)=5$ ensures, conditional on finiteness of $\Sha(A^{\chi'})$, that $\dim \Sha(A^{\chi'})[2]\equiv 0 \pmod 2$.  As explained in Section \ref{subsec:basic_strategy}, this is enough to conclude that $X_{\alpha}(k)\neq \emptyset$.
  \end{proof}
  
  \begin{remark}
- The proof of this result in \cite[Theorem B]{HS16} is slightly different. Specifically, they do not initially arrange that $\dim \textup{Sel}_2(A^{\chi_0})$ is odd (removing the need for Theorem \ref{Thm:parity} in this case). Rather, they twist inductively by characters ramified at a single prime whose Frobenius element fixes a $1$-dimensional subspace of $A[2]$ (e.g. a $4$-cycle) in order to reduce the dimension of the $2$-Selmer group by $1$ at each step. However, by parity considerations, this is not possible to do with characters that are trivial locally at all places of bad reduction for $A$, all places over $2$ and all archimedean places; their characters all restrict to the non-trivial unramified character locally at the distinguished place $\mathfrak{p}$. One advantage of using double transpositions instead of $4$-cycles is that one can prove instances of Theorem \ref{thm:H_S} for other Galois groups such as $A_5$ (in fact, all transitive subgroups of $S_5$ save $C_5$; see \cite[Section 4]{MS24}).\footnote{The condition at the special prime $\mathfrak{p}$ must be sligthly modified for other groups since the current version precludes the discriminant from being a square.}
+ The proof of this result in \cite[Theorem B]{HS16} is slightly different. Specifically, they do not initially arrange that $\dim \textup{Sel}_2(A^{\chi_0})$ is odd (removing the need for Theorem \ref{Thm:parity} in this case). Rather, they twist inductively by characters ramified at a single prime whose Frobenius element fixes a $1$-dimensional subspace of $A[2]$ (e.g. a $4$-cycle) in order to reduce the dimension of the $2$-Selmer group by $1$ at each step. However, by parity considerations, this is not possible to do with characters that are trivial locally at all places of bad reduction for $A$, all places over $2$ and all archimedean places; their characters all restrict to the non-trivial unramified character locally at the distinguished place $\mathfrak{p}$. One advantage of using double transpositions instead of $4$-cycles is that one can prove instances of Theorem \ref{thm:H_S} for other Galois groups such as $A_5$ (in fact, all transitive subgroups of $S_5$ save $C_5$; see \cite[Section 4]{MS24}).\footnote{The condition at the special prime $\mathfrak{p}$ must be slightly modified for other groups since the current version precludes the discriminant from being a square.}
  \end{remark}
  
  
  
  We now briefly discuss the corresponding result where $\deg(f)=6$, which is a special case of \cite[Theorem 1.9]{mor2025}.
  
-  \begin{theorem}
+  \begin{theorem} \label{theorem:deg_6_case}
 Let $f(x)\in \mathcal{O}_k[x]$ be a separable monic polynomial of degree $6$ and let $C:y^2=f(x)$ be the corresponding genus $2$ curve. Let $A$ be the Jacobian of $C$. Suppose that $\textup{Gal}(f)\cong S_{6}$ and that there is a prime ideal $\mathfrak{p}$ with $\textup{ord}_{\mathfrak{p}}\textup{disc}(f)=1$. Let $\alpha \in H^1(k,A[2])$ and suppose that $\alpha$ is unramified at $\mathfrak{p}$. Assume that the Tate--Shafarevich group of each quadratic twist of $A$ is finite. Then the Kummer surface $X_\alpha$ satisfies the Hasse principle. 
  \end{theorem}
   
-Unlike the situation of Theorem \ref{thm:H_S}, the class $c_2\in H^1(k,A[2])$ paramterising quadratic refinements of the Weil pairing is now non-trivial.  Since this is the class  measuring the obstruction to the Cassels--Tate pairing being alternating,  for a quadratic character $\chi$ it is no longer possible to conclude that $\Sha(A^{\chi})[2]=0$ from the fact that $\dim\textup{Sel}^2(A^{\chi})=1$  alone. Moreover, one has $c_2 \in \textup{Sel}^2(A^{\chi})$ for \textit{all} quadratic characters $\chi$, so the most one could hope to obtain from the Mazur--Rubin twisting procedure is the existence of a final character $\chi_n$ such that $\textup{Sel}^2(A^{\chi_n})$ is generated by $\alpha$ and  $c_2$. 
+Unlike the situation of Theorem \ref{thm:H_S}, the class $c_2\in H^1(k,A[2])$ parameterising quadratic refinements of the Weil pairing is now non-trivial.  Since this is the class  measuring the obstruction to the Cassels--Tate pairing being alternating,  for a quadratic character $\chi$ it is no longer possible to conclude that $\Sha(A^{\chi})[2]=0$ from the fact that $\dim\textup{Sel}^2(A^{\chi})=1$  alone. Moreover, one has $c_2 \in \textup{Sel}^2(A^{\chi})$ for \textit{all} quadratic characters $\chi$, so the most one could hope to obtain from the Mazur--Rubin twisting procedure is the existence of a final character $\chi_n$ such that $\textup{Sel}^2(A^{\chi_n})$ is generated by $\alpha$ and  $c_2$. 
 
 To overcome these issues, one can incorporate second descent ideas in the spirit of Harpaz   \cite{Har19} and Smith \cite{smi16}, and study the variation of the Cassels--Tate pairing on the $2$-Selmer group under quadratic twist. Specifically, for a quadratic character $\chi$, we can pull back the Cassels--Tate pairing along the surjection $\textup{Sel}_2(A^\chi)\to \Sha(A^\chi)[2]$ to give a pairing
 \[\textup{CTP}_\chi:\textup{Sel}_2(A^\chi)\times \textup{Sel}_2(A^\chi)\to \tfrac{1}{2}\mathbb{Z}/\mathbb{Z}.\]
@@ -697,15 +710,15 @@ One can show that its kernel is $2\textup{Sel}_4(A^\chi)$, where $\textup{Sel}_4
 
 The strategy is as follows:\footnote{One could try to first twist to make the $2$-Selmer group as small as possible before moving on to the the study of the Cassels--Tate pairing, but this turns out not to be necessary for the argument.}
 \begin{itemize}
-\item as  in the degree $5$ case,   local solubility of the Kummer variety $X_\alpha$ implies the existence of a quadratic character $\chi_0$ such that $\alpha$ lies in $\textup{Sel}_2(A^{\chi_0})$ and   $\textup{rk}_2(A)$ is odd (and in particular positive),
-\item instead of twisting to shrink the $2$-Selmer group, use the Mazur--Rubin machinery to produce many quadratic twists all having odd $2^\infty$-Selmer rank and identical $2$-Selmer group to that of $A^{\chi_0}$. (This step uses the existence of elements $\sigma \in \textup{Gal}(f)$ such that $A[2]^\sigma=0$, e.g. $5$-cycles. The key point is that, if $\mathfrak{q}$ is a prime such that $A[2]^{\textup{Frob}_\mathfrak{q}}=0$ then $H^1(k_\mathfrak{q},A[2])=0$, hence the Selmer conditions at $\mathfrak{q}$ are vacuous.)
-\item as one varies over twists as in the previous step, show that the resulting Cassels--Tate pairings on the common $2$-Selmer group vary over all possible pairings subject to certain forced structure. 
-\item use the previous step to find a twist $\chi$ for which $\alpha$ generates the kernel of the corresponding Cassels--Tate pairing. To conclude from this, note that $\alpha$ is then the unique non-zero element lifting to the $4$-Selmer group of $A^\chi$. Since $A^\chi$ has odd  $2^\infty$-Selmer rank by construction, the only possibility, assuming finiteness of $\Sha(A^\chi/K)[2^\infty]$, is that $\alpha$ is in the image of $\delta:A(k)/2A(k)\to H^1(k,A[2])$, hence has trivial image in $\Sha(A^\chi)$. Thus $X_\alpha(k)\neq \emptyset$.
+\item[(1)] similarly to the degree $5$ case,  under the assumptions of the theorem, local solubility of the Kummer variety $X_\alpha$ implies the existence of a quadratic character $\chi_0$ such that $\alpha$ lies in $\textup{Sel}_2(A^{\chi_0})$ and   $\textup{rk}_2(A^{\chi_0})$ is odd (and in particular positive),
+\item[(2)] instead of twisting to shrink the $2$-Selmer group, use the Mazur--Rubin machinery to produce many quadratic twists all having odd $2^\infty$-Selmer rank and identical $2$-Selmer group to that of $A^{\chi_0}$,
+\item[(3)] as one varies over twists as in the previous step, show that the resulting Cassels--Tate pairings on the common $2$-Selmer group vary over all possible pairings subject to certain forced structure,
+\item[(4)] use the previous step to find a twist $\chi$ for which $\alpha$ generates the kernel of the corresponding Cassels--Tate pairing. To conclude from this, note that $\alpha$ is then the unique non-zero element lifting to the $4$-Selmer group of $A^\chi$. Since $A^\chi$ has odd  $2^\infty$-Selmer rank by construction, the only possibility, assuming finiteness of $\Sha(A^\chi/K)[2^\infty]$, is that $\alpha$ is in the image of $\delta:A(k)/2A(k)\to H^1(k,A[2])$, hence has trivial image in $\Sha(A^\chi)$. Thus $X_\alpha(k)\neq \emptyset$.
 \end{itemize}
 
- 
+The second step uses the existence of elements $\sigma \in \textup{Gal}(f)$ such that $A[2]^\sigma=0$, e.g. $5$-cycles. The key point is that, if $\mathfrak{q}$ is a prime such that $A[2]^{\textup{Frob}_\mathfrak{q}}=0$,  then $H^1(k_\mathfrak{q},A[2])=0$ hence the Selmer conditions at $\mathfrak{q}$ are vacuous; for this reason, such primes are referred to as `silent primes' in the recent work of Alpöge--Bhagava--Ho--Shnidman \cite{ABHS26}. 
 
-Regarding the third bullet point, the following general result is \cite[Theorem 1.14]{mor2025}. To state it, let $A/k$ be a principally polarised abelian variety and let $G=\textup{Gal}(k(A[2])/k)$. 
+Regarding the third step, the following general result is \cite[Theorem 1.14]{mor2025}. To state it, let $A/k$ be a principally polarised abelian variety and let $G=\textup{Gal}(k(A[2])/k)$. 
 \begin{condition} \label{genericity_cond}
 Suppose that:
 \begin{itemize}
@@ -714,8 +727,8 @@ Suppose that:
 \item[(C)] $H^1(G,A[2])\cap \textup{Sel}_2(A)=\left \langle c_2\right \rangle$ (we allow for the possibility that $c_2=0$).  
 \end{itemize}
 \end{condition}
-This condition holds, for example, if $G$ is the full symplectic group of automorphisms of $A[2]$ preserving the Weil pairing.
-This condition holds, for example, if $G$ is the full symplectic group of automorphisms of $A[2]$ preserving the Weil pairing.
+This condition holds, for example, if $G$ is the full symplectic group of automorphisms of $A[2]$ preserving the Weil pairing. 
+
 
 \begin{defi}
   Call a $\tfrac{1}{2}\mathbb{Z}/\mathbb{Z}$-valued bilinear pairing $P$ on $\textup{Sel}_2(A)$   \textit{admissible} if: $P(x,x)=P(x,c_2)$ for all $x\in \textup{Sel}_2(A),$  
@@ -737,9 +750,48 @@ Assume that Condition \ref{genericity_cond} holds. Let $P$ be any admissible pai
 \end{itemize}
 \end{theorem}
 
+We conclude these notes by explaining how to apply this result to carry  out the fourth step of the strategy outlined above and complete the proof of Theorem \ref{theorem:deg_6_case}. Thus, we suppose we are in the situation of Theorem \ref{theorem:deg_6_case}. We can suppose that $\alpha\neq 0$ since otherwise $X_\alpha$ trivially has a $k$-point. We can also suppose that $c_2\neq \alpha$. Indeed, $X_{c_2}$ is the  minimal desingularisation of the quotient of $\textup{Pic}^{1}_{C/k}$ by the involution induced from the hyperelliptic involution $\iota$ on $C$. The natural embedding of $C$ into $\textup{Pic}^{1}_{C/k}$  induces an embedding $C/\iota \cong \mathbb{P}^1  \rightarrow X_{c_2}$. In particular $X_{c_2}(k)\neq \emptyset$.\footnote{More than this, it is a curious fact that (in the specific case of Jacobians of genus $2$ curves) the Kummer varieties associated to $c_2$ and to the zero class are isomorphic; see \cite[Section 3.2]{GHC22} for a discussion of this phenomenon.}   
 
+Assume now that $c_2\neq \alpha\neq 0$ and that $X_\alpha$ is everywhere locally soluble.   Suppose we are given a character $\chi_0$ as in the first step of the strategy, so that $\alpha \in \textup{Sel}_2(A^{\chi_0})$ and $\textup{rk}_2(A^{\chi_0})$ is odd. Since $\textup{Gal}(f)\cong S_6$, it follows from Lemma \ref{hyperelliptic_twisting_nonsense} that $c_2$ is non-zero, so that $\alpha$ and $c_2$ span a $2$-dimensional subspace of $\textup{Sel}_2(A^{\chi_0})$. The same lemma also shows that Condition \ref{genericity_cond} holds for $A^{\chi_0}$. Thus, Theorem \ref{key_cassels_tate_prop_4_sel_intro} applies to $A^{\chi_0}$.  To complete the fourth step of the strategy, it suffices to demonstrate the existence of an admissible pairing $P$ on $\textup{Sel}_2(A^{\chi_0})$ whose kernel is generated by $\alpha$. 
 
+ 
 
+%\textbf{Case 1:} we have $c_2=0$. In particular, $\dim \textup{Sel}_2(A^{\chi_0})\equiv \textup{rk}_2(A^{\chi_0})\equiv 1 \pmod 2$. Moreover, 
+%\[
+%\left(\begin{array}{ccccccc}
+% 0&&  \\
+%   & 0&1 \\
+% &1&0\\
+% &&& \ddots\\
+%    &&&& 0&1 \\
+% &&&&1&0\\
+%\end{array}\right)\]
+
+\textbf{Case 1:} suppose first that $\dim \textup{Sel}_2(A^{\chi_0})\equiv 0 \pmod 2$. Since $\textup{rk}_2(A^{\chi_0})$ is odd, a pairing $P$ on $\textup{Sel}_2(A^{\chi_0})$ is admissible if and only if $P(c_2,c_2)=\tfrac{1}{2}$ and $P(x,x)=P(x,c_2)$ for all $x\in \textup{Sel}_2(A^{\chi_0})$.   We extend $\alpha, c_2$ to a basis $\alpha, c_2, x_1,...,x_n$ for $\textup{Sel}_2(A^{\chi_0})$, noting that $n$ is even. Take $P$ to be the pairing on $\textup{Sel}_2(A^{\chi_0})$ whose matrix with respect to this basis is
+\[
+\left(\begin{array}{ccccccc}
+0 & 0 &&  \\
+0 & \tfrac{1}{2}&&  \\
+ &  & 0&\tfrac{1}{2} \\
+ &&\tfrac{1}{2}&0\\
+ &&&& \ddots\\
+  &  &&&& 0&\tfrac{1}{2} \\
+ &&&&&\tfrac{1}{2}&0\\
+\end{array}\right).\]
+We have $P(c_2,c_2)=\tfrac{1}{2}$. Moreover, since $P$ is symmetric, the identity $P(x,x)=P(x,c_2)$ holds for all $x\in \textup{Sel}_2(A^{\chi_0})$ if and only if it does so as $x$ varies over a basis. Since it holds for the basis $\alpha, c_2, x_1,...,x_n$ by construction, we see that $P$ is admissible. Finally, we note that the displayed matrix has $\mathbb{F}_2$-rank $\dim  \textup{Sel}_2(A^{\chi_0}) -1$ and contains $\alpha$ in its kernel. 
+
+\textbf{Case 2:} now suppose that  $\dim \textup{Sel}_2(A^{\chi_0})\equiv 1 \pmod 2$. This time, since we still have $\textup{rk}_2(A^{\chi_0})$  odd, a pairing $P$ on $\textup{Sel}_2(A^{\chi_0})$ is admissible if and only if $P(c_2,c_2)=0$ and $P(x,x)=P(x,c_2)$ for all $x\in \textup{Sel}_2(A^{\chi_0})$.  As before, we extend $\alpha, c_2$ to a basis $\alpha, c_2, x_1,...,x_n$ for $\textup{Sel}_2(A^{\chi_0})$, noting that now $n$ is odd. Take $P$ to be the pairing on $\textup{Sel}_2(A^{\chi_0})$ whose matrix with respect to this basis is
+ \[
+\left(\begin{array}{ccccccc}
+ 0&&  \\
+   & 0&\tfrac{1}{2} \\
+ &\tfrac{1}{2}&\tfrac{1}{2}\\
+ &&& \ddots\\
+    &&&& 0&\tfrac{1}{2} \\
+ &&&&\tfrac{1}{2}&0\\
+\end{array}\right).\]
+As in the previous case, $P$ is an admissible pairing whose kernel is generated by $\alpha$. 
+ 
 
 
 % \begin{proof}
@@ -832,7 +884,7 @@ Assume that Condition \ref{genericity_cond} holds. Let $P$ be any admissible pai
  %K. \v{C}esnavi\v{c}ius, \textit{The {$\ell$}-parity conjecture over the constant quadratic
        %       extension}, Math. Proc. Cambridge Philos. Soc. \textbf{165} (2018), no. 3, 385--409.  
               
-
+\bibitem[ABHS26]{ABHS26} L. Alpöge, M. Bhargava,  W. Ho   and A. Shnidman, {\it Rank stability in quadratic extensions and Hilbert’s tenth problem for the ring of integers of a number field}, Inventiones Mathematicae \textbf{243}, 1129–1139 (2026)
               
 \bibitem[CT01]{CT2001} J.-L. Colliot-Th\'el\`ene, Hasse principle for pencils of curves of genus one whose Jacobians have a rational 2-division point, close variation on a paper of Bender and Swinnerton-Dyer, in {\it Rational points on algebraic varieties}, 117--161, Progr. Math., 199, Birkh\"auser, Basel, ; MR1875172
 
@@ -841,7 +893,7 @@ Assume that Condition \ref{genericity_cond} holds. Let $P$ be any admissible pai
  \bibitem[CTS21]{ctsko21}   J.-L. Colliot-Th\'el\`ene and A.~N. Skorobogatov, {\it The Brauer-Grothendieck group}, Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge. A Series of Modern Surveys in Mathematics, 71, Springer, Cham, [2021] \copyright 2021.
  
   \bibitem[CTSSD98]{skoroswin98}
-J.-L. Colliot-Th\`{e}l\'{e}ne, A. Skorobogatov and P. Swinnerton-Dyer, \textit{Hasse principle for
+J.-L. Colliot-Th\'el\`ene, A. Skorobogatov and P. Swinnerton-Dyer, \textit{Hasse principle for
 pencils of curves of genus one whose Jacobians have rational 2-division points}, Inventiones Mathematicae \textbf{134} (1998), p. 579–650. 
 %              
 %  \bibitem[\v{C}I16]{MR3577895}
@@ -899,7 +951,7 @@ I. V. Dolgachev. \textit{Classical algebraic geometry. A modern view}, Cambridge
 %T. Fisher and J. Yan, \textit{Computing the Cassels-Tate pairing on the $2$-Selmer group of a genus $2$ Jacobian}, preprint, arXiv:2306.06011
 % (2023).  
      
-   \bibitem[Fla90]{Fla90}  M. Flach. \textit{A generalisation of the Cassel-Tate pairing}, Journal für die reine und angewandte Mathematik 412 (1990), 113-127.
+   \bibitem[Fla90]{Fla90}  M. Flach. \textit{A generalisation of the Cassels--Tate pairing}, Journal für die reine und angewandte Mathematik 412 (1990), 113-127.
 
  %    \bibitem[FTvL12]{Flynn_testa_van_luijk}
         %  E.V. Flynn, D. Testa and R. van Luijk. Two-coverings of Jacobians of curves of genus two. Proc. London Math. Soc. (3) \textbf{104} (2012), 387—429.
@@ -920,8 +972,8 @@ I. V. Dolgachev. \textit{Classical algebraic geometry. A modern view}, Cambridge
 %              {B}righton, 1965), 1967, 116--127. 
 %             
  
-  %    \bibitem[GCH22]{GHC22}
-%D. Gvirtz-Chen and Z. Huang, \textit{Rational curves and the Hilbert Property on Jacobian Kummer varieties}, preprint, arXiv:2205.04364 (2022).  
+    \bibitem[GCH22]{GHC22}
+    D. Gvirtz-Chen and Z. Huang, \textit{Rational curves and the Hilbert Property on Jacobian Kummer varieties}, Algebra \& Number Theory, to appear.  
  
  \bibitem[Har19]{Har19}
  Y. Harpaz, \textit{Second descent and rational points on Kummer varieties}, Proc. London Math. Soc. (3)  \textbf{118} (2019) 606-648.
@@ -931,7 +983,7 @@ I. V. Dolgachev. \textit{Classical algebraic geometry. A modern view}, Cambridge
  
  
  \bibitem[HS16]{HS16}
- Y. Harpaz, and A.N. Skorobogatov,  \textit{Hasse principle for Kummer varieties}, Algebra and Number Theory \textbf{10} (2016) 813-841.
+ Y. Harpaz, and A.N. Skorobogatov,  \textit{Hasse principle for Kummer varieties}, Algebra \& Number Theory \textbf{10} (2016) 813-841.
  
  \bibitem[KMR13]{MR3043582}
  Z. Klagsbrun, B. Mazur, and K. Rubin, \textit{Disparity in {S}elmer ranks of quadratic twists of elliptic curves}, Ann. of Math. (2) \textbf{178} (2013), no. 1, 287--320.
@@ -1070,6 +1122,8 @@ der Mathematischen Wissenschaften, 323), Springer, Berlin, 2008.
   
   \bibitem[Sch96]{MR1370197}
 E. F. Schaefer, \textit{Class groups and {S}elmer groups}, J. Number Theory \textbf{56} (1996), no. 1, 79--114.
+
+\bibitem[Ser70]{Serre_1970} J.-P. Serre, Facteurs locaux des fonctions z\^eta des variet\'es alg\'ebriques (d\'efinitions et conjectures), in {\it S\'eminaire Delange-Pisot-Poitou. 11e ann\'ee: 1969/70. Th\'eorie des nombres. Fasc. 1: Expos\'es 1 \`a{} 15; Fasc. 2: Expos\'es 16 \`a{} 24}, 15 pp., Secr\'etariat Math., Paris.
   
     \bibitem[Sko09]{Skoro2009}
 A.  Skorobogatov, \textit{Diagonal quartic surfaces}, Explicit methods in number theory, K. Belabas, H.W. Lenstra, D.B. Zagier, eds. Oberwolfach report \textbf{33} (2009) 76-79. 
@@ -1086,7 +1140,7 @@ A.  Skorobogatov and P.  Swinnerton-Dyer, \textit{2-descent on elliptic curves a
   
 \bibitem[Smi16]{smi16}
 A. Smith, \textit{Governing fields and statistics for 4-Selmer groups and 8-class groups}
-  %Preprint arXiv:1607.07860 (2016).  
+  Preprint, arXiv:1607.07860 (2016).  
   
     %\bibitem[Smi22a]{smith2022distribution1}
 %A. Smith, \textit{The distribution of $\ell^\infty$-selmer groups in degree $\ell$
